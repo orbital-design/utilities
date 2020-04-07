@@ -1,0 +1,37 @@
+.stroke {
+    &--current {
+        stroke: currentColor
+    }
+}
+
+@media (--viewport-sm) {
+    .sm\:stroke {
+        &--current {
+            stroke: currentColor
+        }
+    }
+}
+
+@media (--viewport-md) {
+    .md\:stroke {
+        &--current {
+            stroke: currentColor
+        }
+    }
+}
+
+@media (--viewport-lg) {
+    .lg\:stroke {
+        &--current {
+            stroke: currentColor
+        }
+    }
+}
+
+@media (--viewport-xl) {
+    .xl\:stroke {
+        &--current {
+            stroke: currentColor
+        }
+    }
+}
