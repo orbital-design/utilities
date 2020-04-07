@@ -6,7 +6,7 @@ $className: 'stroke--current';
 $variants: 'responsive' 'focus' 'hover';
 
 // Construct class props so we don't keep repeating ourselves.
-@mixin fill($prefix, $suffix) {
+@mixin stroke($prefix, $suffix) {
 
     // Use 'stroke--current' to set the stroke color of an SVG to the current text color.
     .#{$prefix}#{$suffix} {
@@ -15,7 +15,7 @@ $variants: 'responsive' 'focus' 'hover';
 }
 
 // Use mixin as a default class without media queries.
-@include fill($className, "");
+@include stroke($className, "");
 
 // Loop through the selected variants for this class.
 @each $variant in $variants {
@@ -23,7 +23,7 @@ $variants: 'responsive' 'focus' 'hover';
     // Make sure we don't include the 'responsive' the variant.
     @if $variant != 'responsive' {
         // Include variant classes
-        @include fill("#{$variant}\\:#{$className}", ":#{$variant}");
+        @include stroke("#{$variant}\\:#{$className}", ":#{$variant}");
     }
 }
 
@@ -38,7 +38,7 @@ $variants: 'responsive' 'focus' 'hover';
         @media (min-width: $query_width) {
 
             // Create default class with breakpoint prefix.
-            @include fill("#{$query_name}\\:#{$className}", "");
+            @include stroke("#{$query_name}\\:#{$className}", "");
 
             // Loop through the selected variants for this class.
             @each $variant in $variants {
@@ -47,7 +47,7 @@ $variants: 'responsive' 'focus' 'hover';
                 @if $variant != 'responsive' {
 
                     // Include variant classes inside mq
-                    @include fill("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
+                    @include stroke("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
                 }
             }
         }
