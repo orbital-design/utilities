@@ -15,3 +15,6 @@ $media_queries: (
 @import 'svg/fill';
 @import 'svg/stroke';
 @import 'svg/stroke-width';
+
+// # Interactivity.
+@import 'interactivity/user-select';
