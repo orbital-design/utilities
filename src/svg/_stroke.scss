@@ -1,37 +1,55 @@
-.stroke {
-    &--current {
-        stroke: currentColor
+// Set class name.
+$className: 'stroke--current';
+
+// Set variants available for this class.
+// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
+$variants: 'responsive' 'focus' 'hover';
+
+// Construct class props so we don't keep repeating ourselves.
+@mixin fill($prefix, $suffix) {
+
+    // Use 'stroke--current' to set the stroke color of an SVG to the current text color.
+    .#{$prefix}#{$suffix} {
+        stroke: currentColor;
     }
 }
 
-@media (--viewport-sm) {
-    .sm\:stroke {
-        &--current {
-            stroke: currentColor
-        }
+// Use mixin as a default class without media queries.
+@include fill($className, "");
+
+// Loop through the selected variants for this class.
+@each $variant in $variants {
+
+    // Make sure we don't include the 'responsive' the variant.
+    @if $variant != 'responsive' {
+        // Include variant classes
+        @include fill("#{$variant}\\:#{$className}", ":#{$variant}");
     }
 }
 
-@media (--viewport-md) {
-    .md\:stroke {
-        &--current {
-            stroke: currentColor
-        }
-    }
-}
+// Use mixin inside media queries with relevant prefix.
+// # Check if 'responsive' is in list.
+@if index($variants, 'responsive') {
 
-@media (--viewport-lg) {
-    .lg\:stroke {
-        &--current {
-            stroke: currentColor
-        }
-    }
-}
+    // If responsive is in list then loop through breakpoints.
+    @each $query_name, $query_width in $media_queries {
 
-@media (--viewport-xl) {
-    .xl\:stroke {
-        &--current {
-            stroke: currentColor
+        // Initiate Media Query.
+        @media (min-width: $query_width) {
+
+            // Create default class with breakpoint prefix.
+            @include fill("#{$query_name}\\:#{$className}", "");
+
+            // Loop through the selected variants for this class.
+            @each $variant in $variants {
+
+                // Make sure we don't include the 'responsive' the variant.
+                @if $variant != 'responsive' {
+
+                    // Include variant classes inside mq
+                    @include fill("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
+                }
+            }
         }
     }
 }
