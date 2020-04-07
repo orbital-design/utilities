@@ -9,9 +9,9 @@ $media_queries: (
 
 // Includes
 // # Accessibility classes.
-// @import 'accessibility/screen-readers';
+@import 'accessibility/screen-readers';
 
 // # SVG classes.
-// @import 'svg/fill';
+@import 'svg/fill';
 @import 'svg/stroke';
-// @import 'svg/stroke-width';
+@import 'svg/stroke-width';

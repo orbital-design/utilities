@@ -1,67 +1,63 @@
-.stroke {
-    &--0 {
+// Set class name.
+$className: 'stroke';
+
+// Set variants available for this class.
+// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
+$variants: 'responsive' 'focus' 'hover';
+
+// Construct class props so we don't keep repeating ourselves.
+@mixin stroke-width($prefix, $suffix) {
+
+    // Use the .stroke--{width} utilities to set the stroke width of an SVG.
+    .#{$prefix}--0#{$suffix} {
         stroke-width: 0;
     }
-    &--1 {
+
+    .#{$prefix}--1#{$suffix} {
         stroke-width: 1;
     }
-    &--2 {
+
+    .#{$prefix}--2#{$suffix} {
         stroke-width:2;
     }
 }
 
-@media (--viewport-sm) {
-    .sm\:stroke {
-        &--0 {
-            stroke-width: 0;
-        }
-        &--1 {
-            stroke-width: 1;
-        }
-        &--2 {
-            stroke-width:2;
-        }
+// Use mixin as a default class without media queries.
+@include stroke-width($className, "");
+
+// Loop through the selected variants for this class.
+@each $variant in $variants {
+
+    // Make sure we don't include the 'responsive' the variant.
+    @if $variant != 'responsive' {
+        // Include variant classes
+        @include stroke-width("#{$variant}\\:#{$className}", ":#{$variant}");
     }
 }
 
-@media (--viewport-md) {
-    .md\:stroke {
-        &--0 {
-            stroke-width: 0;
-        }
-        &--1 {
-            stroke-width: 1;
-        }
-        &--2 {
-            stroke-width:2;
-        }
-    }
-}
+// Use mixin inside media queries with relevant prefix.
+// # Check if 'responsive' is in list.
+@if index($variants, 'responsive') {
 
-@media (--viewport-lg) {
-    .lg\:stroke {
-        &--0 {
-            stroke-width: 0;
-        }
-        &--1 {
-            stroke-width: 1;
-        }
-        &--2 {
-            stroke-width:2;
-        }
-    }
-}
+    // If responsive is in list then loop through breakpoints.
+    @each $query_name, $query_width in $media_queries {
 
-@media (--viewport-xl) {
-    .xl\:stroke {
-        &--0 {
-            stroke-width: 0;
-        }
-        &--1 {
-            stroke-width: 1;
-        }
-        &--2 {
-            stroke-width:2;
+        // Initiate Media Query.
+        @media (min-width: $query_width) {
+
+            // Create default class with breakpoint prefix.
+            @include stroke-width("#{$query_name}\\:#{$className}", "");
+
+            // Loop through the selected variants for this class.
+            @each $variant in $variants {
+
+                // Make sure we don't include the 'responsive' the variant.
+                @if $variant != 'responsive' {
+
+                    // Include variant classes inside mq
+                    @include stroke-width("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
+                }
+            }
         }
     }
 }
