@@ -1,0 +1,59 @@
+// Set class name.
+$className: 'font';
+
+// Set variants available for this class.
+// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
+$variants: 'responsive';
+
+// Construct class props so we don't keep repeating ourselves.
+@mixin font-family($prefix, $suffix) {
+
+    // Utilities for controlling the box shadow of an element.
+    .#{$prefix}--sans#{$suffix} {
+        font-family: v(ff-sans);
+    }
+
+    .#{$prefix}--serif#{$suffix} {
+        font-family: v(ff-serif);
+    }
+}
+
+// Use mixin as a default class without media queries.
+@include font-family($className, "");
+
+// Loop through the selected variants for this class.
+@each $variant in $variants {
+
+    // Make sure we don't include the 'responsive' the variant.
+    @if $variant != 'responsive' {
+        // Include variant classes
+        @include font-family("#{$variant}\\:#{$className}", ":#{$variant}");
+    }
+}
+
+// Use mixin inside media queries with relevant prefix.
+// # Check if 'responsive' is in list.
+@if index($variants, 'responsive') {
+
+    // If responsive is in list then loop through breakpoints.
+    @each $query_name, $query_width in $media_queries {
+
+        // Initiate Media Query.
+        @media (min-width: $query_width) {
+
+            // Create default class with breakpoint prefix.
+            @include font-family("#{$query_name}\\:#{$className}", "");
+
+            // Loop through the selected variants for this class.
+            @each $variant in $variants {
+
+                // Make sure we don't include the 'responsive' the variant.
+                @if $variant != 'responsive' {
+
+                    // Include variant classes inside mq
+                    @include font-family("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
+                }
+            }
+        }
+    }
+}
