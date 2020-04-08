@@ -1,21 +1,24 @@
-// Global Settings
+// # config file
+@import 'scss-vars';
+
 // # SCSS functions
 @import 'functions';
-// # SCSS vars
-@import 'scss-vars';
+@import 'class-constructor';
+
 // # CSS vars
 @import 'css-vars';
 
 // # Typography
+
 // @import 'typography/font-family';
 // @import 'typography/font-size';
-// @import 'typography/font-style';
+@import 'typography/font-style';
 // @import 'typography/font-weight';
 // @import 'typography/letter-spacing';
 // @import 'typography/line-height';
 // @import 'typography/text-align';
 // @import 'typography/text-colour';
-@import 'typography/text-decoration';
+// @import 'typography/text-decoration';
 
 // # Effects
 // @import 'effects/box-shadow';

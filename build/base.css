@@ -1,3 +1,22 @@
+/**
+ * Typography - Font Style
+ * # Generates matching Utility Classes in: typography/_font-style.scss
+ */
+/**
+ * Typography - Font Weights
+ * # Generates matching Utility Classes in:: typography/_font-weight.scss
+ * # Generates matching CSS Custom Vars in: _css-vars.
+ */
+/**
+ * Typography - Letter Spacings / Tracking
+ * # Generates matching Utility Classes in:: typography/_letter-spacing.scss
+ * # Generates matching CSS Custom Vars in: _css-vars.
+ */
+/**
+ * Typography - Leading / Line Height
+ * # Generates matching Utility Classes in:: typography/_line-height.scss
+ * # Generates matching CSS Custom Vars in: _css-vars.
+ */
 :root {
   --fluid-min-width: 320;
   --fluid-max-width: 1500;
@@ -61,7 +80,6 @@
   --tracking-normal: 0;
   --tracking-wide: 0.025em;
   --tracking-wider: 0.05em;
-  --tracking-widest: 0.1em;
   --leading-none: 1;
   --leading-tight: 1.25;
   --leading-snug: 1.375;
@@ -75,13 +93,13 @@
   --light-grey: #97999b;
   --bg-grey: #f3f3f3; }
 
-.text-decoration--under {
-  text-decoration: underline; }
+.font-style {
+  font-style: normal; }
 
-.text-decoration--strike {
-  text-decoration: line-through; }
+.font-style--italic {
+  font-style: italic; }
 
-.text-decoration--none {
-  text-decoration: none; }
+.font-style--normal {
+  font-style: normal; }
 
 /*# sourceMappingURL=base.css.map */
