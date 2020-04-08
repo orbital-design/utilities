@@ -1,4 +1,13 @@
+// Global Settings
+$font_styles: null !default;
+$font_weights: null !default;
+$letter_spacings: null !default;
+$line_heights: null !default;
+$text_alignments: null !default;
+$text_decorations: null !default;
+
 // Breakpoints - min-width
+// # DO NOT REMOVE - Edit but DO NOT REMOVE
 $breakpoints: (
   sm: 768px,
   md: 1024px,
@@ -6,67 +15,94 @@ $breakpoints: (
   xl: 1500px
 );
 
-// Typography Properties
-// # Font Weights
-// ## Create matchng utilities for these in: typography/_font-weight.scss
-// ## Generates CSS Custom Vars in: _css-vars.
-$weights: (
-    light: 200,
-    normal: 400,
-    bold: 600
-);
-// # Letter Spacings / Tracking
-// ## Create matchng utilities for these in: typography/_letter-spacing.scss
-// ## Generates CSS Custom Vars in: _css-vars.
-$letter_spacings: (
-    tightest: -0.1em,
-    tighter: -0.05em,
-    tight: -0.025em,
-    normal: 0,
-    wide: 0.025em,
-    wider: 0.05em,
-    widest: 0.1em
-);
-// # Leading / Line Height
-// ## Create matchng utilities for these in: typography/_line-height.scss
-// ## Generates CSS Custom Vars in: _css-vars.
-$line_heights: (
-    none: 1,
-    tight: 1.25,
-    snug: 1.375,
-    normal: 1.5,
-    relaxed: 1.625,
-    loose: 2
-);
-// # Text Align
-// ## Create matchng utilities for these in: typography/_text-align.scss
-$text_alignments: (
-    left: left,
-    center: center,
-    right: right,
-    justify: justify
-);
-// # Font Style
-// ## Create matchng utilities for these in: typography/_font-style.scss
+// Comment out any maps below this line to prevent css vars or Utility Classes being created from them.
+//===============================================================================================
+
+/**
+ * Typography - Font Style
+ * # Generates matching Utility Classes in: typography/_font-style.scss
+ */
 $font_styles: (
-    italic: italic,
-    normal: normal
+    // name: ( value, output css var, css var name )
+    default: (normal, false, ''),
+    italic: ( italic, false, '' ),
+    normal: ( normal, false, '' )
 );
+
+/**
+ * Typography - Font Weights
+ * # Generates matching Utility Classes in:: typography/_font-weight.scss
+ * # Generates matching CSS Custom Vars in: _css-vars.
+ */
+$font_weights: (
+    // name: ( value, output css var, css var name )
+    default: (400, false, ''),
+    light: ( 200, true, 'fw-light' ),
+    normal: ( 400, true, 'fw-normal' ),
+    bold: ( 600, true, 'fw-bold' )
+);
+
+/**
+ * Typography - Letter Spacings / Tracking
+ * # Generates matching Utility Classes in:: typography/_letter-spacing.scss
+ * # Generates matching CSS Custom Vars in: _css-vars.
+ */
+$letter_spacings: (
+    // name: ( value, output css var, css var name )
+    default: (1.5, false, ''),
+    tightest: ( -0.1em, true, 'tracking-tightest' ),
+    tighter: ( -0.05em, true, 'tracking-tighter' ),
+    tight: ( -0.025em, true, 'tracking-tight' ),
+    normal: ( 0, true, 'tracking-normal' ),
+    wide: ( 0.025em, true, 'tracking-wide' ),
+    wider: ( 0.05em, true, 'tracking-wider' ),
+    widest: ( 0.1em true, 'tracking-widest' )
+);
+
+/**
+ * Typography - Leading / Line Height
+ * # Generates matching Utility Classes in:: typography/_line-height.scss
+ * # Generates matching CSS Custom Vars in: _css-vars.
+ */
+$line_heights: (
+    // name: ( value, output css var, css var name )
+    default: (1.5, false, ''),
+    none:   ( 1, true, 'leading-none' ),
+    tight:  ( 1.25, true, 'leading-tight' ),
+    snug:   ( 1.375, true, 'leading-snug' ),
+    normal: ( 1.5, true, 'leading-normal' ),
+    relaxed:( 1.625, true, 'leading-relaxed' ),
+    loose:  ( 2, true, 'leading-loose' )
+);
+
+// # Text Align
+// ## Generates matching Utility Classes in:: typography/_text-align.scss
+$text_alignments: (
+    // name: ( value, output css var, css var name )
+    default: ( 1.5, false, '' ),
+    left: ( left, false, '' ),
+    center: ( center, false, '' ),
+    right: ( right, false, '' ),
+    justify: ( justify false, '' )
+);
+
 // # Text Decoration
-// ## Create matchng utilities for these in: typography/_text-decoration.scss
+// ## Generates matching Utility Classes in:: typography/_text-decoration.scss
 $text_decorations: (
-    under: underline,
-    strike: line-through,
-    none: none
+    // name: ( value, output css var, css var name )
+    under: ( underline, false, '' ),
+    strike: ( line-through, false, '' ),
+    none: ( none, false, '' )
 );
 
 // Colours
-// # Generates CSS Custom Vars in: _css-vars.
+// # Generates matching CSS Custom Vars in: _css-vars.
 $colours: (
-    white: #ffffff,
-    black: #252525,
-    dark-grey: #212322,
-    mid-grey: #54585a,
-    light-grey: #97999b,
-    bg-grey: #f3f3f3
+    // name: ( value, output css var, css var name )
+    white: ( #ffffff, true, 'white' ),
+    black: ( #252525, true, 'black' ),
+    dark-grey: ( #212322, true, 'dark-grey' ),
+    mid-grey: ( #54585a, true, 'mid-grey' ),
+    light-grey: ( #97999b, true, 'light-grey' ),
+    bg-grey: ( #f3f3f3, true, 'bg-grey' )
 );

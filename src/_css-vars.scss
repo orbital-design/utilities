@@ -64,29 +64,20 @@
     --fs-xl: calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)));
     --fs-2xl: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
     --fs-3xl: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
+
     // # Font Weights
     // ## Create matchng utilities for these in: typography/_font-weight.scss
-    // ## Loop through each item in weights map.
-    @each $name, $weight in $weights {
-        --fw-#{$name}: #{$weight};
-    }
+    @include css-var-constructor( $font_weights );
+
     // # Tracking / Letter Spacing
     // ## Create matchng utilities for these in: typography/_letter-spacing.scss
-    // ## Loop through each item in letter_spacings map.
-    @each $name, $spacing in $letter_spacings {
-        --tracking-#{$name}: #{$spacing};
-    }
-    // # Leading / Line Height
-    // ## Create matchng utilities for these in: typography/_line-height.scss
-    // ## Loop through each item in line_heights map.
-    @each $name, $height in $line_heights {
-        --leading-#{$name}: #{$height};
-    }
+    @include css-var-constructor( $letter_spacings );
 
-    // Colour Properties
+    // # Leading / Line Height Properties
+    // ## Create matchng utilities for these in: typography/_line-height.scss
+    @include css-var-constructor( $line_heights );
+
+    // Generate Color Properties
     // # Create matchng utilities for these in: typography/_text-colour.scss
-    // ## Loop through each item in colour map.
-    @each $name, $colour in $colours {
-        --#{$name}: #{$colour};
-    }
+    @include css-var-constructor( $colours );
 }
