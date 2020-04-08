@@ -51,18 +51,10 @@
     --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
 
     // Colour Properties
-    --white: #ffffff;
-    --black: #252525;
-    --text-color: #5d5d5d;
-    --dark-grey: #212322;
-    --mid-grey: #54585a;
-    --warm-grey: #a8a99e;
-    --light-grey: #97999b;
-    --bg-grey: #f3f3f3;
-    --dark-yellow: #a08629;
-    --yellow: #eaaa00;
-    --dark-red: #9e2a2f;
-    --light-red: #c8102e;
+    // Loop through each item in colour map.
+    @each $name, $colour in $colours {
+        --#{$name}: #{$colour};
+    }
 
     // Typography Properties
     // # Font Sizes
