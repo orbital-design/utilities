@@ -15,7 +15,7 @@ $variants: 'responsive' 'hover' 'focus'; // We don't need responsive as the font
     // Colour Properties
     // Loop through each item in colour map.
     @each $name, $colour in $colours {
-        .#{$prefix}--#{$name}{
+        .#{$prefix}--#{$name}#{$suffix} {
             color: v(#{$name});
         };
     }
