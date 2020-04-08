@@ -66,17 +66,21 @@
 
     // Typography Properties
     // # Font Sizes
-    --fs-s: calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp))); // 16px
-    --fs-n: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp))); // 19px
-    --fs-m: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp))); // 23px
-    --fs-l: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp))); // 27px
-    --fs-xl: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp))); // 39px
-    --fs-xxl: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp))); // 47px
+    // ## Create matchng utilities for these in: typography/_font-style.scss
+    --fs-sm: calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp)));
+    --fs-base: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
+    --fs-md: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
+    --fs-lg: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)));
+    --fs-xl: calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)));
+    --fs-2xl: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
+    --fs-3xl: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
     // # Font Weights
+    // ## Create matchng utilities for these in: typography/_font-weight.scss
     --fw-light: 200;
-    --fw-regular: 300;
+    --fw-normal: 400;
     --fw-bold: 600;
     // # Font Families
+    // ## Create matchng utilities for these in: typography/_font-family.scss
     --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
     --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 }
