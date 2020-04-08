@@ -9,7 +9,8 @@ $media_queries: (
 
 // Includes
 // # Effects
-@import 'effects/box-shadow.scss';
+@import 'effects/box-shadow';
+@import 'effects/opacity';
 
 // # Interactivity.
 @import 'interactivity/appearance';

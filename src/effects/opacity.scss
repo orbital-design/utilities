@@ -1,0 +1,62 @@
+// Set class name.
+$className: 'opacity';
+
+// Set variants available for this class.
+// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
+$variants: 'responsive' 'hover' 'focus';
+
+// Construct class props so we don't keep repeating ourselves.
+@mixin opacity($prefix, $suffix) {
+
+    // Utilities for controlling the opacity of an element.
+    // # Control the opacity of an element using the 'opacity-{color}' utilities.
+    .#{$prefix}#{$suffix} {
+        opacity: 1;
+    }
+
+    @for $i from 0 through 20 {
+        .#{$prefix}--#{($i*5)}#{$suffix} {
+            opacity: ($i * 5) / 100;
+        }
+    }
+}
+
+// Use mixin as a default class without media queries.
+@include opacity($className, "");
+
+// Loop through the selected variants for this class.
+@each $variant in $variants {
+
+    // Make sure we don't include the 'responsive' the variant.
+    @if $variant != 'responsive' {
+        // Include variant classes
+        @include opacity("#{$variant}\\:#{$className}", ":#{$variant}");
+    }
+}
+
+// Use mixin inside media queries with relevant prefix.
+// # Check if 'responsive' is in list.
+@if index($variants, 'responsive') {
+
+    // If responsive is in list then loop through breakpoints.
+    @each $query_name, $query_width in $media_queries {
+
+        // Initiate Media Query.
+        @media (min-width: $query_width) {
+
+            // Create default class with breakpoint prefix.
+            @include opacity("#{$query_name}\\:#{$className}", "");
+
+            // Loop through the selected variants for this class.
+            @each $variant in $variants {
+
+                // Make sure we don't include the 'responsive' the variant.
+                @if $variant != 'responsive' {
+
+                    // Include variant classes inside mq
+                    @include opacity("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
+                }
+            }
+        }
+    }
+}
