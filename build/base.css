@@ -1,4 +1,8 @@
 /**
+ * Typography - Font Fmily
+ * # Generates matching Utility Classes in: typography/_font-family.scss
+ */
+/**
  * Typography - Font Style
  * # Generates matching Utility Classes in: typography/_font-style.scss
  */
@@ -93,13 +97,44 @@
   --light-grey: #97999b;
   --bg-grey: #f3f3f3; }
 
-.font-style {
-  font-style: normal; }
+.font--sans {
+  font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family: var(--ff-sans); }
 
-.font-style--italic {
-  font-style: italic; }
+.font--serif {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: var(--ff-serif); }
 
-.font-style--normal {
-  font-style: normal; }
+@media (min-width: 768px) {
+  .sm\:font--sans {
+    font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-family: var(--ff-sans); }
+  .sm\:font--serif {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--ff-serif); } }
+
+@media (min-width: 1024px) {
+  .md\:font--sans {
+    font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-family: var(--ff-sans); }
+  .md\:font--serif {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--ff-serif); } }
+
+@media (min-width: 1300px) {
+  .lg\:font--sans {
+    font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-family: var(--ff-sans); }
+  .lg\:font--serif {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--ff-serif); } }
+
+@media (min-width: 1500px) {
+  .xl\:font--sans {
+    font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-family: var(--ff-sans); }
+  .xl\:font--serif {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-family: var(--ff-serif); } }
 
 /*# sourceMappingURL=base.css.map */

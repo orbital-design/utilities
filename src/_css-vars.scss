@@ -53,8 +53,8 @@
     // Typography Properties
     // # Font Families
     // ## Create matchng utilities for these in: typography/_font-family.scss
-    --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+    @include css-var-constructor( $font_families );
+
     // # Font Sizes
     // ## Create matchng utilities for these in: typography/_font-style.scss
     --fs-sm: calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp)));

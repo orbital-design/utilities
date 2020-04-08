@@ -19,6 +19,17 @@ $breakpoints: (
 //===============================================================================================
 
 /**
+ * Typography - Font Fmily
+ * # Generates matching Utility Classes in: typography/_font-family.scss
+ */
+$font_families: (
+    // name: ( value, output css var, css var name )
+    sans: ( 'Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif', true, 'ff-sans'),
+    serif: ( 'Georgia, Cambria, "Times New Roman", Times, serif', true, 'ff-serif' )
+);
+
+
+/**
  * Typography - Font Style
  * # Generates matching Utility Classes in: typography/_font-style.scss
  */
