@@ -83,7 +83,7 @@
     // ## Create matchng utilities for these in: typography/_font-family.scss
     --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
     --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-    // # Letter Spacing
+    // # Letter Spacing / Tracking
     // ## Create matchng utilities for these in: typography/_letter-spacing.scss
     --ls--3: -0.1em;
     --ls--2: -0.05em;
@@ -92,4 +92,12 @@
     --ls-1: 0.025em;
     --ls-2: 0.05em;
     --ls-3: 0.1em;
+    // # Line Height / Leading
+    // ## Create matchng utilities for these in: typography/_line-height.scss
+    --lh-none: 1;
+    --lh-tight: 1.25;
+    --lh-snug: 1.375;
+    --lh-normal: 1.5;
+    --lh-relaxed: 1.625;
+    --lh-loose: 2;
 }
