@@ -68,4 +68,12 @@
     // Generate Color Properties
     // # Create matchng utilities for these in: typography/_text-colour.scss
     @include css-var-constructor( $colours );
+
+    // Effects - Box Shadow
+    // # Generates matching Utility Classes in: effects/_box-shadow.scss
+    @include css-var-constructor( $box_shadows );
+
+    // Effects - Opacity
+    // # Generates matching Utility Classes in: effects/_opacity.scss
+    @include css-var-constructor( $opacities );
 }

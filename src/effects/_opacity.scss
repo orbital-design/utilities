@@ -1,62 +1,18 @@
-// Set class name.
-$className: 'opacity';
+// Generate Utility Classes for controlling the opacity of an element.
+// # Use the 'opacity--{value}' utilities to control the opacity of an element.
 
-// Set variants available for this class.
-// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
-$variants: 'responsive' 'hover' 'focus';
+// Please don't change this $class_map.
+// We need this one to be null so we can check against it in the mixin and know we're not using one set previously.
+// Please use the $class_map specified further down.
+$class_map: null !default;
 
-// Construct class props so we don't keep repeating ourselves.
-@mixin opacity($prefix, $suffix) {
+// ## $class_name = string. Set a lowercase string to use as the identifier for your class.
+$class_name: 'opacity';
+// ## $class_variants = list. Use 'none' if you don't want any added states.
+$class_variants: 'responsive' 'hover' 'focus';
+// ## $class_name = string. Specify property to use for your class.
+$class_property: 'opacity';
+// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
+$class_map: $opacities;
 
-    // Utilities for controlling the opacity of an element.
-    // # Control the opacity of an element using the 'opacity-{color}' utilities.
-    .#{$prefix}#{$suffix} {
-        opacity: 1;
-    }
-
-    @for $i from 0 through 20 {
-        .#{$prefix}--#{($i*5)}#{$suffix} {
-            opacity: ($i * 5) / 100;
-        }
-    }
-}
-
-// Use mixin as a default class without media queries.
-@include opacity($className, "");
-
-// Loop through the selected variants for this class.
-@each $variant in $variants {
-
-    // Make sure we don't include the 'responsive' the variant.
-    @if $variant != 'responsive' {
-        // Include variant classes
-        @include opacity("#{$variant}\\:#{$className}", ":#{$variant}");
-    }
-}
-
-// Use mixin inside media queries with relevant prefix.
-// # Check if 'responsive' is in list.
-@if index($variants, 'responsive') {
-
-    // If responsive is in list then loop through breakpoints.
-    @each $query_name, $breakpoint in $breakpoints {
-
-        // Initiate Media Query.
-        @media (min-width: $breakpoint) {
-
-            // Create default class with breakpoint prefix.
-            @include opacity("#{$query_name}\\:#{$className}", "");
-
-            // Loop through the selected variants for this class.
-            @each $variant in $variants {
-
-                // Make sure we don't include the 'responsive' the variant.
-                @if $variant != 'responsive' {
-
-                    // Include variant classes inside mq
-                    @include opacity("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
-                }
-            }
-        }
-    }
-}
+@include class-constructor( $class_name, $class_variants, $class_property, $class_map );

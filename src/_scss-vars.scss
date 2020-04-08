@@ -1,7 +1,7 @@
 // Global Settings
 // # Effects
-$box_shadows: null !default; // TODO: Create map.
-$opacities: null !default; // TODO: Create map.
+$box_shadows: null !default;
+$opacities: null !default;
 // # Interactivity
 $appearances: null !default; // TODO: Create map.
 $cursors: null !default; // TODO: Create map.
@@ -37,6 +37,32 @@ $breakpoints: (
 
 // Comment out any maps below this line to prevent css vars or Utility Classes being created from them.
 //===============================================================================================
+
+// Effects - Box Shadow
+// # Generates matching Utility Classes in: effects/_box-shadow.scss
+// # Generates matching CSS Custom Vars in: _css-vars.
+$box_shadows: (
+    xs: ( '0 0 0 1px rgba(0, 0, 0, 0.05)', true, 'shadow-xs' ),
+    sm: ( '0 1px 2px 0 rgba(0, 0, 0, 0.05)', true, 'shadow-sm' ),
+    base: ( '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)', true, 'shadow-base' ),
+    md: ( '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)', true, 'shadow-md' ),
+    lg: ( '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', true, 'shadow-lg' ),
+    xl: ( '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', true, 'shadow-xl' ),
+    2xl: ( '0 25px 50px -12px rgba(0, 0, 0, 0.25)', true, 'shadow-2xl' ),
+    inner: ( 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)', true, 'shadow-inner' ),
+    outline: ( '0 0 0 3px rgba(66, 153, 225, 0.5)', true, 'shadow-outline' ),
+    none: ( 'none', true, 'shadow-none' )
+);
+
+// Effects - Opacity
+// # Generates matching Utility Classes in: effects/_opacity.scss
+$opacities: ();
+@for $i from 0 through 20 {
+    $value: ( $i * 5 ) / 100;
+    $unit: $i * 5;
+
+    $opacities: map-merge( $opacities, ( $unit: ( $value, false, 'opacity--#{$unit}' ) ) );
+}
 
 // Typography - Fluid Text Defaults
 // # Generates matching CSS Custom Vars in: _css-vars.

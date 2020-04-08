@@ -1,95 +1,18 @@
-// Set class name.
-$className: 'shadow';
+// Generate Utility Classes for controlling the box shadow of an element.
+// # Use the 'shadow--{value}' utilities to control the elements box shadow.
 
-// Set variants available for this class.
-// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
-$variants: 'responsive' 'hover' 'focus';
+// Please don't change this $class_map.
+// We need this one to be null so we can check against it in the mixin and know we're not using one set previously.
+// Please use the $class_map specified further down.
+$class_map: null !default;
 
-// Construct class props so we don't keep repeating ourselves.
-@mixin box-shadow($prefix, $suffix) {
+// ## $class_name = string. Set a lowercase string to use as the identifier for your class.
+$class_name: 'shadow';
+// ## $class_variants = list. Use 'none' if you don't want any added states.
+$class_variants: 'responsive' 'hover' 'focus';
+// ## $class_name = string. Specify property to use for your class.
+$class_property: 'box-shadow';
+// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
+$class_map: $box_shadows;
 
-    // Utilities for controlling the box shadow of an element.
-    // # Use the 'shadow-xs', 'shadow-sm', 'shadow', 'shadow-md', 'shadow-lg', 'shadow-xl', or 'shadow-2xl' utilities to apply different sized outer box shadows to an element.
-    .#{$prefix}#{$suffix} {
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    }
-
-    .#{$prefix}--xs#{$suffix} {
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
-    }
-
-    .#{$prefix}--sm#{$suffix} {
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    }
-
-    .#{$prefix}--md#{$suffix} {
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
-
-    .#{$prefix}--lg#{$suffix} {
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    }
-
-    .#{$prefix}--xl#{$suffix} {
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-
-    .#{$prefix}--2xl#{$suffix} {
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    }
-
-    // # Use the 'shadow-inner' utility to apply a subtle inset box shadow to an element. This can be useful for things like form controls or wells.
-    .#{$prefix}--inner#{$suffix} {
-        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-    }
-
-    // # Use the 'shadow-outline' utility to apply a focus-ring-style shadow to an element. This can be useful when combined with .focus:outline-none to create a better looking focus style that follows an element's border radius.
-    .#{$prefix}--outline#{$suffix} {
-        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-    }
-
-    // # Use 'shadow-none' to remove an existing box shadow from an element. This is most commonly used to remove a shadow that was applied at a smaller breakpoint.
-    .#{$prefix}--none#{$suffix} {
-        box-shadow: none;
-    }
-}
-
-// Use mixin as a default class without media queries.
-@include box-shadow($className, "");
-
-// Loop through the selected variants for this class.
-@each $variant in $variants {
-
-    // Make sure we don't include the 'responsive' the variant.
-    @if $variant != 'responsive' {
-        // Include variant classes
-        @include box-shadow("#{$variant}\\:#{$className}", ":#{$variant}");
-    }
-}
-
-// Use mixin inside media queries with relevant prefix.
-// # Check if 'responsive' is in list.
-@if index($variants, 'responsive') {
-
-    // If responsive is in list then loop through breakpoints.
-    @each $query_name, $breakpoint in $breakpoints {
-
-        // Initiate Media Query.
-        @media (min-width: $breakpoint) {
-
-            // Create default class with breakpoint prefix.
-            @include box-shadow("#{$query_name}\\:#{$className}", "");
-
-            // Loop through the selected variants for this class.
-            @each $variant in $variants {
-
-                // Make sure we don't include the 'responsive' the variant.
-                @if $variant != 'responsive' {
-
-                    // Include variant classes inside mq
-                    @include box-shadow("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
-                }
-            }
-        }
-    }
-}
+@include class-constructor( $class_name, $class_variants, $class_property, $class_map );
