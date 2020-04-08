@@ -1,4 +1,19 @@
 // Global Settings
+// # Effects
+$box_shadows: null !default; // TODO: Create map.
+$opacities: null !default; // TODO: Create map.
+// # Interactivity
+$appearances: null !default; // TODO: Create map.
+$cursors: null !default; // TODO: Create map.
+$outlines: null !default; // TODO: Create map.
+$pointer_events: null !default; // TODO: Create map.
+$resizes: null !default; // TODO: Create map.
+$user_selects: null !default; // TODO: Create map.
+// # SVG
+$fills: null !default; // TODO: Create map.
+$strokes: null !default; // TODO: Create map.
+$stroke_widths: null !default; // TODO: Create map.
+// # Typography
 $fluid_typography: null !default;
 $font_families: null !default;
 $font_sizes: null !default;
@@ -8,6 +23,7 @@ $letter_spacings: null !default;
 $line_heights: null !default;
 $text_alignments: null !default;
 $text_decorations: null !default;
+// # Colours
 $colours: null !default;
 
 // Breakpoints - min-width
