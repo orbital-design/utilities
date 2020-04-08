@@ -29,12 +29,21 @@ gulp.task('css', function () {
                 this.emit('end');
             })
         )
+        .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(postcss([
-            // require('tailwindcss'),
             require('autoprefixer'),
+            require('postcss-preset-env'),
             // require('cssnano'),
         ]))
-
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('build/'))
 })
+
+// Watch files for changes (without Browser-Sync)
+gulp.task('watch', function() {
+    // Watch .scss files
+    gulp.watch('src/base.scss', gulp.series('css'));
+    // gulp.watch('./assets/src/scripts/**/*.js', gulp.series('scripts'));
+    // gulp.watch('./assets/src/img/**/*', gulp.series('images'));
+});
