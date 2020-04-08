@@ -75,56 +75,300 @@
   --lh-relaxed: 1.625;
   --lh-loose: 2; }
 
-.text--left {
-  text-align: left; }
+.text--white {
+  color: #ffffff;
+  color: var(--white); }
 
-.text--center {
-  text-align: center; }
+.text--black {
+  color: #252525;
+  color: var(--black); }
 
-.text--right {
-  text-align: right; }
+.text--dark-grey {
+  color: #212322;
+  color: var(--dark-grey); }
 
-.text--justify {
-  text-align: justify; }
+.text--mid-grey {
+  color: #54585a;
+  color: var(--mid-grey); }
+
+.text--light-grey {
+  color: #97999b;
+  color: var(--light-grey); }
+
+.text--bg-grey {
+  color: #f3f3f3;
+  color: var(--bg-grey); }
+
+.hover\:text--white {
+  color: #ffffff;
+  color: var(--white); }
+
+.hover\:text--black {
+  color: #252525;
+  color: var(--black); }
+
+.hover\:text--dark-grey {
+  color: #212322;
+  color: var(--dark-grey); }
+
+.hover\:text--mid-grey {
+  color: #54585a;
+  color: var(--mid-grey); }
+
+.hover\:text--light-grey {
+  color: #97999b;
+  color: var(--light-grey); }
+
+.hover\:text--bg-grey {
+  color: #f3f3f3;
+  color: var(--bg-grey); }
+
+.focus\:text--white {
+  color: #ffffff;
+  color: var(--white); }
+
+.focus\:text--black {
+  color: #252525;
+  color: var(--black); }
+
+.focus\:text--dark-grey {
+  color: #212322;
+  color: var(--dark-grey); }
+
+.focus\:text--mid-grey {
+  color: #54585a;
+  color: var(--mid-grey); }
+
+.focus\:text--light-grey {
+  color: #97999b;
+  color: var(--light-grey); }
+
+.focus\:text--bg-grey {
+  color: #f3f3f3;
+  color: var(--bg-grey); }
 
 @media (min-width: 768px) {
-  .sm\:text--left {
-    text-align: left; }
-  .sm\:text--center {
-    text-align: center; }
-  .sm\:text--right {
-    text-align: right; }
-  .sm\:text--justify {
-    text-align: justify; } }
+  .sm\:text--white {
+    color: #ffffff;
+    color: var(--white); }
+  .sm\:text--black {
+    color: #252525;
+    color: var(--black); }
+  .sm\:text--dark-grey {
+    color: #212322;
+    color: var(--dark-grey); }
+  .sm\:text--mid-grey {
+    color: #54585a;
+    color: var(--mid-grey); }
+  .sm\:text--light-grey {
+    color: #97999b;
+    color: var(--light-grey); }
+  .sm\:text--bg-grey {
+    color: #f3f3f3;
+    color: var(--bg-grey); }
+  .sm\:hover\:text--white {
+    color: #ffffff;
+    color: var(--white); }
+  .sm\:hover\:text--black {
+    color: #252525;
+    color: var(--black); }
+  .sm\:hover\:text--dark-grey {
+    color: #212322;
+    color: var(--dark-grey); }
+  .sm\:hover\:text--mid-grey {
+    color: #54585a;
+    color: var(--mid-grey); }
+  .sm\:hover\:text--light-grey {
+    color: #97999b;
+    color: var(--light-grey); }
+  .sm\:hover\:text--bg-grey {
+    color: #f3f3f3;
+    color: var(--bg-grey); }
+  .sm\:focus\:text--white {
+    color: #ffffff;
+    color: var(--white); }
+  .sm\:focus\:text--black {
+    color: #252525;
+    color: var(--black); }
+  .sm\:focus\:text--dark-grey {
+    color: #212322;
+    color: var(--dark-grey); }
+  .sm\:focus\:text--mid-grey {
+    color: #54585a;
+    color: var(--mid-grey); }
+  .sm\:focus\:text--light-grey {
+    color: #97999b;
+    color: var(--light-grey); }
+  .sm\:focus\:text--bg-grey {
+    color: #f3f3f3;
+    color: var(--bg-grey); } }
 
 @media (min-width: 1024px) {
-  .md\:text--left {
-    text-align: left; }
-  .md\:text--center {
-    text-align: center; }
-  .md\:text--right {
-    text-align: right; }
-  .md\:text--justify {
-    text-align: justify; } }
+  .md\:text--white {
+    color: #ffffff;
+    color: var(--white); }
+  .md\:text--black {
+    color: #252525;
+    color: var(--black); }
+  .md\:text--dark-grey {
+    color: #212322;
+    color: var(--dark-grey); }
+  .md\:text--mid-grey {
+    color: #54585a;
+    color: var(--mid-grey); }
+  .md\:text--light-grey {
+    color: #97999b;
+    color: var(--light-grey); }
+  .md\:text--bg-grey {
+    color: #f3f3f3;
+    color: var(--bg-grey); }
+  .md\:hover\:text--white {
+    color: #ffffff;
+    color: var(--white); }
+  .md\:hover\:text--black {
+    color: #252525;
+    color: var(--black); }
+  .md\:hover\:text--dark-grey {
+    color: #212322;
+    color: var(--dark-grey); }
+  .md\:hover\:text--mid-grey {
+    color: #54585a;
+    color: var(--mid-grey); }
+  .md\:hover\:text--light-grey {
+    color: #97999b;
+    color: var(--light-grey); }
+  .md\:hover\:text--bg-grey {
+    color: #f3f3f3;
+    color: var(--bg-grey); }
+  .md\:focus\:text--white {
+    color: #ffffff;
+    color: var(--white); }
+  .md\:focus\:text--black {
+    color: #252525;
+    color: var(--black); }
+  .md\:focus\:text--dark-grey {
+    color: #212322;
+    color: var(--dark-grey); }
+  .md\:focus\:text--mid-grey {
+    color: #54585a;
+    color: var(--mid-grey); }
+  .md\:focus\:text--light-grey {
+    color: #97999b;
+    color: var(--light-grey); }
+  .md\:focus\:text--bg-grey {
+    color: #f3f3f3;
+    color: var(--bg-grey); } }
 
 @media (min-width: 1300px) {
-  .lg\:text--left {
-    text-align: left; }
-  .lg\:text--center {
-    text-align: center; }
-  .lg\:text--right {
-    text-align: right; }
-  .lg\:text--justify {
-    text-align: justify; } }
+  .lg\:text--white {
+    color: #ffffff;
+    color: var(--white); }
+  .lg\:text--black {
+    color: #252525;
+    color: var(--black); }
+  .lg\:text--dark-grey {
+    color: #212322;
+    color: var(--dark-grey); }
+  .lg\:text--mid-grey {
+    color: #54585a;
+    color: var(--mid-grey); }
+  .lg\:text--light-grey {
+    color: #97999b;
+    color: var(--light-grey); }
+  .lg\:text--bg-grey {
+    color: #f3f3f3;
+    color: var(--bg-grey); }
+  .lg\:hover\:text--white {
+    color: #ffffff;
+    color: var(--white); }
+  .lg\:hover\:text--black {
+    color: #252525;
+    color: var(--black); }
+  .lg\:hover\:text--dark-grey {
+    color: #212322;
+    color: var(--dark-grey); }
+  .lg\:hover\:text--mid-grey {
+    color: #54585a;
+    color: var(--mid-grey); }
+  .lg\:hover\:text--light-grey {
+    color: #97999b;
+    color: var(--light-grey); }
+  .lg\:hover\:text--bg-grey {
+    color: #f3f3f3;
+    color: var(--bg-grey); }
+  .lg\:focus\:text--white {
+    color: #ffffff;
+    color: var(--white); }
+  .lg\:focus\:text--black {
+    color: #252525;
+    color: var(--black); }
+  .lg\:focus\:text--dark-grey {
+    color: #212322;
+    color: var(--dark-grey); }
+  .lg\:focus\:text--mid-grey {
+    color: #54585a;
+    color: var(--mid-grey); }
+  .lg\:focus\:text--light-grey {
+    color: #97999b;
+    color: var(--light-grey); }
+  .lg\:focus\:text--bg-grey {
+    color: #f3f3f3;
+    color: var(--bg-grey); } }
 
 @media (min-width: 1500px) {
-  .xl\:text--left {
-    text-align: left; }
-  .xl\:text--center {
-    text-align: center; }
-  .xl\:text--right {
-    text-align: right; }
-  .xl\:text--justify {
-    text-align: justify; } }
+  .xl\:text--white {
+    color: #ffffff;
+    color: var(--white); }
+  .xl\:text--black {
+    color: #252525;
+    color: var(--black); }
+  .xl\:text--dark-grey {
+    color: #212322;
+    color: var(--dark-grey); }
+  .xl\:text--mid-grey {
+    color: #54585a;
+    color: var(--mid-grey); }
+  .xl\:text--light-grey {
+    color: #97999b;
+    color: var(--light-grey); }
+  .xl\:text--bg-grey {
+    color: #f3f3f3;
+    color: var(--bg-grey); }
+  .xl\:hover\:text--white {
+    color: #ffffff;
+    color: var(--white); }
+  .xl\:hover\:text--black {
+    color: #252525;
+    color: var(--black); }
+  .xl\:hover\:text--dark-grey {
+    color: #212322;
+    color: var(--dark-grey); }
+  .xl\:hover\:text--mid-grey {
+    color: #54585a;
+    color: var(--mid-grey); }
+  .xl\:hover\:text--light-grey {
+    color: #97999b;
+    color: var(--light-grey); }
+  .xl\:hover\:text--bg-grey {
+    color: #f3f3f3;
+    color: var(--bg-grey); }
+  .xl\:focus\:text--white {
+    color: #ffffff;
+    color: var(--white); }
+  .xl\:focus\:text--black {
+    color: #252525;
+    color: var(--black); }
+  .xl\:focus\:text--dark-grey {
+    color: #212322;
+    color: var(--dark-grey); }
+  .xl\:focus\:text--mid-grey {
+    color: #54585a;
+    color: var(--mid-grey); }
+  .xl\:focus\:text--light-grey {
+    color: #97999b;
+    color: var(--light-grey); }
+  .xl\:focus\:text--bg-grey {
+    color: #f3f3f3;
+    color: var(--bg-grey); } }
 
 /*# sourceMappingURL=base.css.map */
