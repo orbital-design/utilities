@@ -486,6 +486,47 @@
   .xl\:hover\:stroke--2:hover {
     stroke-width: 2; } }
 
+.outline--none {
+  outline: none; }
+
+.focus\:outline--none:focus {
+  outline: none; }
+
+.hover\:outline--none:hover {
+  outline: none; }
+
+@media (min-width: 768px) {
+  .sm\:outline--none {
+    outline: none; }
+  .sm\:focus\:outline--none:focus {
+    outline: none; }
+  .sm\:hover\:outline--none:hover {
+    outline: none; } }
+
+@media (min-width: 1024px) {
+  .md\:outline--none {
+    outline: none; }
+  .md\:focus\:outline--none:focus {
+    outline: none; }
+  .md\:hover\:outline--none:hover {
+    outline: none; } }
+
+@media (min-width: 1300px) {
+  .lg\:outline--none {
+    outline: none; }
+  .lg\:focus\:outline--none:focus {
+    outline: none; }
+  .lg\:hover\:outline--none:hover {
+    outline: none; } }
+
+@media (min-width: 1500px) {
+  .xl\:outline--none {
+    outline: none; }
+  .xl\:focus\:outline--none:focus {
+    outline: none; }
+  .xl\:hover\:outline--none:hover {
+    outline: none; } }
+
 .pointer-events--none {
   pointer-events: none; }
 
