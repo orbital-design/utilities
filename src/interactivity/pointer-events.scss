@@ -1,0 +1,61 @@
+// Set class name.
+$className: 'pointer-events';
+
+// Set variants available for this class.
+// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
+$variants: 'responsive';
+
+// Construct class props so we don't keep repeating ourselves.
+@mixin pointer-events($prefix, $suffix) {
+
+    // Utilities for controlling whether an element responds to pointer events.
+    // # Use 'pointer-events--none' to make an element ignore pointer events.
+    .#{$prefix}--none#{$suffix} {
+        pointer-events: none;
+    }
+
+    // # Use 'pointer-events--auto' to revert to the default behavior for pointer events.
+    .#{$prefix}--auto#{$suffix} {
+        pointer-events: auto;
+    }
+}
+
+// Use mixin as a default class without media queries.
+@include pointer-events($className, "");
+
+// Loop through the selected variants for this class.
+@each $variant in $variants {
+
+    // Make sure we don't include the 'responsive' the variant.
+    @if $variant != 'responsive' {
+        // Include variant classes
+        @include pointer-events("#{$variant}\\:#{$className}", ":#{$variant}");
+    }
+}
+
+// Use mixin inside media queries with relevant prefix.
+// # Check if 'responsive' is in list.
+@if index($variants, 'responsive') {
+
+    // If responsive is in list then loop through breakpoints.
+    @each $query_name, $query_width in $media_queries {
+
+        // Initiate Media Query.
+        @media (min-width: $query_width) {
+
+            // Create default class with breakpoint prefix.
+            @include pointer-events("#{$query_name}\\:#{$className}", "");
+
+            // Loop through the selected variants for this class.
+            @each $variant in $variants {
+
+                // Make sure we don't include the 'responsive' the variant.
+                @if $variant != 'responsive' {
+
+                    // Include variant classes inside mq
+                    @include pointer-events("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
+                }
+            }
+        }
+    }
+}
