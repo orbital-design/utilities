@@ -1,0 +1,91 @@
+// Utility Class constructor
+// # Let's create the properties once so we don't keep repeating ourselves.
+@mixin constructor( $prefix, $suffix ) {
+
+    // ### Check if $map has been specified
+    @if $class_map != null {
+
+        // #### If $map is specified, loop through each item in map.
+        @each $name, $properties in $class_map {
+
+            // ##### Check if item should output a CSS Var.
+            @if nth( $properties, 2 ) == true {
+
+                @if $name == 'default' {
+                    .#{$prefix}#{$suffix} {
+                        #{$class_property}: v(#{nth($properties, 3)});
+                    }
+                } @else {
+                    // ###### Construct Class with Properties from map.
+                    .#{$prefix}--#{$name}#{$suffix} {
+                        #{$class_property}: v(#{nth($properties, 3)});
+                    }
+                }
+
+            } @else {
+
+                @if $name == 'default' {
+                    // ###### Construct Class with Properties from map.
+                    .#{$prefix}#{$suffix} {
+                        #{$class_property}: #{nth($properties, 1)};
+                    }
+                } @else {
+                    // ###### Construct Class with Properties from map.
+                    .#{$prefix}--#{$name}#{$suffix} {
+                        #{$class_property}: #{nth($properties, 1)};
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+// # Let's put it altogether
+@mixin class-constructor( $class_name, $class_variants, $class_property, $class_map ){
+
+    // ## Use constructor to build your default classes without media queries & variants.
+    @include constructor($class_name, "");
+
+    // ## Check if our $variants list includes 'none'.
+    @if not index($class_variants, 'none') {
+
+        // ### If 'none' isn't present we'll loop through the selected variants for this class.
+        @each $variant in $class_variants {
+
+            // #### We want to make sure we don't use the 'responsive' variant at this point if it exists.
+            @if $variant != 'responsive' {
+
+                // ##### Use constructor to build our variant classes without media queries.
+                @include constructor("#{$variant}\\:#{$class_name}", ":#{$variant}");
+            }
+        }
+    }
+
+    // ## Check if our $variants list includes 'responsive'.
+    @if index($class_variants, 'responsive') {
+
+        // ### If 'responsive' is present we'll loop through the brakpoints set in _scss-vars.scss.
+        @each $bp_name, $breakpoint in $breakpoints {
+
+            // #### Construct each media query when we loop through it.
+            @media (min-width: $breakpoint) {
+
+                // ##### Use constructor to build our default classes with breakpoint prefix.
+                @include constructor("#{$bp_name}\\:#{$class_name}", "");
+
+                // ##### We'll loop through the selected variants for this class.
+                @each $variant in $class_variants {
+
+                    // ###### We want to make sure we don't use the 'responsive' variant at this pointas we've already used it.
+                    @if $variant != 'responsive' {
+
+                        // ####### Use constructor to build our variant classes with breakpoint prefix.
+                        @include constructor("#{$bp_name}\\:#{$variant}\\:#{$class_name}", ":#{$variant}");
+                    }
+                }
+            }
+        }
+    }
+}
