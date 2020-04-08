@@ -55,14 +55,15 @@
   --yellow: #eaaa00;
   --dark-red: #9e2a2f;
   --light-red: #c8102e;
-  --fs-s: calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp)));
-  --fs-n: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
-  --fs-m: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
-  --fs-l: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)));
-  --fs-xl: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
-  --fs-xxl: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
+  --fs-sm: calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp)));
+  --fs-base: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
+  --fs-md: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
+  --fs-lg: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)));
+  --fs-xl: calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)));
+  --fs-2xl: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
+  --fs-3xl: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
   --fw-light: 200;
-  --fw-regular: 300;
+  --fw-normal: 400;
   --fw-bold: 600;
   --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif; }
@@ -71,34 +72,36 @@
   --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif; }
 
-.font-style--italic {
-  font-style: italic; }
+.font-size {
+  font-size: calc((((16) / 16 * 1rem) + ((19) / 16 - (16) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-base); }
 
-.font-style--normal {
-  font-style: normal; }
+.font-size--sm {
+  font-size: calc((((16 * 1.125 * (1 / 1.125 / 1.125)) / 16 * 1rem) + ((19 * 1.2 * (1 / 1.2 / 1.2)) / 16 - (16 * 1.125 * (1 / 1.125 / 1.125)) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-sm); }
 
-@media (min-width: 768px) {
-  .sm\:font-style--italic {
-    font-style: italic; }
-  .sm\:font-style--normal {
-    font-style: normal; } }
+.font-size--base {
+  font-size: calc((((16) / 16 * 1rem) + ((19) / 16 - (16) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-base); }
 
-@media (min-width: 1024px) {
-  .md\:font-style--italic {
-    font-style: italic; }
-  .md\:font-style--normal {
-    font-style: normal; } }
+.font-size--md {
+  font-size: calc((((16 * 1.125) / 16 * 1rem) + ((19 * 1.2) / 16 - (16 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-md); }
 
-@media (min-width: 1300px) {
-  .lg\:font-style--italic {
-    font-style: italic; }
-  .lg\:font-style--normal {
-    font-style: normal; } }
+.font-size--lg {
+  font-size: calc((((16 * 1.125 * 1.125) / 16 * 1rem) + ((19 * 1.2 * 1.2) / 16 - (16 * 1.125 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-lg); }
 
-@media (min-width: 1500px) {
-  .xl\:font-style--italic {
-    font-style: italic; }
-  .xl\:font-style--normal {
-    font-style: normal; } }
+.font-size--xl {
+  font-size: calc((((16 * 1.125 * 1.125 * 1.125) / 16 * 1rem) + ((19 * 1.2 * 1.2 * 1.2) / 16 - (16 * 1.125 * 1.125 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-xl); }
+
+.font-size--xl {
+  font-size: calc((((16 * 1.125 * 1.125 * 1.125 * 1.125) / 16 * 1rem) + ((19 * 1.2 * 1.2 * 1.2 * 1.2) / 16 - (16 * 1.125 * 1.125 * 1.125 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-2xl); }
+
+.font-size--xl {
+  font-size: calc((((16 * 1.125 * 1.125 * 1.125 * 1.125 * 1.125) / 16 * 1rem) + ((19 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2) / 16 - (16 * 1.125 * 1.125 * 1.125 * 1.125 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-3xl); }
 
 /*# sourceMappingURL=base.css.map */
