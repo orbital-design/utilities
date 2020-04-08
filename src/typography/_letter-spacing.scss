@@ -1,0 +1,88 @@
+// Set class name.
+$className: 'tracking';
+
+// Set variants available for this class.
+// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
+$variants: 'none'; // We don't need responsive as the font sizes are responsive by default.
+
+// Construct class props so we don't keep repeating ourselves.
+@mixin letter-spacing($prefix, $suffix) {
+
+    // Utilities for controlling the font size of an element.
+    .#{$prefix}#{$suffix} {
+        letter-spacing: 0;
+    }
+
+    // Control the font size of an element using the 'letter-spacing--{size}' utilities.
+    // These must match the vars set out in '_css-vars.scss'
+    .#{$prefix}--tightest#{$suffix} {
+        letter-spacing: v(ls--3);
+    }
+
+    .#{$prefix}--tighter#{$suffix} {
+        letter-spacing: v(ls--2);
+    }
+
+    .#{$prefix}--tight#{$suffix} {
+        letter-spacing: v(ls--1);
+    }
+
+    .#{$prefix}--normal#{$suffix} {
+        letter-spacing: v(ls-0);
+    }
+
+    .#{$prefix}--wide#{$suffix} {
+        letter-spacing: v(ls-1);
+    }
+
+    .#{$prefix}--wider#{$suffix} {
+        letter-spacing: v(ls-2);
+    }
+
+    .#{$prefix}--widest#{$suffix} {
+        letter-spacing: v(ls-3);
+    }
+}
+
+// Use mixin as a default class without media queries.
+@include letter-spacing($className, "");
+
+// Check if 'none' is in list.
+@if not index($variants, 'none') {
+    // # If none isn't in the list, Loop through the selected variants for this class.
+    @each $variant in $variants {
+
+        // # Make sure we don't include the 'responsive' the variant.
+        @if $variant != 'responsive' {
+            // # Include variant classes
+            @include letter-spacing("#{$variant}\\:#{$className}", ":#{$variant}");
+        }
+    }
+}
+
+// Use mixin inside media queries with relevant prefix.
+// # Check if 'responsive' is in list.
+@if index($variants, 'responsive') {
+
+    // If responsive is in list then loop through breakpoints.
+    @each $query_name, $breakpoint in $breakpoints {
+
+        // Initiate Media Query.
+        @media (min-width: $breakpoint) {
+
+            // Create default class with breakpoint prefix.
+            @include letter-spacing("#{$query_name}\\:#{$className}", "");
+
+            // Loop through the selected variants for this class.
+            @each $variant in $variants {
+
+                // Make sure we don't include the 'responsive' the variant.
+                @if $variant != 'responsive' {
+
+                    // Include variant classes inside mq
+                    @include letter-spacing("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
+                }
+            }
+        }
+    }
+}

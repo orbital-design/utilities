@@ -66,100 +66,44 @@
   --fw-normal: 400;
   --fw-bold: 600;
   --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif; }
+  --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --ls--3: -0.1em;
+  --ls--2: -0.05em;
+  --ls--1: -0.025em;
+  --ls-0: 0;
+  --ls-1: 0.025em;
+  --ls-2: 0.05em;
+  --ls-3: 0.1em; }
 
-.font-weight--light {
-  font-weight: 200;
-  font-weight: var(--fw-light); }
+.tracking {
+  letter-spacing: 0; }
 
-.font-weight--normal {
-  font-weight: 400;
-  font-weight: var(--fw-normal); }
+.tracking--tightest {
+  letter-spacing: -0.1em;
+  letter-spacing: var(--ls--3); }
 
-.font-weight--bold {
-  font-weight: var(--fs-bold); }
+.tracking--tighter {
+  letter-spacing: -0.05em;
+  letter-spacing: var(--ls--2); }
 
-.hover\:font-weight--light:hover {
-  font-weight: 200;
-  font-weight: var(--fw-light); }
+.tracking--tight {
+  letter-spacing: -0.025em;
+  letter-spacing: var(--ls--1); }
 
-.hover\:font-weight--normal:hover {
-  font-weight: 400;
-  font-weight: var(--fw-normal); }
+.tracking--normal {
+  letter-spacing: 0;
+  letter-spacing: var(--ls-0); }
 
-.hover\:font-weight--bold:hover {
-  font-weight: var(--fs-bold); }
+.tracking--wide {
+  letter-spacing: 0.025em;
+  letter-spacing: var(--ls-1); }
 
-@media (min-width: 768px) {
-  .sm\:font-weight--light {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .sm\:font-weight--normal {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .sm\:font-weight--bold {
-    font-weight: var(--fs-bold); }
-  .sm\:hover\:font-weight--light:hover {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .sm\:hover\:font-weight--normal:hover {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .sm\:hover\:font-weight--bold:hover {
-    font-weight: var(--fs-bold); } }
+.tracking--wider {
+  letter-spacing: 0.05em;
+  letter-spacing: var(--ls-2); }
 
-@media (min-width: 1024px) {
-  .md\:font-weight--light {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .md\:font-weight--normal {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .md\:font-weight--bold {
-    font-weight: var(--fs-bold); }
-  .md\:hover\:font-weight--light:hover {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .md\:hover\:font-weight--normal:hover {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .md\:hover\:font-weight--bold:hover {
-    font-weight: var(--fs-bold); } }
-
-@media (min-width: 1300px) {
-  .lg\:font-weight--light {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .lg\:font-weight--normal {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .lg\:font-weight--bold {
-    font-weight: var(--fs-bold); }
-  .lg\:hover\:font-weight--light:hover {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .lg\:hover\:font-weight--normal:hover {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .lg\:hover\:font-weight--bold:hover {
-    font-weight: var(--fs-bold); } }
-
-@media (min-width: 1500px) {
-  .xl\:font-weight--light {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .xl\:font-weight--normal {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .xl\:font-weight--bold {
-    font-weight: var(--fs-bold); }
-  .xl\:hover\:font-weight--light:hover {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .xl\:hover\:font-weight--normal:hover {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .xl\:hover\:font-weight--bold:hover {
-    font-weight: var(--fs-bold); } }
+.tracking--widest {
+  letter-spacing: 0.1em;
+  letter-spacing: var(--ls-3); }
 
 /*# sourceMappingURL=base.css.map */

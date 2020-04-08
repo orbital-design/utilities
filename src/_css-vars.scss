@@ -83,4 +83,13 @@
     // ## Create matchng utilities for these in: typography/_font-family.scss
     --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
     --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+    // # Letter Spacing
+    // ## Create matchng utilities for these in: typography/_letter-spacing.scss
+    --ls--3: -0.1em;
+    --ls--2: -0.05em;
+    --ls--1: -0.025em;
+    --ls-0: 0;
+    --ls-1: 0.025em;
+    --ls-2: 0.05em;
+    --ls-3: 0.1em;
 }
