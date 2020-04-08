@@ -486,6 +486,35 @@
   .xl\:hover\:stroke--2:hover {
     stroke-width: 2; } }
 
+.appearance--none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+
+@media (min-width: 768px) {
+  .sm\:appearance--none {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; } }
+
+@media (min-width: 1024px) {
+  .md\:appearance--none {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; } }
+
+@media (min-width: 1300px) {
+  .lg\:appearance--none {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; } }
+
+@media (min-width: 1500px) {
+  .xl\:appearance--none {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; } }
+
 .cursor {
   cursor: auto; }
 

@@ -17,6 +17,7 @@ $media_queries: (
 @import 'svg/stroke-width';
 
 // # Interactivity.
+@import 'interactivity/appearance';
 @import 'interactivity/cursor';
 @import 'interactivity/outline';
 @import 'interactivity/pointer-events';
