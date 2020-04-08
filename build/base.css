@@ -76,7 +76,7 @@
 
 .font-size {
   font-size: calc((((16) / 16 * 1rem) + ((19) / 16 - (16) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
-  font-size: var(--fs-base); }
+  font-size: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp))); }
 
 .font-size--sm {
   font-size: calc((((16 * 1.125 * (1 / 1.125 / 1.125)) / 16 * 1rem) + ((19 * 1.2 * (1 / 1.2 / 1.2)) / 16 - (16 * 1.125 * (1 / 1.125 / 1.125)) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));

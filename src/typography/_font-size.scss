@@ -1,89 +1,18 @@
-// TODO: Adapt constructor for this.
-// Set class name.
-$className: 'font-size';
+// Generate Utility Classes for controlling the font size of an element.
+// # Use the 'font-size--{value}' utilities to control the elements font size.
 
-// Set variants available for this class.
-// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
-$variants: 'none'; // We don't need responsive as the font sizes are responsive by default.
+// Please don't change this $class_map.
+// We need this one to be null so we can check against it in the mixin and know we're not using one set previously.
+// Please use the $class_map specified further down.
+$class_map: null !default;
 
-// Construct class props so we don't keep repeating ourselves.
-@mixin font-size($prefix, $suffix) {
+// ## $class_name = string. Set a lowercase string to use as the identifier for your class.
+$class_name: 'font-size';
+// ## $class_variants = list. Use 'none' if you don't want any added states.
+$class_variants: 'none';
+// ## $class_name = string. Specify property to use for your class.
+$class_property: 'font-size';
+// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
+$class_map: $font_sizes;
 
-    // Utilities for controlling the font size of an element.
-    .#{$prefix}#{$suffix} {
-        font-size: v(fs-base);
-    }
-
-    // Control the font size of an element using the 'font-size--{size}' utilities.
-    // These must match the vars set out in '_css-vars.scss'
-    .#{$prefix}--sm#{$suffix} {
-        font-size: v(fs-sm);
-    }
-
-    .#{$prefix}--base#{$suffix} {
-        font-size: v(fs-base);
-    }
-
-    .#{$prefix}--md#{$suffix} {
-        font-size: v(fs-md);
-    }
-
-    .#{$prefix}--lg#{$suffix} {
-        font-size: v(fs-lg);
-    }
-
-    .#{$prefix}--xl#{$suffix} {
-        font-size: v(fs-xl);
-    }
-
-    .#{$prefix}--2xl#{$suffix} {
-        font-size: v(fs-2xl);
-    }
-
-    .#{$prefix}--3xl#{$suffix} {
-        font-size: v(fs-3xl);
-    }
-}
-
-// Use mixin as a default class without media queries.
-@include font-size($className, "");
-
-// Check if 'none' is in list.
-@if not index($variants, 'none') {
-    // # If none isn't in the list, Loop through the selected variants for this class.
-    @each $variant in $variants {
-
-        // # Make sure we don't include the 'responsive' the variant.
-        @if $variant != 'responsive' {
-            // # Include variant classes
-            @include font-size("#{$variant}\\:#{$className}", ":#{$variant}");
-        }
-    }
-}
-
-// Use mixin inside media queries with relevant prefix.
-// # Check if 'responsive' is in list.
-@if index($variants, 'responsive') {
-
-    // If responsive is in list then loop through breakpoints.
-    @each $query_name, $breakpoint in $breakpoints {
-
-        // Initiate Media Query.
-        @media (min-width: $breakpoint) {
-
-            // Create default class with breakpoint prefix.
-            @include font-size("#{$query_name}\\:#{$className}", "");
-
-            // Loop through the selected variants for this class.
-            @each $variant in $variants {
-
-                // Make sure we don't include the 'responsive' the variant.
-                @if $variant != 'responsive' {
-
-                    // Include variant classes inside mq
-                    @include font-size("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
-                }
-            }
-        }
-    }
-}
+@include class-constructor( $class_name, $class_variants, $class_property, $class_map );
