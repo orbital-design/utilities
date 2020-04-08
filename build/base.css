@@ -486,6 +486,58 @@
   .xl\:hover\:stroke--2:hover {
     stroke-width: 2; } }
 
+.resize {
+  resize: both; }
+
+.resize--x {
+  resize: horizontal; }
+
+.resize--y {
+  resize: vertical; }
+
+.resize--none {
+  resize: none; }
+
+@media (min-width: 768px) {
+  .sm\:resize {
+    resize: both; }
+  .sm\:resize--x {
+    resize: horizontal; }
+  .sm\:resize--y {
+    resize: vertical; }
+  .sm\:resize--none {
+    resize: none; } }
+
+@media (min-width: 1024px) {
+  .md\:resize {
+    resize: both; }
+  .md\:resize--x {
+    resize: horizontal; }
+  .md\:resize--y {
+    resize: vertical; }
+  .md\:resize--none {
+    resize: none; } }
+
+@media (min-width: 1300px) {
+  .lg\:resize {
+    resize: both; }
+  .lg\:resize--x {
+    resize: horizontal; }
+  .lg\:resize--y {
+    resize: vertical; }
+  .lg\:resize--none {
+    resize: none; } }
+
+@media (min-width: 1500px) {
+  .xl\:resize {
+    resize: both; }
+  .xl\:resize--x {
+    resize: horizontal; }
+  .xl\:resize--y {
+    resize: vertical; }
+  .xl\:resize--none {
+    resize: none; } }
+
 .select--none {
   -webkit-user-select: none;
      -moz-user-select: none;

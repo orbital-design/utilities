@@ -1,0 +1,67 @@
+// Set class name.
+$className: 'resize';
+
+// Set variants available for this class.
+// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
+$variants: 'responsive';
+
+// Construct class props so we don't keep repeating ourselves.
+@mixin resize($prefix, $suffix) {
+
+    .#{$prefix}#{$suffix} {
+        resize: both;
+    }
+
+    // Use the .stroke--{width} utilities to set the stroke width of an SVG.
+    .#{$prefix}--x#{$suffix} {
+        resize: horizontal;
+    }
+
+    .#{$prefix}--y#{$suffix} {
+        resize: vertical;
+    }
+
+    .#{$prefix}--none#{$suffix} {
+        resize: none;
+    }
+}
+
+// Use mixin as a default class without media queries.
+@include resize($className, "");
+
+// Loop through the selected variants for this class.
+@each $variant in $variants {
+
+    // Make sure we don't include the 'responsive' the variant.
+    @if $variant != 'responsive' {
+        // Include variant classes
+        @include resize("#{$variant}\\:#{$className}", ":#{$variant}");
+    }
+}
+
+// Use mixin inside media queries with relevant prefix.
+// # Check if 'responsive' is in list.
+@if index($variants, 'responsive') {
+
+    // If responsive is in list then loop through breakpoints.
+    @each $query_name, $query_width in $media_queries {
+
+        // Initiate Media Query.
+        @media (min-width: $query_width) {
+
+            // Create default class with breakpoint prefix.
+            @include resize("#{$query_name}\\:#{$className}", "");
+
+            // Loop through the selected variants for this class.
+            @each $variant in $variants {
+
+                // Make sure we don't include the 'responsive' the variant.
+                @if $variant != 'responsive' {
+
+                    // Include variant classes inside mq
+                    @include resize("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
+                }
+            }
+        }
+    }
+}
