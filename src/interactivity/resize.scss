@@ -8,19 +8,23 @@ $variants: 'responsive';
 // Construct class props so we don't keep repeating ourselves.
 @mixin resize($prefix, $suffix) {
 
+    // Utilities for controlling how an element can be resized.
+    // # Use 'resize' to make an element horizontally and vertically resizable.
     .#{$prefix}#{$suffix} {
         resize: both;
     }
 
-    // Use the .stroke--{width} utilities to set the stroke width of an SVG.
+    // # Use 'resize-x' to make an element horizontally resizable.
     .#{$prefix}--x#{$suffix} {
         resize: horizontal;
     }
 
+    // # Use 'resize--y' to make an element vertically resizable.
     .#{$prefix}--y#{$suffix} {
         resize: vertical;
     }
 
+    // Use 'resize-none' to prevent an element from being resizable.
     .#{$prefix}--none#{$suffix} {
         resize: none;
     }
