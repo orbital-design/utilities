@@ -11,16 +11,15 @@ $variants: 'responsive' 'hover';
     // Utilities for controlling the font weight of an element.
     // # Control the font weight of an element using the 'font-weight--{weight}' utilities.
     // # These must match the vars set out in '_css-vars.scss'
-    .#{$prefix}--light#{$suffix} {
-        font-weight: v(fw-light);
-    }
+    // # Loop through each item in weights map.
+    @each $name, $weight in $weights {
 
-    .#{$prefix}--normal#{$suffix} {
-        font-weight: v(fw-normal);
-    }
+        // Remove the 'fw-'.
+        $class: str-slice($name, 4, -1);
 
-    .#{$prefix}--bold#{$suffix} {
-        font-weight: v(fs-bold);
+        .#{$prefix}--#{$class}#{$suffix} {
+            font-weight: v(#{$name});
+        };
     }
 }
 

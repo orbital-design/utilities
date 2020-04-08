@@ -49,9 +49,9 @@
     --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
     --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
     --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
-
     // Colour Properties
-    // Loop through each item in colour map.
+    // # Create matchng utilities for these in: typography/_text-colour.scss
+    // # Loop through each item in colour map.
     @each $name, $colour in $colours {
         --#{$name}: #{$colour};
     }
@@ -68,9 +68,10 @@
     --fs-3xl: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
     // # Font Weights
     // ## Create matchng utilities for these in: typography/_font-weight.scss
-    --fw-light: 200;
-    --fw-normal: 400;
-    --fw-bold: 600;
+    // # Loop through each item in weights map.
+    @each $name, $weight in $weights {
+        --#{$name}: #{$weight};
+    }
     // # Font Families
     // ## Create matchng utilities for these in: typography/_font-family.scss
     --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
