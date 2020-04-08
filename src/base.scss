@@ -8,13 +8,8 @@ $media_queries: (
 );
 
 // Includes
-// # Accessibility classes.
-@import 'accessibility/screen-readers';
-
-// # SVG classes.
-@import 'svg/fill';
-@import 'svg/stroke';
-@import 'svg/stroke-width';
+// # Effects
+@import 'effects/box-shadow.scss';
 
 // # Interactivity.
 @import 'interactivity/appearance';
@@ -23,3 +18,11 @@ $media_queries: (
 @import 'interactivity/pointer-events';
 @import 'interactivity/resize';
 @import 'interactivity/user-select';
+
+// # SVG classes.
+@import 'svg/fill';
+@import 'svg/stroke';
+@import 'svg/stroke-width';
+
+// # Accessibility classes.
+@import 'accessibility/screen-readers';
