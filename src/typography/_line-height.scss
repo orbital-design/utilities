@@ -9,34 +9,14 @@ $variants: 'responsive'; // We don't need responsive as the font sizes are respo
 @mixin line-height($prefix, $suffix) {
 
     // Utilities for controlling the leading (line height) of an element.
-    .#{$prefix}#{$suffix} {
-        line-height: v(lh-normal);
-    }
-
     // Use the 'leading--none', 'leading--tight', 'leading--snug', 'leading--normal', 'leading--relaxed', and 'leading--loose' utilities to give an element a relative line-height based on its current font-size.
-    // These must match the vars set out in '_css-vars.scss'
-    .#{$prefix}--none#{$suffix} {
-        line-height: v(lh-none);
-    }
+    // #These must match the vars set out in '_css-vars.scss'
+    // # Loop through each item in weights map.
+    @each $name, $height in $line_heights {
 
-    .#{$prefix}--tight#{$suffix} {
-        line-height: v(lh-tight);
-    }
-
-    .#{$prefix}--snug#{$suffix} {
-        line-height: v(lh-snug);
-    }
-
-    .#{$prefix}--normal#{$suffix} {
-        line-height: v(lh-normal);
-    }
-
-    .#{$prefix}--relaxed#{$suffix} {
-        line-height: v(lh-relaxed);
-    }
-
-    .#{$prefix}--loose#{$suffix} {
-        line-height: v(lh-loose);
+        .#{$prefix}--#{$name}#{$suffix} {
+             line-height: v(leading-#{$name});
+        };
     }
 }
 

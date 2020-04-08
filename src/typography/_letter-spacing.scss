@@ -9,38 +9,13 @@ $variants: 'responsive'; // We don't need responsive as the font sizes are respo
 @mixin letter-spacing($prefix, $suffix) {
 
     // Utilities for controlling the font size of an element.
-    .#{$prefix}#{$suffix} {
-        letter-spacing: 0;
-    }
-
-    // Control the font size of an element using the 'letter-spacing--{size}' utilities.
-    // These must match the vars set out in '_css-vars.scss'
-    .#{$prefix}--tightest#{$suffix} {
-        letter-spacing: v(ls--3);
-    }
-
-    .#{$prefix}--tighter#{$suffix} {
-        letter-spacing: v(ls--2);
-    }
-
-    .#{$prefix}--tight#{$suffix} {
-        letter-spacing: v(ls--1);
-    }
-
-    .#{$prefix}--normal#{$suffix} {
-        letter-spacing: v(ls-0);
-    }
-
-    .#{$prefix}--wide#{$suffix} {
-        letter-spacing: v(ls-1);
-    }
-
-    .#{$prefix}--wider#{$suffix} {
-        letter-spacing: v(ls-2);
-    }
-
-    .#{$prefix}--widest#{$suffix} {
-        letter-spacing: v(ls-3);
+    // # Control the font size of an element using the 'letter-spacing--{size}' utilities.
+    // # These must match the vars set out in '_css-vars.scss'
+    // # Loop through each item in letter_spacings map.
+    @each $name, $spacing in $letter_spacings {
+        .#{$prefix}--#{$name}#{$suffix} {
+            letter-spacing: v(tracking-#{$name});
+        };
     }
 }
 

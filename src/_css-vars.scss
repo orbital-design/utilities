@@ -49,12 +49,6 @@
     --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
     --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
     --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
-    // Colour Properties
-    // # Create matchng utilities for these in: typography/_text-colour.scss
-    // # Loop through each item in colour map.
-    @each $name, $colour in $colours {
-        --#{$name}: #{$colour};
-    }
 
     // Typography Properties
     // # Font Sizes
@@ -68,29 +62,30 @@
     --fs-3xl: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
     // # Font Weights
     // ## Create matchng utilities for these in: typography/_font-weight.scss
-    // # Loop through each item in weights map.
+    // ## Loop through each item in weights map.
     @each $name, $weight in $weights {
-        --#{$name}: #{$weight};
+        --fw-#{$name}: #{$weight};
     }
     // # Font Families
     // ## Create matchng utilities for these in: typography/_font-family.scss
     --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
     --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-    // # Letter Spacing / Tracking
+    // # Tracking / Letter Spacing
     // ## Create matchng utilities for these in: typography/_letter-spacing.scss
-    --ls--3: -0.1em;
-    --ls--2: -0.05em;
-    --ls--1: -0.025em;
-    --ls-0: 0;
-    --ls-1: 0.025em;
-    --ls-2: 0.05em;
-    --ls-3: 0.1em;
-    // # Line Height / Leading
+    // ## Loop through each item in letter_spacings map.
+    @each $name, $spacing in $letter_spacings {
+        --tracking-#{$name}: #{$spacing};
+    }
+    // # Leading / Line Height
     // ## Create matchng utilities for these in: typography/_line-height.scss
-    --lh-none: 1;
-    --lh-tight: 1.25;
-    --lh-snug: 1.375;
-    --lh-normal: 1.5;
-    --lh-relaxed: 1.625;
-    --lh-loose: 2;
+    // ## Loop through each item in line_heights map.
+    @each $name, $height in $line_heights {
+        --leading-#{$name}: #{$height};
+    }
+    // Colour Properties
+    // # Create matchng utilities for these in: typography/_text-colour.scss
+    // ## Loop through each item in colour map.
+    @each $name, $colour in $colours {
+        --#{$name}: #{$colour};
+    }
 }

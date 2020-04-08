@@ -43,12 +43,6 @@
   --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
   --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
   --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
-  --white: #ffffff;
-  --black: #252525;
-  --dark-grey: #212322;
-  --mid-grey: #54585a;
-  --light-grey: #97999b;
-  --bg-grey: #f3f3f3;
   --fs-sm: calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp)));
   --fs-base: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
   --fs-md: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
@@ -61,122 +55,128 @@
   --fw-bold: 600;
   --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-  --ls--3: -0.1em;
-  --ls--2: -0.05em;
-  --ls--1: -0.025em;
-  --ls-0: 0;
-  --ls-1: 0.025em;
-  --ls-2: 0.05em;
-  --ls-3: 0.1em;
-  --lh-none: 1;
-  --lh-tight: 1.25;
-  --lh-snug: 1.375;
-  --lh-normal: 1.5;
-  --lh-relaxed: 1.625;
-  --lh-loose: 2; }
+  --tracking-tightest: -0.1em;
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  --white: #ffffff;
+  --black: #252525;
+  --dark-grey: #212322;
+  --mid-grey: #54585a;
+  --light-grey: #97999b;
+  --bg-grey: #f3f3f3; }
 
-.font-weight--light {
-  font-weight: 200;
-  font-weight: var(--fw-light); }
+.leading--none {
+  line-height: 1;
+  line-height: var(--leading-none); }
 
-.font-weight--normal {
-  font-weight: 400;
-  font-weight: var(--fw-normal); }
+.leading--tight {
+  line-height: 1.25;
+  line-height: var(--leading-tight); }
 
-.font-weight--bold {
-  font-weight: 600;
-  font-weight: var(--fw-bold); }
+.leading--snug {
+  line-height: 1.375;
+  line-height: var(--leading-snug); }
 
-.hover\:font-weight--light:hover {
-  font-weight: 200;
-  font-weight: var(--fw-light); }
+.leading--normal {
+  line-height: 1.5;
+  line-height: var(--leading-normal); }
 
-.hover\:font-weight--normal:hover {
-  font-weight: 400;
-  font-weight: var(--fw-normal); }
+.leading--relaxed {
+  line-height: 1.625;
+  line-height: var(--leading-relaxed); }
 
-.hover\:font-weight--bold:hover {
-  font-weight: 600;
-  font-weight: var(--fw-bold); }
+.leading--loose {
+  line-height: 2;
+  line-height: var(--leading-loose); }
 
 @media (min-width: 768px) {
-  .sm\:font-weight--light {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .sm\:font-weight--normal {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .sm\:font-weight--bold {
-    font-weight: 600;
-    font-weight: var(--fw-bold); }
-  .sm\:hover\:font-weight--light:hover {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .sm\:hover\:font-weight--normal:hover {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .sm\:hover\:font-weight--bold:hover {
-    font-weight: 600;
-    font-weight: var(--fw-bold); } }
+  .sm\:leading--none {
+    line-height: 1;
+    line-height: var(--leading-none); }
+  .sm\:leading--tight {
+    line-height: 1.25;
+    line-height: var(--leading-tight); }
+  .sm\:leading--snug {
+    line-height: 1.375;
+    line-height: var(--leading-snug); }
+  .sm\:leading--normal {
+    line-height: 1.5;
+    line-height: var(--leading-normal); }
+  .sm\:leading--relaxed {
+    line-height: 1.625;
+    line-height: var(--leading-relaxed); }
+  .sm\:leading--loose {
+    line-height: 2;
+    line-height: var(--leading-loose); } }
 
 @media (min-width: 1024px) {
-  .md\:font-weight--light {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .md\:font-weight--normal {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .md\:font-weight--bold {
-    font-weight: 600;
-    font-weight: var(--fw-bold); }
-  .md\:hover\:font-weight--light:hover {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .md\:hover\:font-weight--normal:hover {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .md\:hover\:font-weight--bold:hover {
-    font-weight: 600;
-    font-weight: var(--fw-bold); } }
+  .md\:leading--none {
+    line-height: 1;
+    line-height: var(--leading-none); }
+  .md\:leading--tight {
+    line-height: 1.25;
+    line-height: var(--leading-tight); }
+  .md\:leading--snug {
+    line-height: 1.375;
+    line-height: var(--leading-snug); }
+  .md\:leading--normal {
+    line-height: 1.5;
+    line-height: var(--leading-normal); }
+  .md\:leading--relaxed {
+    line-height: 1.625;
+    line-height: var(--leading-relaxed); }
+  .md\:leading--loose {
+    line-height: 2;
+    line-height: var(--leading-loose); } }
 
 @media (min-width: 1300px) {
-  .lg\:font-weight--light {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .lg\:font-weight--normal {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .lg\:font-weight--bold {
-    font-weight: 600;
-    font-weight: var(--fw-bold); }
-  .lg\:hover\:font-weight--light:hover {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .lg\:hover\:font-weight--normal:hover {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .lg\:hover\:font-weight--bold:hover {
-    font-weight: 600;
-    font-weight: var(--fw-bold); } }
+  .lg\:leading--none {
+    line-height: 1;
+    line-height: var(--leading-none); }
+  .lg\:leading--tight {
+    line-height: 1.25;
+    line-height: var(--leading-tight); }
+  .lg\:leading--snug {
+    line-height: 1.375;
+    line-height: var(--leading-snug); }
+  .lg\:leading--normal {
+    line-height: 1.5;
+    line-height: var(--leading-normal); }
+  .lg\:leading--relaxed {
+    line-height: 1.625;
+    line-height: var(--leading-relaxed); }
+  .lg\:leading--loose {
+    line-height: 2;
+    line-height: var(--leading-loose); } }
 
 @media (min-width: 1500px) {
-  .xl\:font-weight--light {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .xl\:font-weight--normal {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .xl\:font-weight--bold {
-    font-weight: 600;
-    font-weight: var(--fw-bold); }
-  .xl\:hover\:font-weight--light:hover {
-    font-weight: 200;
-    font-weight: var(--fw-light); }
-  .xl\:hover\:font-weight--normal:hover {
-    font-weight: 400;
-    font-weight: var(--fw-normal); }
-  .xl\:hover\:font-weight--bold:hover {
-    font-weight: 600;
-    font-weight: var(--fw-bold); } }
+  .xl\:leading--none {
+    line-height: 1;
+    line-height: var(--leading-none); }
+  .xl\:leading--tight {
+    line-height: 1.25;
+    line-height: var(--leading-tight); }
+  .xl\:leading--snug {
+    line-height: 1.375;
+    line-height: var(--leading-snug); }
+  .xl\:leading--normal {
+    line-height: 1.5;
+    line-height: var(--leading-normal); }
+  .xl\:leading--relaxed {
+    line-height: 1.625;
+    line-height: var(--leading-relaxed); }
+  .xl\:leading--loose {
+    line-height: 2;
+    line-height: var(--leading-loose); } }
 
 /*# sourceMappingURL=base.css.map */

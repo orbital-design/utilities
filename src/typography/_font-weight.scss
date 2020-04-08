@@ -14,11 +14,8 @@ $variants: 'responsive' 'hover';
     // # Loop through each item in weights map.
     @each $name, $weight in $weights {
 
-        // Remove the 'fw-'.
-        $class: str-slice($name, 4, -1);
-
-        .#{$prefix}--#{$class}#{$suffix} {
-            font-weight: v(#{$name});
+        .#{$prefix}--#{$name}#{$suffix} {
+            font-weight: v(fw-#{$name});
         };
     }
 }
