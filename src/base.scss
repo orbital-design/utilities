@@ -1,22 +1,19 @@
 // Global Settings
+// # SCSS functions
+@import 'functions';
+// # SCSS vars
+@import 'scss-vars';
+// # CSS vars
+@import 'css-vars';
 
 :root {
     --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
     --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 }
-// # Breakpoint Setup - min-width
-$media_queries: (
-  sm: 768px,
-  md: 1024px,
-  lg: 1300px,
-  xl: 1500px
-);
-
-// Includes
-@import 'functions';
 
 // # Typography
-@import 'typography/font-family';
+// @import 'typography/font-family';
+@import 'typography/font-style';
 
 // # Effects
 // @import 'effects/box-shadow';

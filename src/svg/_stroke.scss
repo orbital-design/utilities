@@ -32,10 +32,10 @@ $variants: 'responsive' 'focus' 'hover';
 @if index($variants, 'responsive') {
 
     // If responsive is in list then loop through breakpoints.
-    @each $query_name, $query_width in $media_queries {
+    @each $query_name, $breakpoint in $breakpoints {
 
         // Initiate Media Query.
-        @media (min-width: $query_width) {
+        @media (min-width: $breakpoint) {
 
             // Create default class with breakpoint prefix.
             @include stroke("#{$query_name}\\:#{$className}", "");

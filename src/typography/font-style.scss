@@ -1,41 +1,25 @@
 // Set class name.
-$className: 'sr';
+$className: 'font-style';
 
 // Set variants available for this class.
 // # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
-$variants: 'responsive' 'focus' 'hover';
+$variants: 'responsive';
 
 // Construct class props so we don't keep repeating ourselves.
-@mixin screen-reader($prefix, $suffix) {
+@mixin font-style($prefix, $suffix) {
 
-    // Use 'sr' to hide an element visually without hiding it from screen readers.
-    .#{$prefix}#{$suffix} {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
+    // Utilities for controlling the box shadow of an element.
+    .#{$prefix}--italic#{$suffix} {
+        font-style: italic;
     }
 
-    // Use 'sr--undo' to undo 'sr', making an element visible to sighted users as well as screen readers.
-    .#{$prefix}--undo#{$suffix} {
-        position: static;
-        width: auto;
-        height: auto;
-        padding: 0;
-        margin: 0;
-        overflow: visible;
-        clip: auto;
-        white-space: normal;
+    .#{$prefix}--normal#{$suffix} {
+        font-style: normal;
     }
 }
 
 // Use mixin as a default class without media queries.
-@include screen-reader($className, "");
+@include font-style($className, "");
 
 // Loop through the selected variants for this class.
 @each $variant in $variants {
@@ -43,7 +27,7 @@ $variants: 'responsive' 'focus' 'hover';
     // Make sure we don't include the 'responsive' the variant.
     @if $variant != 'responsive' {
         // Include variant classes
-        @include screen-reader("#{$variant}\\:#{$className}", ":#{$variant}");
+        @include font-style("#{$variant}\\:#{$className}", ":#{$variant}");
     }
 }
 
@@ -58,7 +42,7 @@ $variants: 'responsive' 'focus' 'hover';
         @media (min-width: $breakpoint) {
 
             // Create default class with breakpoint prefix.
-            @include screen-reader("#{$query_name}\\:#{$className}", "");
+            @include font-style("#{$query_name}\\:#{$className}", "");
 
             // Loop through the selected variants for this class.
             @each $variant in $variants {
@@ -67,7 +51,7 @@ $variants: 'responsive' 'focus' 'hover';
                 @if $variant != 'responsive' {
 
                     // Include variant classes inside mq
-                    @include screen-reader("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
+                    @include font-style("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
                 }
             }
         }

@@ -1,45 +1,104 @@
 :root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1500;
+  --fluid-min-size: 16;
+  --fluid-max-size: 19;
+  --fluid-min-ratio: 1.125;
+  --fluid-max-ratio: 1.2;
+  --fluid-screen: 100vw;
+  --fluid-bp: calc((var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) / ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16))); }
+
+@media (min-width: 1500px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px); } }
+
+:root {
+  --fluid-max-negative: (1 / var(--fluid-max-ratio) / var(--fluid-max-ratio));
+  --fluid-min-negative: (1 / var(--fluid-min-ratio) / var(--fluid-min-ratio));
+  --fluid-min-scale--1: var(--fluid-min-ratio) * var(--fluid-min-negative);
+  --fluid-max-scale--1: var(--fluid-max-ratio) * var(--fluid-max-negative);
+  --fluid-min-size--1: (var(--fluid-min-size) * var(--fluid-min-scale--1)) / 16;
+  --fluid-max-size--1: (var(--fluid-max-size) * var(--fluid-max-scale--1)) / 16;
+  --fluid-min-scale-0: var(--fluid-min-ratio);
+  --fluid-max-scale-0: var(--fluid-max-ratio);
+  --fluid-min-size-0: (var(--fluid-min-size)) / 16;
+  --fluid-max-size-0: (var(--fluid-max-size)) / 16;
+  --fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+  --fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+  --fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+  --fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+  --fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+  --fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+  --fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+  --fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+  --fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+  --fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+  --fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+  --fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+  --fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+  --fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+  --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+  --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+  --fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
+  --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
+  --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
+  --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
+  --white: #ffffff;
+  --black: #252525;
+  --text-color: #5d5d5d;
+  --dark-grey: #212322;
+  --mid-grey: #54585a;
+  --warm-grey: #a8a99e;
+  --light-grey: #97999b;
+  --bg-grey: #f3f3f3;
+  --dark-yellow: #a08629;
+  --yellow: #eaaa00;
+  --dark-red: #9e2a2f;
+  --light-red: #c8102e;
+  --fs-s: calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp)));
+  --fs-n: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
+  --fs-m: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
+  --fs-l: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)));
+  --fs-xl: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
+  --fs-xxl: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
+  --fw-light: 200;
+  --fw-regular: 300;
+  --fw-bold: 600;
   --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif; }
 
-.font--sans {
-  font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  font-family: var(--ff-sans); }
+:root {
+  --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif; }
 
-.font--serif {
-  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  font-family: var(--ff-serif); }
+.font-style--italic {
+  font-style: italic; }
+
+.font-style--normal {
+  font-style: normal; }
 
 @media (min-width: 768px) {
-  .sm\:font--sans {
-    font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    font-family: var(--ff-sans); }
-  .sm\:font--serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-    font-family: var(--ff-serif); } }
+  .sm\:font-style--italic {
+    font-style: italic; }
+  .sm\:font-style--normal {
+    font-style: normal; } }
 
 @media (min-width: 1024px) {
-  .md\:font--sans {
-    font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    font-family: var(--ff-sans); }
-  .md\:font--serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-    font-family: var(--ff-serif); } }
+  .md\:font-style--italic {
+    font-style: italic; }
+  .md\:font-style--normal {
+    font-style: normal; } }
 
 @media (min-width: 1300px) {
-  .lg\:font--sans {
-    font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    font-family: var(--ff-sans); }
-  .lg\:font--serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-    font-family: var(--ff-serif); } }
+  .lg\:font-style--italic {
+    font-style: italic; }
+  .lg\:font-style--normal {
+    font-style: normal; } }
 
 @media (min-width: 1500px) {
-  .xl\:font--sans {
-    font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    font-family: var(--ff-sans); }
-  .xl\:font--serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-    font-family: var(--ff-serif); } }
+  .xl\:font-style--italic {
+    font-style: italic; }
+  .xl\:font-style--normal {
+    font-style: normal; } }
 
 /*# sourceMappingURL=base.css.map */
