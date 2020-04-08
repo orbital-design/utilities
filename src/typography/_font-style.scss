@@ -3,31 +3,35 @@ $className: 'font-style';
 
 // Set variants available for this class.
 // # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
-$variants: 'responsive';
+$variants: 'none';
 
 // Construct class props so we don't keep repeating ourselves.
 @mixin font-style($prefix, $suffix) {
 
     // Utilities for controlling the box shadow of an element.
-    .#{$prefix}--italic#{$suffix} {
-        font-style: italic;
-    }
+    // # These must match the vars set out in '_scss-vars.scss'
+    // # Loop through each item in text_alignments map.
+    @each $name, $style in $font_styles {
 
-    .#{$prefix}--normal#{$suffix} {
-        font-style: normal;
+        .#{$prefix}--#{$name}#{$suffix} {
+            font-style: #{$style};
+        };
     }
 }
 
 // Use mixin as a default class without media queries.
 @include font-style($className, "");
 
-// Loop through the selected variants for this class.
-@each $variant in $variants {
+// Check if 'none' is in list.
+@if not index($variants, 'none') {
+    // # If none isn't in the list, Loop through the selected variants for this class.
+    @each $variant in $variants {
 
-    // Make sure we don't include the 'responsive' the variant.
-    @if $variant != 'responsive' {
-        // Include variant classes
-        @include font-style("#{$variant}\\:#{$className}", ":#{$variant}");
+        // Make sure we don't include the 'responsive' the variant.
+        @if $variant != 'responsive' {
+            // Include variant classes
+            @include font-style("#{$variant}\\:#{$className}", ":#{$variant}");
+        }
     }
 }
 

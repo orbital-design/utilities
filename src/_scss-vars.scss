@@ -1,5 +1,4 @@
-// Global Vars
-// # Breakpoint Setup - min-width
+// Breakpoints - min-width
 $breakpoints: (
   sm: 768px,
   md: 1024px,
@@ -7,18 +6,10 @@ $breakpoints: (
   xl: 1500px
 );
 
-$colours: (
-    white: #ffffff,
-    black: #252525,
-    dark-grey: #212322,
-    mid-grey: #54585a,
-    light-grey: #97999b,
-    bg-grey: #f3f3f3
-);
-
 // Typography Properties
 // # Font Weights
 // ## Create matchng utilities for these in: typography/_font-weight.scss
+// ## Generates CSS Custom Vars in: _css-vars.
 $weights: (
     light: 200,
     normal: 400,
@@ -26,6 +17,7 @@ $weights: (
 );
 // # Letter Spacings / Tracking
 // ## Create matchng utilities for these in: typography/_letter-spacing.scss
+// ## Generates CSS Custom Vars in: _css-vars.
 $letter_spacings: (
     tightest: -0.1em,
     tighter: -0.05em,
@@ -37,6 +29,7 @@ $letter_spacings: (
 );
 // # Leading / Line Height
 // ## Create matchng utilities for these in: typography/_line-height.scss
+// ## Generates CSS Custom Vars in: _css-vars.
 $line_heights: (
     none: 1,
     tight: 1.25,
@@ -44,4 +37,29 @@ $line_heights: (
     normal: 1.5,
     relaxed: 1.625,
     loose: 2
+);
+// # Text Align
+// ## Create matchng utilities for these in: typography/_text-align.scss
+$text_alignments: (
+    left: left,
+    center: center,
+    right: right,
+    justify: justify
+);
+// # Font Style
+// ## Create matchng utilities for these in: typography/_font-style.scss
+$font_styles: (
+    italic: italic,
+    normal: normal
+);
+
+// Colours
+// # Generates CSS Custom Vars in: _css-vars.
+$colours: (
+    white: #ffffff,
+    black: #252525,
+    dark-grey: #212322,
+    mid-grey: #54585a,
+    light-grey: #97999b,
+    bg-grey: #f3f3f3
 );

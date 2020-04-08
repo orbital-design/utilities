@@ -10,21 +10,13 @@ $variants: 'responsive'; // We don't need responsive as the font sizes are respo
 
     // Utilities for controlling the alignment of text.
     // # Control the text alignment of an element using the 'text--left', 'text--center', 'text--right', and 'text--justify' utilities.
-    // # These must match the vars set out in '_css-vars.scss'
-    .#{$prefix}--left#{$suffix} {
-        text-align: left;
-    }
+    // # These must match the vars set out in '_scss-vars.scss'
+    // # Loop through each item in text_alignments map.
+    @each $name, $align in $text_alignments {
 
-    .#{$prefix}--center#{$suffix} {
-        text-align: center;
-    }
-
-    .#{$prefix}--right#{$suffix} {
-        text-align: right;
-    }
-
-    .#{$prefix}--justify#{$suffix} {
-        text-align: justify;
+        .#{$prefix}--#{$name}#{$suffix} {
+             text-align: #{$align};
+        };
     }
 }
 
