@@ -1,11 +1,6 @@
 :root {
-    // Fluid Text Defaults
-    --fluid-min-width: 320;
-    --fluid-max-width: 1500;
-    --fluid-min-size: 16;
-    --fluid-max-size: 19;
-    --fluid-min-ratio: 1.125;
-    --fluid-max-ratio: 1.2;
+    // Typography - Fluid Text Defaults
+    @include css-var-constructor( $fluid_typography );
 
     --fluid-screen: 100vw;
     --fluid-bp: calc((var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) / ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16)));
@@ -50,31 +45,24 @@
     --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
     --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
 
-    // Typography Properties
-    // # Font Families
-    // ## Create matchng utilities for these in: typography/_font-family.scss
+    // Typography - Font Family
+    // # Generates matching Utility Classes in: typography/_font-family.scss
     @include css-var-constructor( $font_families );
 
-    // # Font Sizes
-    // ## Create matchng utilities for these in: typography/_font-style.scss
-    --fs-sm: calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp)));
-    --fs-base: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
-    --fs-md: calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)));
-    --fs-lg: calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)));
-    --fs-xl: calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)));
-    --fs-2xl: calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)));
-    --fs-3xl: calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)));
+    // Typography - Font Size
+    // # Generates matching Utility Classes in: typography/_font-size.scss
+    @include css-var-constructor( $font_sizes );
 
-    // # Font Weights
-    // ## Create matchng utilities for these in: typography/_font-weight.scss
+    // Typography - Font Weights
+    // # Generates matching Utility Classes in: typography/_font-weight.scss
     @include css-var-constructor( $font_weights );
 
-    // # Tracking / Letter Spacing
-    // ## Create matchng utilities for these in: typography/_letter-spacing.scss
+    // Typography - Tracking / Letter Spacings
+    // # Generates matching Utility Classes in: typography/_letter-spacing.scss
     @include css-var-constructor( $letter_spacings );
 
-    // # Leading / Line Height Properties
-    // ## Create matchng utilities for these in: typography/_line-height.scss
+    // Typography - Leading / Line Height
+    // # Generates matching Utility Classes in: typography/_line-height.scss
     @include css-var-constructor( $line_heights );
 
     // Generate Color Properties

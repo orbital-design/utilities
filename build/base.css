@@ -1,26 +1,3 @@
-/**
- * Typography - Font Fmily
- * # Generates matching Utility Classes in: typography/_font-family.scss
- */
-/**
- * Typography - Font Style
- * # Generates matching Utility Classes in: typography/_font-style.scss
- */
-/**
- * Typography - Font Weights
- * # Generates matching Utility Classes in:: typography/_font-weight.scss
- * # Generates matching CSS Custom Vars in: _css-vars.
- */
-/**
- * Typography - Letter Spacings / Tracking
- * # Generates matching Utility Classes in:: typography/_letter-spacing.scss
- * # Generates matching CSS Custom Vars in: _css-vars.
- */
-/**
- * Typography - Leading / Line Height
- * # Generates matching Utility Classes in:: typography/_line-height.scss
- * # Generates matching CSS Custom Vars in: _css-vars.
- */
 :root {
   --fluid-min-width: 320;
   --fluid-max-width: 1500;
@@ -97,44 +74,36 @@
   --light-grey: #97999b;
   --bg-grey: #f3f3f3; }
 
-.font--sans {
-  font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  font-family: var(--ff-sans); }
+.font-size {
+  font-size: calc((((16) / 16 * 1rem) + ((19) / 16 - (16) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-base); }
 
-.font--serif {
-  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-  font-family: var(--ff-serif); }
+.font-size--sm {
+  font-size: calc((((16 * 1.125 * (1 / 1.125 / 1.125)) / 16 * 1rem) + ((19 * 1.2 * (1 / 1.2 / 1.2)) / 16 - (16 * 1.125 * (1 / 1.125 / 1.125)) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-sm); }
 
-@media (min-width: 768px) {
-  .sm\:font--sans {
-    font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    font-family: var(--ff-sans); }
-  .sm\:font--serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-    font-family: var(--ff-serif); } }
+.font-size--base {
+  font-size: calc((((16) / 16 * 1rem) + ((19) / 16 - (16) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-base); }
 
-@media (min-width: 1024px) {
-  .md\:font--sans {
-    font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    font-family: var(--ff-sans); }
-  .md\:font--serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-    font-family: var(--ff-serif); } }
+.font-size--md {
+  font-size: calc((((16 * 1.125) / 16 * 1rem) + ((19 * 1.2) / 16 - (16 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-md); }
 
-@media (min-width: 1300px) {
-  .lg\:font--sans {
-    font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    font-family: var(--ff-sans); }
-  .lg\:font--serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-    font-family: var(--ff-serif); } }
+.font-size--lg {
+  font-size: calc((((16 * 1.125 * 1.125) / 16 * 1rem) + ((19 * 1.2 * 1.2) / 16 - (16 * 1.125 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-lg); }
 
-@media (min-width: 1500px) {
-  .xl\:font--sans {
-    font-family: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    font-family: var(--ff-sans); }
-  .xl\:font--serif {
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-    font-family: var(--ff-serif); } }
+.font-size--xl {
+  font-size: calc((((16 * 1.125 * 1.125 * 1.125) / 16 * 1rem) + ((19 * 1.2 * 1.2 * 1.2) / 16 - (16 * 1.125 * 1.125 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-xl); }
+
+.font-size--2xl {
+  font-size: calc((((16 * 1.125 * 1.125 * 1.125 * 1.125) / 16 * 1rem) + ((19 * 1.2 * 1.2 * 1.2 * 1.2) / 16 - (16 * 1.125 * 1.125 * 1.125 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-2xl); }
+
+.font-size--3xl {
+  font-size: calc((((16 * 1.125 * 1.125 * 1.125 * 1.125 * 1.125) / 16 * 1rem) + ((19 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2) / 16 - (16 * 1.125 * 1.125 * 1.125 * 1.125 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
+  font-size: var(--fs-3xl); }
 
 /*# sourceMappingURL=base.css.map */
