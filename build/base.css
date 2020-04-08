@@ -486,6 +486,36 @@
   .xl\:hover\:stroke--2:hover {
     stroke-width: 2; } }
 
+.pointer-events--none {
+  pointer-events: none; }
+
+.pointer-events--auto {
+  pointer-events: auto; }
+
+@media (min-width: 768px) {
+  .sm\:pointer-events--none {
+    pointer-events: none; }
+  .sm\:pointer-events--auto {
+    pointer-events: auto; } }
+
+@media (min-width: 1024px) {
+  .md\:pointer-events--none {
+    pointer-events: none; }
+  .md\:pointer-events--auto {
+    pointer-events: auto; } }
+
+@media (min-width: 1300px) {
+  .lg\:pointer-events--none {
+    pointer-events: none; }
+  .lg\:pointer-events--auto {
+    pointer-events: auto; } }
+
+@media (min-width: 1500px) {
+  .xl\:pointer-events--none {
+    pointer-events: none; }
+  .xl\:pointer-events--auto {
+    pointer-events: auto; } }
+
 .resize {
   resize: both; }
 

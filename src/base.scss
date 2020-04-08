@@ -17,5 +17,6 @@ $media_queries: (
 @import 'svg/stroke-width';
 
 // # Interactivity.
+@import 'interactivity/pointer-events';
 @import 'interactivity/resize';
 @import 'interactivity/user-select';
