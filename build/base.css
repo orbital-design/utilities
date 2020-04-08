@@ -68,40 +68,98 @@
   --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif; }
 
-:root {
-  --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif; }
+.font-weight--light {
+  font-weight: 200;
+  font-weight: var(--fw-light); }
 
-.font-size {
-  font-size: calc((((16) / 16 * 1rem) + ((19) / 16 - (16) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
-  font-size: var(--fs-base); }
+.font-weight--normal {
+  font-weight: 400;
+  font-weight: var(--fw-normal); }
 
-.font-size--sm {
-  font-size: calc((((16 * 1.125 * (1 / 1.125 / 1.125)) / 16 * 1rem) + ((19 * 1.2 * (1 / 1.2 / 1.2)) / 16 - (16 * 1.125 * (1 / 1.125 / 1.125)) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
-  font-size: var(--fs-sm); }
+.font-weight--bold {
+  font-weight: var(--fs-bold); }
 
-.font-size--base {
-  font-size: calc((((16) / 16 * 1rem) + ((19) / 16 - (16) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
-  font-size: var(--fs-base); }
+.hover\:font-weight--light:hover {
+  font-weight: 200;
+  font-weight: var(--fw-light); }
 
-.font-size--md {
-  font-size: calc((((16 * 1.125) / 16 * 1rem) + ((19 * 1.2) / 16 - (16 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
-  font-size: var(--fs-md); }
+.hover\:font-weight--normal:hover {
+  font-weight: 400;
+  font-weight: var(--fw-normal); }
 
-.font-size--lg {
-  font-size: calc((((16 * 1.125 * 1.125) / 16 * 1rem) + ((19 * 1.2 * 1.2) / 16 - (16 * 1.125 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
-  font-size: var(--fs-lg); }
+.hover\:font-weight--bold:hover {
+  font-weight: var(--fs-bold); }
 
-.font-size--xl {
-  font-size: calc((((16 * 1.125 * 1.125 * 1.125) / 16 * 1rem) + ((19 * 1.2 * 1.2 * 1.2) / 16 - (16 * 1.125 * 1.125 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
-  font-size: var(--fs-xl); }
+@media (min-width: 768px) {
+  .sm\:font-weight--light {
+    font-weight: 200;
+    font-weight: var(--fw-light); }
+  .sm\:font-weight--normal {
+    font-weight: 400;
+    font-weight: var(--fw-normal); }
+  .sm\:font-weight--bold {
+    font-weight: var(--fs-bold); }
+  .sm\:hover\:font-weight--light:hover {
+    font-weight: 200;
+    font-weight: var(--fw-light); }
+  .sm\:hover\:font-weight--normal:hover {
+    font-weight: 400;
+    font-weight: var(--fw-normal); }
+  .sm\:hover\:font-weight--bold:hover {
+    font-weight: var(--fs-bold); } }
 
-.font-size--xl {
-  font-size: calc((((16 * 1.125 * 1.125 * 1.125 * 1.125) / 16 * 1rem) + ((19 * 1.2 * 1.2 * 1.2 * 1.2) / 16 - (16 * 1.125 * 1.125 * 1.125 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
-  font-size: var(--fs-2xl); }
+@media (min-width: 1024px) {
+  .md\:font-weight--light {
+    font-weight: 200;
+    font-weight: var(--fw-light); }
+  .md\:font-weight--normal {
+    font-weight: 400;
+    font-weight: var(--fw-normal); }
+  .md\:font-weight--bold {
+    font-weight: var(--fs-bold); }
+  .md\:hover\:font-weight--light:hover {
+    font-weight: 200;
+    font-weight: var(--fw-light); }
+  .md\:hover\:font-weight--normal:hover {
+    font-weight: 400;
+    font-weight: var(--fw-normal); }
+  .md\:hover\:font-weight--bold:hover {
+    font-weight: var(--fs-bold); } }
 
-.font-size--xl {
-  font-size: calc((((16 * 1.125 * 1.125 * 1.125 * 1.125 * 1.125) / 16 * 1rem) + ((19 * 1.2 * 1.2 * 1.2 * 1.2 * 1.2) / 16 - (16 * 1.125 * 1.125 * 1.125 * 1.125 * 1.125) / 16) * calc((100vw - ((320 / 16) * 1rem)) / ((1500 / 16) - (320 / 16)))));
-  font-size: var(--fs-3xl); }
+@media (min-width: 1300px) {
+  .lg\:font-weight--light {
+    font-weight: 200;
+    font-weight: var(--fw-light); }
+  .lg\:font-weight--normal {
+    font-weight: 400;
+    font-weight: var(--fw-normal); }
+  .lg\:font-weight--bold {
+    font-weight: var(--fs-bold); }
+  .lg\:hover\:font-weight--light:hover {
+    font-weight: 200;
+    font-weight: var(--fw-light); }
+  .lg\:hover\:font-weight--normal:hover {
+    font-weight: 400;
+    font-weight: var(--fw-normal); }
+  .lg\:hover\:font-weight--bold:hover {
+    font-weight: var(--fs-bold); } }
+
+@media (min-width: 1500px) {
+  .xl\:font-weight--light {
+    font-weight: 200;
+    font-weight: var(--fw-light); }
+  .xl\:font-weight--normal {
+    font-weight: 400;
+    font-weight: var(--fw-normal); }
+  .xl\:font-weight--bold {
+    font-weight: var(--fs-bold); }
+  .xl\:hover\:font-weight--light:hover {
+    font-weight: 200;
+    font-weight: var(--fw-light); }
+  .xl\:hover\:font-weight--normal:hover {
+    font-weight: 400;
+    font-weight: var(--fw-normal); }
+  .xl\:hover\:font-weight--bold:hover {
+    font-weight: var(--fs-bold); } }
 
 /*# sourceMappingURL=base.css.map */

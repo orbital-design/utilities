@@ -1,0 +1,68 @@
+// Set class name.
+$className: 'font-weight';
+
+// Set variants available for this class.
+// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
+$variants: 'responsive' 'hover';
+
+// Construct class props so we don't keep repeating ourselves.
+@mixin font-weight($prefix, $suffix) {
+
+    // Utilities for controlling the font weight of an element.
+    // # Control the font weight of an element using the 'font-weight--{weight}' utilities.
+    // # These must match the vars set out in '_css-vars.scss'
+    .#{$prefix}--light#{$suffix} {
+        font-weight: v(fw-light);
+    }
+
+    .#{$prefix}--normal#{$suffix} {
+        font-weight: v(fw-normal);
+    }
+
+    .#{$prefix}--bold#{$suffix} {
+        font-weight: v(fs-bold);
+    }
+}
+
+// Use mixin as a default class without media queries.
+@include font-weight($className, "");
+
+// Check if 'none' is in list.
+@if not index($variants, 'none') {
+    // # If none isn't in the list, Loop through the selected variants for this class.
+    @each $variant in $variants {
+
+        // # Make sure we don't include the 'responsive' the variant.
+        @if $variant != 'responsive' {
+            // # Include variant classes
+            @include font-weight("#{$variant}\\:#{$className}", ":#{$variant}");
+        }
+    }
+}
+
+// Use mixin inside media queries with relevant prefix.
+// # Check if 'responsive' is in list.
+@if index($variants, 'responsive') {
+
+    // If responsive is in list then loop through breakpoints.
+    @each $query_name, $breakpoint in $breakpoints {
+
+        // Initiate Media Query.
+        @media (min-width: $breakpoint) {
+
+            // Create default class with breakpoint prefix.
+            @include font-weight("#{$query_name}\\:#{$className}", "");
+
+            // Loop through the selected variants for this class.
+            @each $variant in $variants {
+
+                // Make sure we don't include the 'responsive' the variant.
+                @if $variant != 'responsive' {
+
+                    // Include variant classes inside mq
+                    @include font-weight("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
+                }
+            }
+        }
+    }
+}

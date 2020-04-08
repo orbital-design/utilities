@@ -6,15 +6,11 @@
 // # CSS vars
 @import 'css-vars';
 
-:root {
-    --ff-sans: Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    --ff-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
 // # Typography
 // @import 'typography/font-family';
-@import 'typography/font-size';
+// @import 'typography/font-size';
 // @import 'typography/font-style';
+@import 'typography/font-weight';
 
 // # Effects
 // @import 'effects/box-shadow';
