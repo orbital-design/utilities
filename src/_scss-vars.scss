@@ -52,6 +52,13 @@ $font_styles: (
     italic: italic,
     normal: normal
 );
+// # Text Decoration
+// ## Create matchng utilities for these in: typography/_text-decoration.scss
+$text_decorations: (
+    under: underline,
+    strike: line-through,
+    none: none
+);
 
 // Colours
 // # Generates CSS Custom Vars in: _css-vars.

@@ -1,0 +1,64 @@
+// Set class name.
+$className: 'text-decoration';
+
+// Set variants available for this class.
+// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
+$variants: 'none'; // We don't need responsive as the font sizes are responsive by default.
+
+// Construct class props so we don't keep repeating ourselves.
+@mixin text-align($prefix, $suffix) {
+
+    // Utilities for controlling the decoration of text.
+    // # Control the text decoration of an element using the 'text-decoration--{value}' utilities.
+    // # These must match the vars set out in '_scss-vars.scss'
+    // # Loop through each item in text_decorations map.
+    @each $name, $decoration in $text_decorations {
+
+        .#{$prefix}--#{$name}#{$suffix} {
+             text-decoration: #{$decoration};
+        };
+    }
+}
+
+// Use mixin as a default class without media queries.
+@include text-align($className, "");
+
+// Check if 'none' is in list.
+@if not index($variants, 'none') {
+    // # If none isn't in the list, Loop through the selected variants for this class.
+    @each $variant in $variants {
+
+        // # Make sure we don't include the 'responsive' the variant.
+        @if $variant != 'responsive' {
+            // # Include variant classes
+            @include text-align("#{$variant}\\:#{$className}", ":#{$variant}");
+        }
+    }
+}
+
+// Use mixin inside media queries with relevant prefix.
+// # Check if 'responsive' is in list.
+@if index($variants, 'responsive') {
+
+    // If responsive is in list then loop through breakpoints.
+    @each $query_name, $breakpoint in $breakpoints {
+
+        // Initiate Media Query.
+        @media (min-width: $breakpoint) {
+
+            // Create default class with breakpoint prefix.
+            @include text-align("#{$query_name}\\:#{$className}", "");
+
+            // Loop through the selected variants for this class.
+            @each $variant in $variants {
+
+                // Make sure we don't include the 'responsive' the variant.
+                @if $variant != 'responsive' {
+
+                    // Include variant classes inside mq
+                    @include text-align("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
+                }
+            }
+        }
+    }
+}

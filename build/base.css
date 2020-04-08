@@ -75,10 +75,13 @@
   --light-grey: #97999b;
   --bg-grey: #f3f3f3; }
 
-.font-style--italic {
-  font-style: italic; }
+.text-decoration--under {
+  text-decoration: underline; }
 
-.font-style--normal {
-  font-style: normal; }
+.text-decoration--strike {
+  text-decoration: line-through; }
+
+.text-decoration--none {
+  text-decoration: none; }
 
 /*# sourceMappingURL=base.css.map */
