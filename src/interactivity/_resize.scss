@@ -1,71 +1,18 @@
-// Set class name.
-$className: 'resize';
+// Generate Utility Classes for controlling how an element can be resized.
+// # Use the 'resize--{value}' utilities to change how element can be resized.
 
-// Set variants available for this class.
-// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
-$variants: 'responsive';
+// Please don't change this $class_map.
+// We need this one to be null so we can check against it in the mixin and know we're not using one set previously.
+// Please use the $class_map specified further down.
+$class_map: null !default;
 
-// Construct class props so we don't keep repeating ourselves.
-@mixin resize($prefix, $suffix) {
+// ## $class_name = string. Set a lowercase string to use as the identifier for your class.
+$class_name: 'resize';
+// ## $class_variants = list. Use 'none' if you don't want any added states.
+$class_variants: 'none';
+// ## $class_name = string. Specify property to use for your class.
+$class_property: 'resize';
+// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
+$class_map: $resizes;
 
-    // Utilities for controlling how an element can be resized.
-    // # Use 'resize' to make an element horizontally and vertically resizable.
-    .#{$prefix}#{$suffix} {
-        resize: both;
-    }
-
-    // # Use 'resize-x' to make an element horizontally resizable.
-    .#{$prefix}--x#{$suffix} {
-        resize: horizontal;
-    }
-
-    // # Use 'resize--y' to make an element vertically resizable.
-    .#{$prefix}--y#{$suffix} {
-        resize: vertical;
-    }
-
-    // Use 'resize-none' to prevent an element from being resizable.
-    .#{$prefix}--none#{$suffix} {
-        resize: none;
-    }
-}
-
-// Use mixin as a default class without media queries.
-@include resize($className, "");
-
-// Loop through the selected variants for this class.
-@each $variant in $variants {
-
-    // Make sure we don't include the 'responsive' the variant.
-    @if $variant != 'responsive' {
-        // Include variant classes
-        @include resize("#{$variant}\\:#{$className}", ":#{$variant}");
-    }
-}
-
-// Use mixin inside media queries with relevant prefix.
-// # Check if 'responsive' is in list.
-@if index($variants, 'responsive') {
-
-    // If responsive is in list then loop through breakpoints.
-    @each $query_name, $breakpoint in $breakpoints {
-
-        // Initiate Media Query.
-        @media (min-width: $breakpoint) {
-
-            // Create default class with breakpoint prefix.
-            @include resize("#{$query_name}\\:#{$className}", "");
-
-            // Loop through the selected variants for this class.
-            @each $variant in $variants {
-
-                // Make sure we don't include the 'responsive' the variant.
-                @if $variant != 'responsive' {
-
-                    // Include variant classes inside mq
-                    @include resize("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
-                }
-            }
-        }
-    }
-}
+@include class-constructor( $class_name, $class_variants, $class_property, $class_map );

@@ -76,13 +76,62 @@ $opacities: ();
     $opacities: map-merge( $opacities, ( $unit: ( $value, false, 'opacity--#{$unit}' ) ) );
 }
 
+// Interactivity - Appearance
+// # Generates matching Utility Classes in: interactivity/_appearance.scss
+$appearances: (
+    'none': ('none', false, 'appearance-none')
+);
+
+// Interactivity - Cursors
+// # Generates matching Utility Classes in: interactivity/_cursor.scss
+$cursors: (
+        'auto': ( auto, false, 'cursor-auto' ),
+        'default': ( default, false, 'cursor-default' ),
+        'pointer': ( pointer, false, 'cursor-pointer' ),
+        'wait': ( wait, false, 'cursor-wait' ),
+        'text': ( text, false, 'cursor-text' ),
+        'move': ( move, false, 'cursor-move' ),
+        'not-allowed': ( not-allowed, false, 'cursor-not-allowed' )
+);
+
+// Interactivity - Outline
+// # Generates matching Utility Classes in: interactivity/_outline.scss
+$outlines: (
+    'none': (0, false, 'outline-none')
+);
+
+// Interactivity - Pointer Events
+// # Generates matching Utility Classes in: interactivity/_pointer-events.scss
+$pointer_events: (
+    'none': ('none', false, 'pointer-none'),
+    'auto': ('auto', false, 'pointer-auto')
+);
+
+// Interactivity - Resize
+// # Generates matching Utility Classes in: interactivity/_resize.scss
+$resizes: (
+    'default': ('both', false, ''),
+    'none': ('none', false, 'resize-none'),
+    'y': ('vertical', false, 'resize-y'),
+    'x': ('horizontal', false, 'resize-x')
+);
+
+// Interactivity - User Select
+// # Generates matching Utility Classes in: interactivity/_user-select.scss
+$user_selects: (
+    'none': ('none', false, 'select-none'),
+    'text': ('text', false, 'select-text'),
+    'all': ('all', false, 'select-all'),
+    'auto': ('auto', false, 'select-auto')
+);
+
 // SVG - Fill
 // # Generates matching Utility Classes in: svg/_fill.scss
 $fills: (
     current: (currentColor, false, 'current')
 );
 @each $name, $details in $colours {
-    $fills: map-merge( $fills, ( $name: ( #{nth($details, 1)}, true, #{nth($details, 3)} ) ) );
+    $fills: map-merge( $fills, ( $name: ( #{nth($details, 1)}, false, #{nth($details, 3)} ) ) );
 }
 
 // SVG - Stroke
@@ -91,7 +140,7 @@ $strokes: (
     current: (currentColor, false, 'current')
 );
 @each $name, $details in $colours {
-    $strokes: map-merge( $strokes, ( $name: ( #{nth($details, 1)}, true, #{nth($details, 3)} ) ) );
+    $strokes: map-merge( $strokes, ( $name: ( #{nth($details, 1)}, false, #{nth($details, 3)} ) ) );
 }
 
 // SVG - Stroke Width
@@ -104,103 +153,95 @@ $stroke_widths: ();
 // Typography - Fluid Text Defaults
 // # Generates matching CSS Custom Vars in: _css-vars.
 $fluid_typography: (
-    fluid-min-width: ( 320, true, 'fluid-min-width' ),
-    fluid-max-width: ( 1500, true, 'fluid-max-width' ),
-    fluid-min-size:  ( 16, true, 'fluid-min-size' ),
-    fluid-max-size:  ( 19, true, 'fluid-max-size' ),
-    fluid-min-ratio: ( 1.125, true, 'fluid-min-ratio' ),
-    fluid-max-ratio: ( 1.2, true, 'fluid-max-ratio' )
+    'fluid-min-width': ( 320, true, 'fluid-min-width' ),
+    'fluid-max-width': ( 1500, true, 'fluid-max-width' ),
+    'fluid-min-size': ( 16, true, 'fluid-min-size' ),
+    'fluid-max-size': ( 19, true, 'fluid-max-size' ),
+    'fluid-min-ratio': ( 1.125, true, 'fluid-min-ratio' ),
+    'fluid-max-ratio': ( 1.2, true, 'fluid-max-ratio' )
 );
 
 // Typography - Font Family
 // # Generates matching Utility Classes in: typography/_font-family.scss
 // # Generates matching CSS Custom Vars in: _css-vars.
 $font_families: (
-    // name: ( value, output css var, css var name )
-    sans: ( 'Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif', true, 'ff-sans'),
-    serif: ( 'Georgia, Cambria, "Times New Roman", Times, serif', true, 'ff-serif' )
+    'sans': ( 'Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif', true, 'ff-sans'),
+    'serif': ( 'Georgia, Cambria, "Times New Roman", Times, serif', true, 'ff-serif' )
 );
 
 // Typography - Font Size
 // # Generates matching Utility Classes in: typography/_font-size.scss
 // # Generates matching CSS Custom Vars in: _css-vars.
 $font_sizes: (
-    // name: ( value, output css var, css var name )
-    default: ( calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp))), false, '' ),
-    sm: ( calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp))), true, 'fs-sm' ),
-    base: ( calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp))), true, 'fs-base' ),
-    md: ( calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp))), true, 'fs-md' ),
-    lg: ( calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp))), true, 'fs-lg' ),
-    xl: ( calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp))), true, 'fs-xl' ),
-    2xl: ( calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp))), true, 'fs-2xl' ),
-    3xl: ( calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp))), true, 'fs-3xl' )
+    'default': ( calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp))), false, '' ),
+    'sm': ( calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp))), true, 'fs-sm' ),
+    'base': ( calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp))), true, 'fs-base' ),
+    'md': ( calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp))), true, 'fs-md' ),
+    'lg': ( calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp))), true, 'fs-lg' ),
+    'xl': ( calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp))), true, 'fs-xl' ),
+    '2xl': ( calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp))), true, 'fs-2xl' ),
+    '3xl': ( calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp))), true, 'fs-3xl' )
 );
 
 // Typography - Font Style
 // # Generates matching Utility Classes in: typography/_font-style.scss
 $font_styles: (
-    // name: ( value, output css var, css var name )
-    default: (normal, false, ''),
-    italic: ( italic, false, '' ),
-    normal: ( normal, false, '' )
+    'default': ( 'normal', false, ''),
+    'italic': ( 'italic', false, '' ),
+    'normal': ( 'normal', false, '' )
 );
 
 // Typography - Font Weights
 // # Generates matching Utility Classes in: typography/_font-weight.scss
 // # Generates matching CSS Custom Vars in: _css-vars.
 $font_weights: (
-    // name: ( value, output css var, css var name )
-    default: (400, false, ''),
-    light: ( 200, true, 'fw-light' ),
-    normal: ( 400, true, 'fw-normal' ),
-    bold: ( 600, true, 'fw-bold' )
+    'default': (400, false, ''),
+    'light': ( 200, true, 'fw-light' ),
+    'normal': ( 400, true, 'fw-normal' ),
+    'bold': ( 600, true, 'fw-bold' )
 );
 
 // Typography - Tracking / Letter Spacings
 // # Generates matching Utility Classes in: typography/_letter-spacing.scss
 // # Generates matching CSS Custom Vars in: _css-vars.
 $letter_spacings: (
-    // name: ( value, output css var, css var name )
-    default: (1.5, false, ''),
-    tightest: ( -0.1em, true, 'tracking-tightest' ),
-    tighter: ( -0.05em, true, 'tracking-tighter' ),
-    tight: ( -0.025em, true, 'tracking-tight' ),
-    normal: ( 0, true, 'tracking-normal' ),
-    wide: ( 0.025em, true, 'tracking-wide' ),
-    wider: ( 0.05em, true, 'tracking-wider' ),
-    widest: ( 0.1em true, 'tracking-widest' )
+    'default': (1.5, false, ''),
+    'tightest': ( -0.1em, true, 'tracking-tightest' ),
+    'tighter': ( -0.05em, true, 'tracking-tighter' ),
+    'tight': ( -0.025em, true, 'tracking-tight' ),
+    'normal': ( 0, true, 'tracking-normal' ),
+    'wide': ( 0.025em, true, 'tracking-wide' ),
+    'wider': ( 0.05em, true, 'tracking-wider' ),
+    'widest': ( 0.1em true, 'tracking-widest' )
 );
 
 // Typography - Leading / Line Height
 // # Generates matching Utility Classes in: typography/_line-height.scss
 // # Generates matching CSS Custom Vars in: _css-vars.
 $line_heights: (
-    // name: ( value, output css var, css var name )
-    default: (1.5, false, ''),
-    none:   ( 1, true, 'leading-none' ),
-    tight:  ( 1.25, true, 'leading-tight' ),
-    snug:   ( 1.375, true, 'leading-snug' ),
-    normal: ( 1.5, true, 'leading-normal' ),
-    relaxed:( 1.625, true, 'leading-relaxed' ),
-    loose:  ( 2, true, 'leading-loose' )
+    'default': (1.5, false, ''),
+    'none':   ( 1, true, 'leading-none' ),
+    'tight':  ( 1.25, true, 'leading-tight' ),
+    'snug':   ( 1.375, true, 'leading-snug' ),
+    'normal': ( 1.5, true, 'leading-normal' ),
+    'relaxed':( 1.625, true, 'leading-relaxed' ),
+    'loose':  ( 2, true, 'leading-loose' )
 );
 
 // Typography - Text Align
 // # Generates matching Utility Classes in: typography/_text-align.scss
 $text_alignments: (
-    // name: ( value, output css var, css var name )
-    default: ( 1.5, false, '' ),
-    left: ( left, false, '' ),
-    center: ( center, false, '' ),
-    right: ( right, false, '' ),
-    justify: ( justify false, '' )
+    'default': ( 'left', false, '' ),
+    'left': ( 'left', false, 'text-left' ),
+    'center': ( 'center', false, 'text-center' ),
+    'right': ( 'right', false, 'text-right' ),
+    'justify': ( 'justify' false, 'text-justify' )
 );
 
 // Typography - Text Decoration
 // # Generates matching Utility Classes in: typography/_text-decoration.scss
 $text_decorations: (
-    // name: ( value, output css var, css var name )
-    under: ( underline, false, '' ),
-    strike: ( line-through, false, '' ),
-    none: ( none, false, '' )
+    'under': ( 'underline', false, 'td-under' ),
+    'strike': ( 'line-through', false, 'td-strike' ),
+    'none': ( 'none', false, 'td-none' )
 );

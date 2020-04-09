@@ -77,6 +77,30 @@
     // # Generates matching Utility Classes in: effects/_opacity.scss
     @include css-var-constructor( $opacities );
 
+    // Interactivity - Appearance
+    // # Generates matching Utility Classes in: interactivity/_appearance.scss
+    @include css-var-constructor( $appearances );
+
+    // Interactivity - Cursors
+    // # Generates matching Utility Classes in: interactivity/_cursor.scss
+    @include css-var-constructor( $cursors );
+
+    // Interactivity - Outline
+    // # Generates matching Utility Classes in: interactivity/_outline.scss
+    @include css-var-constructor( $outlines );
+
+    // Interactivity - Pointer Events
+    // # Generates matching Utility Classes in: interactivity/_pointer-events.scss
+    @include css-var-constructor( $pointer_events );
+
+    // Interactivity - Resize
+    // # Generates matching Utility Classes in: interactivity/_resize.scss
+    @include css-var-constructor( $resizes );
+
+    // Interactivity - User Select
+    // # Generates matching Utility Classes in: interactivity/_user-select.scss
+    @include css-var-constructor( $user_selects );
+
     // SVG - Fills
     // # Generates matching Utility Classes in: svg/_fill.scss
     @include css-var-constructor( $fills );

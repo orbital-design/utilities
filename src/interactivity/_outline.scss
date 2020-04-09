@@ -1,56 +1,18 @@
-// Set class name.
-$className: 'outline';
+// Generate Utility Classes for controlling an element's outline.
+// # Use the 'outline--{value}' utilities to change control a form elements outline.
 
-// Set variants available for this class.
-// # You can use 'responsive' as well as 'hover', 'focus', 'active' etc...
-$variants: 'responsive' 'focus' 'hover';
+// Please don't change this $class_map.
+// We need this one to be null so we can check against it in the mixin and know we're not using one set previously.
+// Please use the $class_map specified further down.
+$class_map: null !default;
 
-// Construct class props so we don't keep repeating ourselves.
-@mixin outline($prefix, $suffix) {
+// ## $class_name = string. Set a lowercase string to use as the identifier for your class.
+$class_name: 'outline';
+// ## $class_variants = list. Use 'none' if you don't want any added states.
+$class_variants: 'focus' 'hover';
+// ## $class_name = string. Specify property to use for your class.
+$class_property: 'outline';
+// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
+$class_map: $outlines;
 
-    // Utilities for controlling an element's outline.
-    // # Use 'outline--none' to remove browser specific outlining of focused elements.
-    .#{$prefix}--none#{$suffix} {
-        outline: none;
-    }
-}
-
-// Use mixin as a default class without media queries.
-@include outline($className, "");
-
-// Loop through the selected variants for this class.
-@each $variant in $variants {
-
-    // Make sure we don't include the 'responsive' the variant.
-    @if $variant != 'responsive' {
-        // Include variant classes
-        @include outline("#{$variant}\\:#{$className}", ":#{$variant}");
-    }
-}
-
-// Use mixin inside media queries with relevant prefix.
-// # Check if 'responsive' is in list.
-@if index($variants, 'responsive') {
-
-    // If responsive is in list then loop through breakpoints.
-    @each $query_name, $breakpoint in $breakpoints {
-
-        // Initiate Media Query.
-        @media (min-width: $breakpoint) {
-
-            // Create default class with breakpoint prefix.
-            @include outline("#{$query_name}\\:#{$className}", "");
-
-            // Loop through the selected variants for this class.
-            @each $variant in $variants {
-
-                // Make sure we don't include the 'responsive' the variant.
-                @if $variant != 'responsive' {
-
-                    // Include variant classes inside mq
-                    @include outline("#{$query_name}\\:#{$variant}\\:#{$className}", ":#{$variant}");
-                }
-            }
-        }
-    }
-}
+@include class-constructor( $class_name, $class_variants, $class_property, $class_map );
