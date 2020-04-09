@@ -1,0 +1,15 @@
+// CSS Custom Var/Prop Constructor
+// # Used in: _css-vars.scss
+@mixin css-var-constructor( $map ) {
+    // ## Check if $map has been specified
+    @if $map != null {
+        // ### If is specified, loop through each item in the map.
+        @each $name, $details in $map {
+            // #### Check whether item should output a var.
+            @if nth( $details, 4 ) == true {
+                // #### Output var
+                --#{nth($details, 5)}: #{nth($details, 1)};
+            }
+        }
+    }
+}

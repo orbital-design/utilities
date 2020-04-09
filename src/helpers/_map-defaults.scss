@@ -1,0 +1,39 @@
+// Map Defaults
+// # We need to make sure every map is set to null so if user comments out the map no vars or classes are output
+// # We don't need to do this for breakpoints.
+
+// - - - - - - - - - -
+
+// # Effects
+$box_shadows: null !default;
+$opacities: null !default;
+
+// # Interactivity
+$appearances: null !default;
+$cursors: null !default;
+$outlines: null !default;
+$pointer_events: null !default;
+$resizes: null !default;
+$user_selects: null !default;
+
+// # Sizing
+$widths: null !default;
+
+// # SVG
+$fills: null !default;
+$strokes: null !default;
+$stroke_widths: null !default;
+
+// # Typography
+$fluid_typography: null !default;
+$font_families: null !default;
+$font_sizes: null !default;
+$font_styles: null !default;
+$font_weights: null !default;
+$letter_spacings: null !default;
+$line_heights: null !default;
+$text_alignments: null !default;
+$text_decorations: null !default;
+
+// # Colours
+$colours: null !default;

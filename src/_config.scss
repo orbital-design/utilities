@@ -1,31 +1,3 @@
-// Global Settings
-// # Effects
-$box_shadows: null !default;
-$opacities: null !default;
-// # Interactivity
-$appearances: null !default;
-$cursors: null !default;
-$outlines: null !default;
-$pointer_events: null !default;
-$resizes: null !default;
-$user_selects: null !default;
-// # SVG
-$fills: null !default;
-$strokes: null !default;
-$stroke_widths: null !default;
-// # Typography
-$fluid_typography: null !default;
-$font_families: null !default;
-$font_sizes: null !default;
-$font_styles: null !default;
-$font_weights: null !default;
-$letter_spacings: null !default;
-$line_heights: null !default;
-$text_alignments: null !default;
-$text_decorations: null !default;
-// # Colours
-$colours: null !default;
-
 // Breakpoints - min-width
 // # DO NOT REMOVE - Edit but DO NOT REMOVE
 $breakpoints: (
@@ -159,17 +131,17 @@ $widths: (
     16: ( 50%,          false,  '3\\/6',        true,   'w-3-sixths' ),
     17: ( 66.666667%,   false,  '4\\/6',        true,   'w-4-sixths' ),
     18: ( 83.333333%,   false,  '5\\/6',        true,   'w-5-sixths' ),
-    19: ( 8.333333%,    false,  '1\\/12',       true,   'w-1-twelth' ),
-    20: ( 16.666667%,   false,  '2\\/12',       true,   'w-2-twelths' ),
-    21: ( 25%,          false,  '3\\/12',       true,   'w-3-twelths' ),
-    22: ( 33.333333%,   false,  '4\\/12',       true,   'w-4-twelths' ),
-    23: ( 41.666667%,   false,  '5\\/12',       true,   'w-5-twelths' ),
-    24: ( 50%,          false,  '6\\/12',       true,   'w-6-twelths' ),
-    25: ( 58.333333%,   false,  '7\\/12',       true,   'w-7-twelths' ),
-    26: ( 66.666667%,   false,  '8\\/12',       true,   'w-8-twelths' ),
-    27: ( 75%,          false,  '9\\/12',       true,   'w-9-twelths' ),
-    28: ( 83.333333%,   false,  '10\\/12',      true,   'w-10-twelths' ),
-    29: ( 91.666667%,   false,  '11\\/12',      true,   'w-11-twelths' )
+    19: ( 8.333333%,    false,  '1\\/12',       true,   'w-1-twelfth' ),
+    20: ( 16.666667%,   false,  '2\\/12',       true,   'w-2-twelfths' ),
+    21: ( 25%,          false,  '3\\/12',       true,   'w-3-twelfths' ),
+    22: ( 33.333333%,   false,  '4\\/12',       true,   'w-4-twelfths' ),
+    23: ( 41.666667%,   false,  '5\\/12',       true,   'w-5-twelfths' ),
+    24: ( 50%,          false,  '6\\/12',       true,   'w-6-twelfths' ),
+    25: ( 58.333333%,   false,  '7\\/12',       true,   'w-7-twelfths' ),
+    26: ( 66.666667%,   false,  '8\\/12',       true,   'w-8-twelfths' ),
+    27: ( 75%,          false,  '9\\/12',       true,   'w-9-twelfths' ),
+    28: ( 83.333333%,   false,  '10\\/12',      true,   'w-10-twelfths' ),
+    29: ( 91.666667%,   false,  '11\\/12',      true,   'w-11-twelfths' )
 );
 
 // Sizing - width

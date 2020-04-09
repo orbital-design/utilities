@@ -1,12 +1,18 @@
+// Get map defaults used for condtionals
+@import 'helpers/map-defaults';
+
+// SCSS Helpers
+@import 'helpers/functions';
+@import 'helpers/mixins';
+@import 'helpers/constructor-utilities';
+@import 'helpers/constructor-vars';
+
 // Config/Setup file
+// This is where the uses specifies what they want.
 @import 'config';
 
-// SCSS functions & mixins
-@import 'functions';
-@import 'class-constructor';
-
 // Generate CSS Custom vars
-@import 'css-vars';
+@import 'helpers/css-vars';
 
 // Utility Class Generators
 // # Accessibility classes.
@@ -25,7 +31,7 @@
 // @import 'interactivity/user-select';
 
 // # Sizing.
-// @import 'sizing/width';
+@import 'sizing/width';
 
 // # SVG classes.
 // @import 'svg/fill';
