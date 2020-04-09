@@ -115,7 +115,15 @@
 
     // Sizing - Width
     // # Generates matching Utility Classes in: sizing/_width.scss
+    // # Generates matching Utility Classes in: sizing/_min-width.scss
+    // # Generates matching Utility Classes in: sizing/_max-width.scss
     @include css-var-constructor( $widths );
+
+    // Sizing - Height
+    // # Generates matching Utility Classes in: sizing/_height.scss
+    // # Generates matching Utility Classes in: sizing/_min-height.scss
+    // # Generates matching Utility Classes in: sizing/_max-height.scss
+    @include css-var-constructor( $heights );
 
     // SVG - Fills
     // # Generates matching Utility Classes in: svg/_fill.scss

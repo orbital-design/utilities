@@ -144,9 +144,17 @@ $widths: (
     29: ( 91.666667%,   false,  '11\\/12',      true,   'w-11-twelfths' )
 );
 
-// Sizing - width
-// # Generates matching Utility Classes in: sizing/_width.scss
-$min_widths: (
+// Sizing - Height
+// # Generates matching Utility Classes in: sizing/_height.scss
+$heights: (
+//  int:( value,        class,  classExt        var,    varExt ),
+    0:  ( auto,         true,   'auto',         true,   'h-auto' ),
+    2:  ( 0,            true,   '0',            true,   'h-0' ),
+    3:  ( 25%,          true,   'quarter',      true,   'h-25' ),
+    4:  ( 50%,          true,   'half',         true,   'h-50' ),
+    5:  ( 75%,          true,   '3-quarter',    true,   'h-75' ),
+    6:  ( 100%,         true,   'full',         true,   'h-100' ),
+    7:  ( 100vw,        true,   'screen',       true,   'h-screen' )
 );
 
 // SVG - Fill

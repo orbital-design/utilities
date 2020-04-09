@@ -111,7 +111,14 @@
   --w-8-twelfths: 66.66667%;
   --w-9-twelfths: 75%;
   --w-10-twelfths: 83.33333%;
-  --w-11-twelfths: 91.66667%; }
+  --w-11-twelfths: 91.66667%;
+  --h-auto: auto;
+  --h-0: 0;
+  --h-25: 25%;
+  --h-50: 50%;
+  --h-75: 75%;
+  --h-100: 100%;
+  --h-screen: 100vw; }
 
 .max-w--auto {
   max-width: auto;
