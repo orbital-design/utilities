@@ -10,9 +10,9 @@ $pointer_events: null !default; // TODO: Create map.
 $resizes: null !default; // TODO: Create map.
 $user_selects: null !default; // TODO: Create map.
 // # SVG
-$fills: null !default; // TODO: Create map.
-$strokes: null !default; // TODO: Create map.
-$stroke_widths: null !default; // TODO: Create map.
+$fills: null !default;
+$strokes: null !default;
+$stroke_widths: null !default;
 // # Typography
 $fluid_typography: null !default;
 $font_families: null !default;
@@ -38,6 +38,18 @@ $breakpoints: (
 // Comment out any maps below this line to prevent css vars or Utility Classes being created from them.
 //===============================================================================================
 
+// Colours
+// # Generates matching CSS Custom Vars in: _css-vars.
+$colours: (
+    // name: ( value, output css var, css var name )
+    white: ( #ffffff, true, 'white' ),
+    black: ( #252525, true, 'black' ),
+    dark-grey: ( #212322, true, 'dark-grey' ),
+    mid-grey: ( #54585a, true, 'mid-grey' ),
+    light-grey: ( #97999b, true, 'light-grey' ),
+    bg-grey: ( #f3f3f3, true, 'bg-grey' )
+);
+
 // Effects - Box Shadow
 // # Generates matching Utility Classes in: effects/_box-shadow.scss
 // # Generates matching CSS Custom Vars in: _css-vars.
@@ -62,6 +74,31 @@ $opacities: ();
     $unit: $i * 5;
 
     $opacities: map-merge( $opacities, ( $unit: ( $value, false, 'opacity--#{$unit}' ) ) );
+}
+
+// SVG - Fill
+// # Generates matching Utility Classes in: svg/_fill.scss
+$fills: (
+    current: (currentColor, false, 'current')
+);
+@each $name, $details in $colours {
+    $fills: map-merge( $fills, ( $name: ( #{nth($details, 1)}, true, #{nth($details, 3)} ) ) );
+}
+
+// SVG - Stroke
+// # Generates matching Utility Classes in: svg/_stroke.scss
+$strokes: (
+    current: (currentColor, false, 'current')
+);
+@each $name, $details in $colours {
+    $strokes: map-merge( $strokes, ( $name: ( #{nth($details, 1)}, true, #{nth($details, 3)} ) ) );
+}
+
+// SVG - Stroke Width
+// # Generates matching Utility Classes in: svg/_stroke-width.scss
+$stroke_widths: ();
+@for $i from 0 through 5 {
+    $stroke_widths: map-merge( $stroke_widths, ( $i: ( $i, false, '' ) ) );
 }
 
 // Typography - Fluid Text Defaults
@@ -166,16 +203,4 @@ $text_decorations: (
     under: ( underline, false, '' ),
     strike: ( line-through, false, '' ),
     none: ( none, false, '' )
-);
-
-// Colours
-// # Generates matching CSS Custom Vars in: _css-vars.
-$colours: (
-    // name: ( value, output css var, css var name )
-    white: ( #ffffff, true, 'white' ),
-    black: ( #252525, true, 'black' ),
-    dark-grey: ( #212322, true, 'dark-grey' ),
-    mid-grey: ( #54585a, true, 'mid-grey' ),
-    light-grey: ( #97999b, true, 'light-grey' ),
-    bg-grey: ( #f3f3f3, true, 'bg-grey' )
 );

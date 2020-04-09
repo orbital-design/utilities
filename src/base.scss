@@ -22,7 +22,7 @@
 
 // # Effects
 // @import 'effects/box-shadow';
-@import 'effects/opacity';
+// @import 'effects/opacity';
 
 // # Interactivity.
 // @import 'interactivity/appearance';
@@ -35,7 +35,7 @@
 // # SVG classes.
 // @import 'svg/fill';
 // @import 'svg/stroke';
-// @import 'svg/stroke-width';
+@import 'svg/stroke-width';
 
 // # Accessibility classes.
 // @import 'accessibility/screen-readers';
