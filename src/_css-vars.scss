@@ -53,6 +53,10 @@
     // # Generates matching Utility Classes in: typography/_font-size.scss
     @include css-var-constructor( $font_sizes );
 
+    // Typography - Font Style
+    // # Generates matching Utility Classes in: typography/_font-style.scss
+    @include css-var-constructor( $font_styles );
+
     // Typography - Font Weights
     // # Generates matching Utility Classes in: typography/_font-weight.scss
     @include css-var-constructor( $font_weights );
@@ -64,6 +68,14 @@
     // Typography - Leading / Line Height
     // # Generates matching Utility Classes in: typography/_line-height.scss
     @include css-var-constructor( $line_heights );
+
+    // Typography - Text Align
+    // # Generates matching Utility Classes in: typography/_text-align.scss
+    @include css-var-constructor( $text_alignments );
+
+    // Typography - Text Decoration
+    // # Generates matching Utility Classes in: typography/_text-decoration.scss
+    @include css-var-constructor( $text_decorations );
 
     // Generate Color Properties
     // # Create matchng utilities for these in: typography/_text-colour.scss
@@ -101,13 +113,17 @@
     // # Generates matching Utility Classes in: interactivity/_user-select.scss
     @include css-var-constructor( $user_selects );
 
+    // Sizing - Width
+    // # Generates matching Utility Classes in: sizing/_width.scss
+    @include css-var-constructor( $widths );
+
     // SVG - Fills
     // # Generates matching Utility Classes in: svg/_fill.scss
-    @include css-var-constructor( $fills );
+    // @include css-var-constructor( $fills );
 
     // SVG - Stroke
     // # Generates matching Utility Classes in: svg/_stroke.scss
-    @include css-var-constructor( $strokes );
+    // @include css-var-constructor( $strokes );
 
     // SVG - Stroke Width
     // # Generates matching Utility Classes in: svg/_stroke-width.scss

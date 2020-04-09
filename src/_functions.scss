@@ -31,9 +31,9 @@
         // ### If is specified, loop through each item in the map.
         @each $name, $details in $map {
             // #### Check whether item should output a var.
-            @if nth( $details, 2 ) == true {
+            @if nth( $details, 4 ) == true {
                 // #### Output var
-                --#{nth($details, 3)}: #{nth($details, 1)};
+                --#{nth($details, 5)}: #{nth($details, 1)};
             }
         }
     }
