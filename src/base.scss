@@ -1,24 +1,16 @@
-// # config file
-@import 'scss-vars';
+// Config/Setup file
+@import 'config';
 
-// # SCSS functions
+// SCSS functions & mixins
 @import 'functions';
 @import 'class-constructor';
 
-// # CSS vars
+// Generate CSS Custom vars
 @import 'css-vars';
 
-// # Typography
-
-@import 'typography/font-family';
-// @import 'typography/font-size';
-// @import 'typography/font-style';
-// @import 'typography/font-weight';
-// @import 'typography/letter-spacing';
-// @import 'typography/line-height';
-// @import 'typography/text-align';
-// @import 'typography/text-colour';
-// @import 'typography/text-decoration';
+// Utility Class Generators
+// # Accessibility classes.
+// @import 'accessibility/screen-readers';
 
 // # Effects
 // @import 'effects/box-shadow';
@@ -40,5 +32,13 @@
 // @import 'svg/stroke';
 // @import 'svg/stroke-width';
 
-// # Accessibility classes.
-// @import 'accessibility/screen-readers';
+// # Typography
+// @import 'typography/font-family';
+// @import 'typography/font-size';
+// @import 'typography/font-style';
+// @import 'typography/font-weight';
+// @import 'typography/letter-spacing';
+// @import 'typography/line-height';
+// @import 'typography/text-align';
+// @import 'typography/text-colour';
+// @import 'typography/text-decoration';

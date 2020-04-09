@@ -140,7 +140,6 @@ $user_selects: (
 // Sizing - width
 // # Generates matching Utility Classes in: sizing/_width.scss
 $widths: (
-//           1             2       3               4       5
 //  int:( value,        class,  classExt        var,    varExt ),
     0:  ( auto,         true,   'auto',         true,   'w-auto' ),
     2:  ( 0,            true,   '0',            true,   'w-0' ),
