@@ -1,42 +1,48 @@
-// Utility Class constructor
-// # Let's create the properties once so we don't keep repeating ourselves.
+// Utility Class Constructor
 @mixin constructor( $prefix, $suffix ) {
 
-    // ### Check if $map has been specified
+    // # Check if $map has been specified
     @if $class_map != null {
 
-        // #### If $map is specified, loop through each item in map.
+        // ## If $map is specified, loop through each item.
         @each $name, $properties in $class_map {
 
-            // ##### Check if item should output a CSS Var.
+            // ### Check if item should output a class.
             @if nth( $properties, 2 ) == true {
 
-                @if $name == 'default' {
-                    .#{$prefix}#{$suffix} {
-                        #{$class_property}: v(#{nth($properties, 3)});
+                // #### Check if item should output a CSS Var.
+                @if nth( $properties, 4 ) == true {
+
+                    // ##### Check if class should be a default.
+                    @if nth( $properties, 3 ) == 'default' {
+
+                        // ###### Construct class with no --{value}
+                        .#{$prefix}#{$suffix} {
+                            #{$class_property}: v(#{nth($properties, 5)});
+                        }
+                    } @else {
+
+                        // ###### Construct class with --{value} with property from map.
+                        .#{$prefix}--#{nth($properties, 3)}#{$suffix} {
+                            #{$class_property}: v(#{nth($properties, 5)});
+                        }
                     }
                 } @else {
-                    // ###### Construct Class with Properties from map.
-                    .#{$prefix}--#{$name}#{$suffix} {
-                        #{$class_property}: v(#{nth($properties, 3)});
+
+                    // ##### Check if class should be a default.
+                    @if nth( $properties, 3 ) == 'default' {
+
+                        // ###### Construct class with no --{value}
+                        .#{$prefix}#{$suffix} {
+                            #{$class_property}: #{nth($properties, 1)};
+                        }
+                    } @else {
+                        // ###### Construct class with --{value} with property from map.
+                        .#{$prefix}--#{nth($properties, 3)}#{$suffix} {
+                            #{$class_property}: #{nth($properties, 1)};
+                        }
                     }
                 }
-
-            } @else {
-
-                @if $name == 'default' {
-                    // ###### Construct Class with Properties from map.
-                    .#{$prefix}#{$suffix} {
-                        #{$class_property}: #{nth($properties, 1)};
-                    }
-                } @else {
-                    // ###### Construct Class with Properties from map.
-                    .#{$prefix}--#{$name}#{$suffix} {
-                        #{$class_property}: #{nth($properties, 1)};
-                    }
-                }
-
-
             }
         }
     }
@@ -70,7 +76,8 @@
         @each $bp_name, $breakpoint in $breakpoints {
 
             // #### Construct each media query when we loop through it.
-            @media (min-width: $breakpoint) {
+            @include mq( $bp_name ) {
+            // @media (min-width: $breakpoint) {
 
                 // ##### Use constructor to build our default classes with breakpoint prefix.
                 @include constructor("#{$bp_name}\\:#{$class_name}", "");
