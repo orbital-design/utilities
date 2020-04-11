@@ -15,6 +15,7 @@
 }
 
 @mixin new-css-var-constructor( $map ) {
+
     // # Check if $map has been specified
     @if $map != null {
 
@@ -25,11 +26,8 @@
             @if $map_type == 'vars' {
 
                 // ## If CSS Var should be output, loop through each item in the map.
-                @each $index, $vars in $map_type_values {
-
-                    @each $var_name, $var_value in $vars {
-                        --#{$var_name}: #{$var_value};
-                    }
+                @each $var_name, $var_value in $map_type_values {
+                    --#{$var_name}: #{$var_value};
                 }
             }
         }

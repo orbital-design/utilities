@@ -51,7 +51,6 @@
     // # Check if $map has been specified
     @if $class_map != null {
 
-
         // Loop through first level of map
         @each $map_type, $map_type_values in $class_map {
 

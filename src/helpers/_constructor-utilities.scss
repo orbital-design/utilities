@@ -1,58 +1,83 @@
 // Utility Class Constructor
-@mixin constructor( $prefix, $suffix ) {
+@mixin constructor( $class_prefix, $class_suffix ) {
+    // Loop through first level of map
+    @each $map_type, $map_type_values in $class_map {
+        // # Check whether item should output a var.
+        @if $map_type == 'classes' {
 
-    // # Check if $map has been specified
-    @if $class_map != null {
+            // If type is 'classes', progress with loop of indexes.
+            @each $class_name, $class_props in $map_type_values {
+                // @warn $index;
+                // Loop through classes inside index.
+                .#{$class_prefix}#{$class_name}#{$class_suffix} {
 
-        // ## If $map is specified, loop through each item.
-        @each $name, $properties in $class_map {
+                @each $property_type, $property_value in $class_props {
+                    // @warn $class_name;
+                    // @warn $css_value;
+                    // @warn $classes;
+                    // Create class.
 
-            // ### Check if item should output a class.
-            @if nth( $properties, 2 ) == true {
-
-                // #### Check if item should output a CSS Var.
-                @if nth( $properties, 4 ) == true {
-
-                    // ##### Check if class should be a default.
-                    @if nth( $properties, 3 ) == 'default' {
-
-                        // ###### Construct class with no --{value}
-                        .#{$prefix}#{$suffix} {
-                            #{$class_property}: v(#{nth($properties, 5)});
-                        }
-                    } @else {
-
-                        // ###### Construct class with --{value} with property from map.
-                        .#{$prefix}--#{nth($properties, 3)}#{$suffix} {
-                            #{$class_property}: v(#{nth($properties, 5)});
-                        }
-                    }
-                } @else {
-
-                    // ##### Check if class should be a default.
-                    @if nth( $properties, 3 ) == 'default' {
-
-                        // ###### Construct class with no --{value}
-                        .#{$prefix}#{$suffix} {
-                            #{$class_property}: #{nth($properties, 1)};
-                        }
-                    } @else {
-                        // ###### Construct class with --{value} with property from map.
-                        .#{$prefix}--#{nth($properties, 3)}#{$suffix} {
-                            #{$class_property}: #{nth($properties, 1)};
-                        }
+                        // Output each attribute line inside class.
+                        #{$property_type}: $property_value;
                     }
                 }
             }
+
         }
     }
+
+    // # Check if $map has been specified
+    // @if $class_map != null {
+
+    //     // ## If $map is specified, loop through each item.
+    //     @each $name, $properties in $class_map {
+
+    //         // ### Check if item should output a class.
+    //         @if nth( $properties, 2 ) == true {
+
+    //             // #### Check if item should output a CSS Var.
+    //             @if nth( $properties, 4 ) == true {
+
+    //                 // ##### Check if class should be a default.
+    //                 @if nth( $properties, 3 ) == 'default' {
+
+    //                     // ###### Construct class with no --{value}
+    //                     .#{$prefix}#{$suffix} {
+    //                         #{$class_property}: v(#{nth($properties, 5)});
+    //                     }
+    //                 } @else {
+
+    //                     // ###### Construct class with --{value} with property from map.
+    //                     .#{$prefix}--#{nth($properties, 3)}#{$suffix} {
+    //                         #{$class_property}: v(#{nth($properties, 5)});
+    //                     }
+    //                 }
+    //             } @else {
+
+    //                 // ##### Check if class should be a default.
+    //                 @if nth( $properties, 3 ) == 'default' {
+
+    //                     // ###### Construct class with no --{value}
+    //                     .#{$prefix}#{$suffix} {
+    //                         #{$class_property}: #{nth($properties, 1)};
+    //                     }
+    //                 } @else {
+    //                     // ###### Construct class with --{value} with property from map.
+    //                     .#{$prefix}--#{nth($properties, 3)}#{$suffix} {
+    //                         #{$class_property}: #{nth($properties, 1)};
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 // # Let's put it altogether
-@mixin class-constructor( $class_name, $class_variants, $class_property, $class_map ){
+@mixin class-constructor( $class_map, $class_variants ){
 
     // ## Use constructor to build your default classes without media queries & variants.
-    @include constructor($class_name, "");
+    @include constructor('', '');
 
     // ## Check if our $variants list includes 'none'.
     @if not index($class_variants, 'none') {
@@ -64,7 +89,7 @@
             @if $variant != 'responsive' {
 
                 // ##### Use constructor to build our variant classes without media queries.
-                @include constructor("#{$variant}\\:#{$class_name}", ":#{$variant}");
+                @include constructor('#{$variant}\\:', ':#{$variant}');
             }
         }
     }
@@ -80,7 +105,7 @@
             // @media (min-width: $breakpoint) {
 
                 // ##### Use constructor to build our default classes with breakpoint prefix.
-                @include constructor("#{$bp_name}\\:#{$class_name}", "");
+                @include constructor('#{$bp_name}\\:', '');
 
                 // ##### We'll loop through the selected variants for this class.
                 @each $variant in $class_variants {
@@ -89,7 +114,7 @@
                     @if $variant != 'responsive' {
 
                         // ####### Use constructor to build our variant classes with breakpoint prefix.
-                        @include constructor("#{$bp_name}\\:#{$variant}\\:#{$class_name}", ":#{$variant}");
+                        @include constructor('#{$bp_name}\\:#{$variant}\\:', ':#{$variant}');
                     }
                 }
             }
