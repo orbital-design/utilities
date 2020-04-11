@@ -1,18 +1,9 @@
 // Generate Utility Classes for controlling the font style of an element.
 // # Use the 'font-style--{value}' utilities to give an element a relative line-height based on its current font-size.
 
-// Please don't change this $class_map.
-// We need this one to be null so we can check against it in the mixin and know we're not using one set previously.
-// Please use the $class_map specified further down.
-$class_map: null !default;
-
-// ## $class_name = string. Set a lowercase string to use as the identifier for your class.
-$class_name: 'font-style';
+// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
+$class_map: $font_style_properties;
 // ## $class_variants = list. Use 'none' if you don't want any added states.
 $class_variants: 'none';
-// ## $class_name = string. Specify property to use for your class.
-$class_property: 'font-style';
-// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
-$class_map: $font_styles;
 
-@include class-constructor( $class_name, $class_variants, $class_property, $class_map );
+@include class-constructor( $class_map, $class_variants );

@@ -2,7 +2,7 @@
 // # Use the 'stroke-{value}' utilities to control the elements stroke color.
 
 // ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
-$class_map: $strokes;
+$class_map: $stroke_color_properties;
 // ## $class_variants = list. Use 'none' if you don't want any added states.
 $class_variants: 'responsive' 'hover' 'focus';
 

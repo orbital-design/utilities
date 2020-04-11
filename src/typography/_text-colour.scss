@@ -1,18 +1,9 @@
 // Generate Utility Classes for controlling the text color of an element.
 // # Use the 'text--{value}' utilities to change the color of text within an element.
 
-// Please don't change this $class_map.
-// We need this one to be null so we can check against it in the mixin and know we're not using one set previously.
-// Please use the $class_map specified further down.
-$class_map: null !default;
-
-// ## $class_name = string. Set a lowercase string to use as the identifier for your class.
-$class_name: 'text';
+// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
+$class_map: $text_color_properties;
 // ## $class_variants = list. Use 'none' if you don't want any added states.
 $class_variants: 'responsive' 'hover' 'focus';
-// ## $class_name = string. Specify property to use for your class.
-$class_property: 'color';
-// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
-$class_map: $colours;
 
-@include class-constructor( $class_name, $class_variants, $class_property, $class_map );
+@include class-constructor( $class_map, $class_variants );

@@ -1,6 +1,6 @@
 :root {
     // Typography - Fluid Text Defaults
-    @include new-css-var-constructor( $fluid_typography );
+    @include css-var-constructor( $fluid_typography );
 
     --fluid-screen: 100vw;
     --fluid-bp: calc((var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) / ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16)));
@@ -47,99 +47,103 @@
 
     // Typography - Font Family
     // # Generates matching Utility Classes in: typography/_font-family.scss
-    @include new-css-var-constructor( $font_families );
+    @include css-var-constructor( $font_family_properties );
 
     // Typography - Font Size
     // # Generates matching Utility Classes in: typography/_font-size.scss
-    @include new-css-var-constructor( $font_sizes );
+    @include css-var-constructor( $font_size_properties );
 
     // Typography - Font Style
     // # Generates matching Utility Classes in: typography/_font-style.scss
-    @include new-css-var-constructor( $font_styles );
+    @include css-var-constructor( $font_style_properties );
 
     // Typography - Font Weights
     // # Generates matching Utility Classes in: typography/_font-weight.scss
-    @include new-css-var-constructor( $font_weights );
+    @include css-var-constructor( $font_weight_properties );
 
     // Typography - Tracking / Letter Spacings
     // # Generates matching Utility Classes in: typography/_letter-spacing.scss
-    @include new-css-var-constructor( $letter_spacings );
+    @include css-var-constructor( $tracking_properties );
 
     // Typography - Leading / Line Height
     // # Generates matching Utility Classes in: typography/_line-height.scss
-    @include new-css-var-constructor( $line_heights );
+    @include css-var-constructor( $leading_properties );
 
     // Typography - Text Align
     // # Generates matching Utility Classes in: typography/_text-align.scss
-    @include new-css-var-constructor( $text_alignments );
+    @include css-var-constructor( $text_align_properties );
+
+    // Typography - Text Colour
+    // # Generates matching Utility Classes in: typography/_text-colour.scss
+    @include css-var-constructor( $text_color_properties );
 
     // Typography - Text Decoration
     // # Generates matching Utility Classes in: typography/_text-decoration.scss
-    @include new-css-var-constructor( $text_decorations );
+    @include css-var-constructor( $text_decoration_properties );
 
     // Generate Color Properties
     // # Create matchng utilities for these in: typography/_text-colour.scss
-    @include new-css-var-constructor( $colours );
+    @include css-var-constructor( $colours );
 
     // Effects - Box Shadow
     // # Generates matching Utility Classes in: effects/_box-shadow.scss
-    @include new-css-var-constructor( $shadow_properties );
+    @include css-var-constructor( $shadow_properties );
 
     // Effects - Opacity
     // # Generates matching Utility Classes in: effects/_opacity.scss
-    @include new-css-var-constructor( $opacities );
+    @include css-var-constructor( $opacity_properties );
 
     // Interactivity - Appearance
     // # Generates matching Utility Classes in: interactivity/_appearance.scss
-    @include new-css-var-constructor( $appearances );
+    @include css-var-constructor( $appearance_properties );
 
     // Interactivity - Cursors
     // # Generates matching Utility Classes in: interactivity/_cursor.scss
-    @include new-css-var-constructor( $cursors );
+    @include css-var-constructor( $cursor_properties );
 
     // Interactivity - Outline
     // # Generates matching Utility Classes in: interactivity/_outline.scss
-    @include new-css-var-constructor( $outlines );
+    @include css-var-constructor( $outline_properties );
 
     // Interactivity - Pointer Events
     // # Generates matching Utility Classes in: interactivity/_pointer-events.scss
-    @include new-css-var-constructor( $pointer_events );
+    @include css-var-constructor( $pointer_event_properties );
 
     // Interactivity - Resize
     // # Generates matching Utility Classes in: interactivity/_resize.scss
-    @include new-css-var-constructor( $resizes );
+    @include css-var-constructor( $resize_properties );
 
     // Interactivity - User Select
     // # Generates matching Utility Classes in: interactivity/_user-select.scss
-    @include new-css-var-constructor( $user_selects );
-
-    // Sizing - Width
-    // # Generates matching Utility Classes in: sizing/_width.scss
-    // # Generates matching Utility Classes in: sizing/_min-width.scss
-    // # Generates matching Utility Classes in: sizing/_max-width.scss
-    @include new-css-var-constructor( $widths );
+    @include css-var-constructor( $user_select_properties );
 
     // Sizing - Height
     // # Generates matching Utility Classes in: sizing/_height.scss
     // # Generates matching Utility Classes in: sizing/_min-height.scss
     // # Generates matching Utility Classes in: sizing/_max-height.scss
-    @include new-css-var-constructor( $heights );
+    @include css-var-constructor( $height_properties );
+
+    // Sizing - Width
+    // # Generates matching Utility Classes in: sizing/_width.scss
+    // # Generates matching Utility Classes in: sizing/_min-width.scss
+    // # Generates matching Utility Classes in: sizing/_max-width.scss
+    @include css-var-constructor( $width_properties );
 
     // Spacing - Padding
     // # Generates matching Utility Classes in: sizing/_height.scss
     // # Generates matching Utility Classes in: sizing/_min-height.scss
     // # Generates matching Utility Classes in: sizing/_max-height.scss
-    @include new-css-var-constructor( $spacing_properties );
+    @include css-var-constructor( $spacing_properties );
 
     // SVG - Fills
     // # Generates matching Utility Classes in: svg/_fill.scss
-    @include new-css-var-constructor( $fills );
+    @include css-var-constructor( $fill_color_properties );
 
     // SVG - Stroke
     // # Generates matching Utility Classes in: svg/_stroke.scss
-    @include new-css-var-constructor( $strokes );
+    @include css-var-constructor( $stroke_color_properties );
 
     // SVG - Stroke Width
     // # Generates matching Utility Classes in: svg/_stroke-width.scss
-    @include new-css-var-constructor( $stroke_widths );
+    @include css-var-constructor( $stroke_width_properties );
 }

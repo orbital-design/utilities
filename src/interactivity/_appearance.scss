@@ -1,18 +1,9 @@
 // Generate Utility Classes for suppressing native form control styling.
 // # Use the 'appearance--{value}' utilities to control the styling of a form element.
 
-// Please don't change this $class_map.
-// We need this one to be null so we can check against it in the mixin and know we're not using one set previously.
-// Please use the $class_map specified further down.
-$class_map: null !default;
-
-// ## $class_name = string. Set a lowercase string to use as the identifier for your class.
-$class_name: 'appearance';
+// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
+$class_map: $appearance_properties;
 // ## $class_variants = list. Use 'none' if you don't want any added states.
 $class_variants: 'none';
-// ## $class_name = string. Specify property to use for your class.
-$class_property: 'appearance';
-// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
-$class_map: $appearances;
 
-@include class-constructor( $class_name, $class_variants, $class_property, $class_map );
+@include class-constructor( $class_map, $class_variants );

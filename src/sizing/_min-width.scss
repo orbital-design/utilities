@@ -1,18 +1,10 @@
 // Generate Utility Classes for setting the minimum width of an element
 // # Use the 'min-w--{value}' utilities to control the min-width of an element.
 
-// Please don't change this $class_map.
-// We need this one to be null so we can check against it in the mixin and know we're not using one set previously.
-// Please use the $class_map specified further down.
-$class_map: null !default;
+// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
+$class_map: $min_width_properties;
 
-// ## $class_name = string. Set a lowercase string to use as the identifier for your class.
-$class_name: 'min-w';
 // ## $class_variants = list. Use 'none' if you don't want any added states.
 $class_variants: 'responsive';
-// ## $class_name = string. Specify property to use for your class.
-$class_property: 'min-width';
-// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
-$class_map: $widths;
 
-@include class-constructor( $class_name, $class_variants, $class_property, $class_map );
+@include class-constructor( $class_map, $class_variants );

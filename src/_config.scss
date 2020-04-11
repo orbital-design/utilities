@@ -55,14 +55,14 @@ $shadow_properties: (
 
 // Effects - Opacity
 // # Generates matching Utility Classes in: effects/_opacity.scss
-$opacities: ( 'classes': () );
+$opacity_properties: ( 'classes': () );
 @for $i from 0 through 20 {
-    $opacities: map-deep-set( $opacities, 'classes', 'opacity-#{($i*5)}', ('opacity': ( $i * 5 ) / 100) );
+    $opacity_properties: map-deep-set( $opacity_properties, 'classes', 'opacity-#{($i*5)}', ('opacity': ( $i * 5 ) / 100) );
 }
 
 // Interactivity - Appearance
 // # Generates matching Utility Classes in: interactivity/_appearance.scss
-$appearances: (
+$appearance_properties: (
     'classes': (
         'apperance-none':       ( 'appearance': 'none' )
     )
@@ -70,7 +70,7 @@ $appearances: (
 
 // Interactivity - Cursors
 // # Generates matching Utility Classes in: interactivity/_cursor.scss
-$cursors: (
+$cursor_properties: (
     'classes': (
         'cursor-auto':          ( 'cursor': 'auto' ),
         'cursor-default':       ( 'cursor': 'default' ),
@@ -84,7 +84,7 @@ $cursors: (
 
 // Interactivity - Outline
 // # Generates matching Utility Classes in: interactivity/_outline.scss
-$outlines: (
+$outline_properties: (
     'classes': (
         'outline-none':         ( 'outline': 'none' )
     )
@@ -92,7 +92,7 @@ $outlines: (
 
 // Interactivity - Pointer Events
 // # Generates matching Utility Classes in: interactivity/_pointer-events.scss
-$pointer_events: (
+$pointer_event_properties: (
     'classes': (
         'pointer-none':         ( 'pointer-events': 'none' ),
         'pointer-auto':         ( 'pointer-events': 'auto' )
@@ -101,7 +101,7 @@ $pointer_events: (
 
 // Interactivity - Resize
 // # Generates matching Utility Classes in: interactivity/_resize.scss
-$resizes: (
+$resize_properties: (
     'classes': (
         'resize-both':          ( 'resize': 'both' ),
         'resize-none':          ( 'resize': 'none' ),
@@ -112,7 +112,7 @@ $resizes: (
 
 // Interactivity - User Select
 // # Generates matching Utility Classes in: interactivity/_user-select.scss
-$user_selects: (
+$user_select_properties: (
     'classes': (
         'u-select-none':        ( 'user-select': 'none' ),
         'u-select-text':        ( 'user-select': 'text' ),
@@ -123,7 +123,7 @@ $user_selects: (
 
 // Sizing - width
 // # Generates matching Utility Classes in: sizing/_width.scss
-$widths: (
+$width_properties: (
     'vars': (
         'w-auto':           auto,
         'w-0':              0,
@@ -166,9 +166,27 @@ $widths: (
     )
 );
 
+// Sizing - Max Width
+// # Generates matching Utility Classes in: sizing/_max-width.scss
+$max_width_properties: ( 'classes': () );
+@each $class_name, $class_props in map-get($width_properties, 'classes') {
+    @each $property, $var in $class_props {
+        $max_width_properties: map-deep-set( $max_width_properties, 'classes', 'max-#{$class_name}', ('max-#{$property}': $var) );
+    }
+}
+
+// Sizing - Min Width
+// # Generates matching Utility Classes in: sizing/_min-width.scss
+$min_width_properties: ( 'classes': () );
+@each $class_name, $class_props in map-get($width_properties, 'classes') {
+    @each $property, $var in $class_props {
+        $min_width_properties: map-deep-set( $min_width_properties, 'classes', 'min-#{$class_name}', ('min-#{$property}': $var) );
+    }
+}
+
 // Sizing - Height
 // # Generates matching Utility Classes in: sizing/_height.scss
-$heights: (
+$height_properties: (
     'vars': (
         'h-auto':           auto,
         'h-0':              0,
@@ -188,6 +206,20 @@ $heights: (
         'h-screen':         ( 'height': v('h-screen') )
     )
 );
+
+// Sizing - Max Height
+// # Generates matching Utility Classes in: sizing/_max-height.scss
+$max_height_properties: ( 'classes': () );
+@each $name, $value in map-get($height_properties, 'vars') {
+    $max_height_properties: map-deep-set( $max_height_properties, 'classes', 'max-#{$name}', ('max-height': $value) );
+}
+
+// Sizing - Min Height
+// # Generates matching Utility Classes in: sizing/_min-height.scss
+$min_height_properties: ( 'classes': () );
+@each $name, $value in map-get($height_properties, 'vars') {
+    $min_height_properties: map-deep-set( $min_height_properties, 'classes', 'min-#{$name}', ('min-height': $value) );
+}
 
 // Spacing - Spacing Units
 // # Generates matching CSS Custom Vars in: _css-vars.
@@ -216,23 +248,23 @@ $padding_properties: ( 'classes': () );
 
 // SVG - Fill
 // # Generates matching Utility Classes in: svg/_fill.scss
-$fills: ( 'classes': ( 'fill-current': ( 'fill': 'currentColor' ) ) );
+$fill_color_properties: ( 'classes': ( 'fill-current': ( 'fill': 'currentColor' ) ) );
 @each $name, $value in map-get($colours, 'vars') {
-    $fills: map-deep-set( $fills, 'classes', 'fill-#{$name}', ('fill': $value) );
+    $fill_color_properties: map-deep-set( $fill_color_properties, 'classes', 'fill-#{$name}', ('fill': $value) );
 }
 
 // SVG - Stroke Colors
 // # Generates matching Utility Classes in: svg/_stroke.scss
-$strokes: ( 'classes': ( 'stroke-current': ( 'stroke': 'currentColor' ) ) );
+$stroke_color_properties: ( 'classes': ( 'stroke-current': ( 'stroke': 'currentColor' ) ) );
 @each $name, $value in map-get($colours, 'vars') {
-    $strokes: map-deep-set( $strokes, 'classes', 'stroke-#{$name}', ('stroke': $value) );
+    $stroke_color_properties: map-deep-set( $stroke_color_properties, 'classes', 'stroke-#{$name}', ('stroke': $value) );
 }
 
 // SVG - Stroke Width
 // # Generates matching Utility Classes in: svg/_stroke-width.scss
-$stroke_widths: ( 'classes': () );
+$stroke_width_properties: ( 'classes': () );
 @for $i from 0 through 5 {
-    $stroke_widths: map-deep-set( $stroke_widths, 'classes', 'stroke-w-#{$i}', ('stroke-width': $i) );
+    $stroke_width_properties: map-deep-set( $stroke_width_properties, 'classes', 'stroke-w-#{$i}', ('stroke-width': $i) );
 }
 
 // Typography - Fluid Text Defaults
@@ -251,7 +283,7 @@ $fluid_typography: (
 // Typography - Font Family
 // # Generates matching Utility Classes in: typography/_font-family.scss
 // # Generates matching CSS Custom Vars in: _css-vars.
-$font_families: (
+$font_family_properties: (
     'vars': (
         'ff-sans':      'Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif',
         'ff-serif':     'Georgia, Cambria, "Times New Roman", Times, serif'
@@ -265,30 +297,30 @@ $font_families: (
 // Typography - Font Size
 // # Generates matching Utility Classes in: typography/_font-size.scss
 // # Generates matching CSS Custom Vars in: _css-vars.
-$font_sizes: (
+$font_size_properties: (
     'vars': (
-        'fs-sm':        calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp))),
-        'fs-base':      calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp))),
-        'fs-md':        calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp))),
-        'fs-lg':        calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp))),
-        'fs-xl':        calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp))),
-        'fs-2xl':       calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp))),
-        'fs-3xl':       calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)))
+        'fs-sm':        calc( ((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp)) ),
+        'fs-base':      calc( ((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)) ),
+        'fs-md':        calc( ((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)) ),
+        'fs-lg':        calc( ((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)) ),
+        'fs-xl':        calc( ((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)) ),
+        'fs-2xl':       calc( ((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)) ),
+        'fs-3xl':       calc( ((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)) )
     ),
     'classes': (
-        'font-sm',      ( 'font-size': v('fs-sm') ),
-        'font-base',    ( 'font-size': v('fs-base') ),
-        'font-md',      ( 'font-size': v('fs-md') ),
-        'font-lg',      ( 'font-size': v('fs-lg') ),
-        'font-xl',      ( 'font-size': v('fs-xl') ),
-        'font-2xl',     ( 'font-size': v('fs-2xl') ),
-        'font-3xl',     ( 'font-size': v('fs-3xl') )
+        'font-sm':      ( 'font-size': v('fs-sm') ),
+        'font-base':    ( 'font-size': v('fs-base') ),
+        'font-md':      ( 'font-size': v('fs-md') ),
+        'font-lg':      ( 'font-size': v('fs-lg') ),
+        'font-xl':      ( 'font-size': v('fs-xl') ),
+        'font-2xl':     ( 'font-size': v('fs-2xl') ),
+        'font-3xl':     ( 'font-size': v('fs-3xl') )
     )
 );
 
 // Typography - Font Style
 // # Generates matching Utility Classes in: typography/_font-style.scss
-$font_styles: (
+$font_style_properties: (
     'classes': (
         'font-style-normal':    ( 'font-style': 'normal' ),
         'font-style-italic':    ( 'font-style': 'italic' )
@@ -298,23 +330,23 @@ $font_styles: (
 // Typography - Font Weights
 // # Generates matching Utility Classes in: typography/_font-weight.scss
 // # Generates matching CSS Custom Vars in: _css-vars.
-$font_weights: (
+$font_weight_properties: (
     'vars': (
         'fw-light':         200,
         'fw-normal':        400,
         'fw-bold':          600
     ),
     'classes': (
-        'font-light':       ( 'font-weight': v('ff-light') ),
-        'font-normal':      ( 'font-weight': v('ff-normal') ),
-        'font-bold':        ( 'font-weight': v('ff-bold') )
+        'font-light':       ( 'font-weight': v('fw-light') ),
+        'font-normal':      ( 'font-weight': v('fw-normal') ),
+        'font-bold':        ( 'font-weight': v('fw-bold') )
     )
 );
 
 // Typography - Tracking / Letter Spacings
 // # Generates matching Utility Classes in: typography/_letter-spacing.scss
 // # Generates matching CSS Custom Vars in: _css-vars.
-$letter_spacings: (
+$tracking_properties: (
     'vars': (
         'tracking-tightest':    -0.1em,
         'tracking-tighter':     -0.05em,
@@ -325,20 +357,20 @@ $letter_spacings: (
         'tracking-widest':      0.1em
     ),
     'classes': (
-        'tracking-tightest',    ( 'letter-spacing': v('tracking-tightest') ),
-        'tracking-tighter',     ( 'letter-spacing': v('tracking-tighter') ),
-        'tracking-tight',       ( 'letter-spacing': v('tracking-tight') ),
-        'tracking-normal',      ( 'letter-spacing': v('tracking-normal') ),
-        'tracking-wide',        ( 'letter-spacing': v('tracking-wide') ),
-        'tracking-wider',       ( 'letter-spacing': v('tracking-wider') ),
-        'tracking-widest',      ( 'letter-spacing': v('tracking-widest') )
+        'tracking-tightest':    ( 'letter-spacing': v('tracking-tightest') ),
+        'tracking-tighter':     ( 'letter-spacing': v('tracking-tighter') ),
+        'tracking-tight':       ( 'letter-spacing': v('tracking-tight') ),
+        'tracking-normal':      ( 'letter-spacing': v('tracking-normal') ),
+        'tracking-wide':        ( 'letter-spacing': v('tracking-wide') ),
+        'tracking-wider':       ( 'letter-spacing': v('tracking-wider') ),
+        'tracking-widest':      ( 'letter-spacing': v('tracking-widest') )
     )
 );
 
 // Typography - Leading / Line Height
 // # Generates matching Utility Classes in: typography/_line-height.scss
 // # Generates matching CSS Custom Vars in: _css-vars.
-$line_heights: (
+$leading_properties: (
     'vars': (
         'leading-none':     1,
         'leading-tight':    1.25,
@@ -359,7 +391,7 @@ $line_heights: (
 
 // Typography - Text Align
 // # Generates matching Utility Classes in: typography/_text-align.scss
-$text_alignments: (
+$text_align_properties: (
     'classes': (
         'text-left':    ( 'text-align': 'left' ),
         'text-center':  ( 'text-align': 'center' ),
@@ -368,9 +400,16 @@ $text_alignments: (
     )
 );
 
+// Typography - Text Colors
+// # Generates matching Utility Classes in: typography/_text-colour.scss
+$text_color_properties: ( 'classes': () );
+@each $name, $value in map-get($colours, 'vars') {
+    $text_color_properties: map-deep-set( $text_color_properties, 'classes', 'text-#{$name}', ('color': v($name) ) );
+}
+
 // Typography - Text Decoration
 // # Generates matching Utility Classes in: typography/_text-decoration.scss
-$text_decorations: (
+$text_decoration_properties: (
     'classes': (
         'text-under':   ( 'text-decoration': 'underline' ),
         'text-strike':  ( 'text-decoration': 'line-through' ),

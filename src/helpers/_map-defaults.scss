@@ -4,21 +4,28 @@
 
 // - - - - - - - - - -
 
+// # Colours
+$colours: null !default;
+
 // # Effects
-$box_shadows: null !default;
-$opacities: null !default;
+$shadow_properties: null !default;
+$opacity_properties: null !default;
 
 // # Interactivity
-$appearances: null !default;
-$cursors: null !default;
-$outlines: null !default;
-$pointer_events: null !default;
-$resizes: null !default;
-$user_selects: null !default;
+$appearance_properties: null !default;
+$cursor_properties: null !default;
+$outline_properties: null !default;
+$pointer_event_properties: null !default;
+$resize_properties: null !default;
+$user_select_properties: null !default;
 
 // # Sizing
-$widths: null !default;
-$heights: null !default;
+$height_properties: null !default;
+$max_height_properties: null !default;
+$min_height_properties: null !default;
+$width_properties: null !default;
+$max_width_properties: null !default;
+$min_width_properties: null !default;
 
 // # Spacing
 $spacing_properties: null !default;
@@ -26,20 +33,18 @@ $margin_properties: null !default;
 $padding_properties: null !default;
 
 // # SVG
-$fills: null !default;
-$strokes: null !default;
-$stroke_widths: null !default;
+$fill_color_properties: null !default;
+$stroke_color_properties: null !default;
+$stroke_width_properties: null !default;
 
 // # Typography
 $fluid_typography: null !default;
-$font_families: null !default;
-$font_sizes: null !default;
-$font_styles: null !default;
-$font_weights: null !default;
-$letter_spacings: null !default;
-$line_heights: null !default;
-$text_alignments: null !default;
-$text_decorations: null !default;
-
-// # Colours
-$colours: null !default;
+$font_family_properties: null !default;
+$font_size_properties: null !default;
+$font_style_properties: null !default;
+$font_weight_properties: null !default;
+$tracking_properties: null !default;
+$leading_properties: null !default;
+$text_align_properties: null !default;
+$text_color_properties: null !default;
+$text_decoration_properties: null !default;

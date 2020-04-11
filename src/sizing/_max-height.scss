@@ -1,18 +1,9 @@
 // Generate Utility Classes for setting the maximum height of an element
 // # Use the 'max-h--{value}' utilities to control the max-height of an element.
 
-// Please don't change this $class_map.
-// We need this one to be null so we can check against it in the mixin and know we're not using one set previously.
-// Please use the $class_map specified further down.
-$class_map: null !default;
-
-// ## $class_name = string. Set a lowercase string to use as the identifier for your class.
-$class_name: 'max-h';
+// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
+$class_map: $max_height_properties;
 // ## $class_variants = list. Use 'none' if you don't want any added states.
 $class_variants: 'responsive';
-// ## $class_name = string. Specify property to use for your class.
-$class_property: 'max-height';
-// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
-$class_map: $heights;
 
-@include class-constructor( $class_name, $class_variants, $class_property, $class_map );
+@include class-constructor( $class_map, $class_variants );
