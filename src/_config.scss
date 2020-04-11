@@ -50,12 +50,12 @@ $shadow_properties: (
         'shadow-inner':     ( 'box-shadow':   v('shadow-inner') ),
         'shadow-outline':   ( 'box-shadow':   v('shadow-outline') ),
         'shadow-none':      ( 'box-shadow':   v('shadow-none') )
-    ),
+    )
 );
 
 // Effects - Opacity
 // # Generates matching Utility Classes in: effects/_opacity.scss
-$opacities: ( 'vars': (), 'classes': () );
+$opacities: ( 'classes': () );
 @for $i from 0 through 20 {
     $opacities: map-deep-set( $opacities, 'classes', 'opacity-#{($i*5)}', ('opacity': ( $i * 5 ) / 100) );
 }
@@ -63,7 +63,6 @@ $opacities: ( 'vars': (), 'classes': () );
 // Interactivity - Appearance
 // # Generates matching Utility Classes in: interactivity/_appearance.scss
 $appearances: (
-    'vars': (),
     'classes': (
         'apperance-none':       ( 'appearance': 'none' )
     )
@@ -72,7 +71,6 @@ $appearances: (
 // Interactivity - Cursors
 // # Generates matching Utility Classes in: interactivity/_cursor.scss
 $cursors: (
-    'vars': (),
     'classes': (
         'cursor-auto':          ( 'cursor': 'auto' ),
         'cursor-default':       ( 'cursor': 'default' ),
@@ -87,7 +85,6 @@ $cursors: (
 // Interactivity - Outline
 // # Generates matching Utility Classes in: interactivity/_outline.scss
 $outlines: (
-    'vars': (),
     'classes': (
         'outline-none':         ( 'outline': 'none' )
     )
@@ -96,7 +93,6 @@ $outlines: (
 // Interactivity - Pointer Events
 // # Generates matching Utility Classes in: interactivity/_pointer-events.scss
 $pointer_events: (
-    'vars': (),
     'classes': (
         'pointer-none':         ( 'pointer-events': 'none' ),
         'pointer-auto':         ( 'pointer-events': 'auto' )
@@ -106,7 +102,6 @@ $pointer_events: (
 // Interactivity - Resize
 // # Generates matching Utility Classes in: interactivity/_resize.scss
 $resizes: (
-    'vars': (),
     'classes': (
         'resize-both':          ( 'resize': 'both' ),
         'resize-none':          ( 'resize': 'none' ),
@@ -118,7 +113,6 @@ $resizes: (
 // Interactivity - User Select
 // # Generates matching Utility Classes in: interactivity/_user-select.scss
 $user_selects: (
-    'vars': (),
     'classes': (
         'u-select-none':        ( 'user-select': 'none' ),
         'u-select-text':        ( 'user-select': 'text' ),
@@ -205,20 +199,19 @@ $spacing_properties: (
         'spacing-0':    rem-calc($spacing_default * 0),
         'spacing-1':    rem-calc($spacing_default * 1),
         'spacing-2':    rem-calc($spacing_default * 2)
-    ),
-    'classes': ()
+    )
 );
 
 // Spacing - Margin
 // # Generates matching Utility Classes in: spacing/_margin.scss
 // # Creates the 'classes' map from the '$spacing_properties' map.
-$margin_properties: ( 'vars': (), 'classes': () );
+$margin_properties: ( 'classes': () );
 @include spacing-map-constructor( $spacing_properties, 'm', 'margin' );
 
 // Spacing - Padding
 // # Generates matching Utility Classes in: spacing/_padding.scss
 // # Creates the 'classes' map from the '$spacing_properties' map.
-$padding_properties: ( 'vars': (), 'classes': () );
+$padding_properties: ( 'classes': () );
 @include spacing-map-constructor( $spacing_properties, 'p', 'padding' );
 
 // SVG - Fill
@@ -237,7 +230,7 @@ $strokes: ( 'classes': ( 'stroke-current': ( 'stroke': 'currentColor' ) ) );
 
 // SVG - Stroke Width
 // # Generates matching Utility Classes in: svg/_stroke-width.scss
-$stroke_widths: ( 'vars': (), 'classes': () );
+$stroke_widths: ( 'classes': () );
 @for $i from 0 through 5 {
     $stroke_widths: map-deep-set( $stroke_widths, 'classes', 'stroke-w-#{$i}', ('stroke-width': $i) );
 }
@@ -252,8 +245,7 @@ $fluid_typography: (
         'fluid-max-size':   19,
         'fluid-min-ratio':  1.125,
         'fluid-max-ratio':  1.2
-    ),
-    'classes': ()
+    )
 );
 
 // Typography - Font Family
@@ -297,7 +289,6 @@ $font_sizes: (
 // Typography - Font Style
 // # Generates matching Utility Classes in: typography/_font-style.scss
 $font_styles: (
-    'vars': (),
     'classes': (
         'font-style-normal':    ( 'font-style': 'normal' ),
         'font-style-italic':    ( 'font-style': 'italic' )
@@ -369,7 +360,6 @@ $line_heights: (
 // Typography - Text Align
 // # Generates matching Utility Classes in: typography/_text-align.scss
 $text_alignments: (
-    'vars': (),
     'classes': (
         'text-left':    ( 'text-align': 'left' ),
         'text-center':  ( 'text-align': 'center' ),
@@ -381,7 +371,6 @@ $text_alignments: (
 // Typography - Text Decoration
 // # Generates matching Utility Classes in: typography/_text-decoration.scss
 $text_decorations: (
-    'vars': (),
     'classes': (
         'text-under':   ( 'text-decoration': 'underline' ),
         'text-strike':  ( 'text-decoration': 'line-through' ),

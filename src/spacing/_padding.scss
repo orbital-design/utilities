@@ -1,17 +1,9 @@
 // Generate Utility Classes for controlling the padding of an element
 // # Use the 'p-{size}', p{y|x|t|r|b|l}-{size}, utilities to control the padding of an element.
 
-// Please don't change this $class_map.
-// We need this one to be null so we can check against it in the mixin and know we're not using one set previously.
-// Please use the $class_map specified further down.
-$class_map: null !default;
-
 // ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
 $class_map: $padding_properties;
 // ## $class_variants = list. Use 'none' if you don't want any added states.
 $class_variants: 'responsive';
-// ## $class_name = string. Set a lowercase string to use as the identifier for your class.
-$class_name: 'p';
 
-// @include class-constructor( $class_name, $class_variants, $class_property, $class_map );
-@include spacing-utility-spacing-class-constructor( $class_map, $class_variants, $class_name );
+@include class-constructor( $class_map, $class_variants );
