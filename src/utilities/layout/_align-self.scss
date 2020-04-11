@@ -1,0 +1,9 @@
+// Generate Utility Classes for controlling how an individual flex item is positioned along its container's cross axis.
+// # Use the 'self-{value}' utilities to control how an individual flex item is positioned along its container's cross axis.
+
+// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
+$class_map: $align_self_properties;
+// ## $class_variants = list. Use 'none' if you don't want any added states.
+$class_variants: 'responsive';
+
+@include class-constructor( $class_map, $class_variants );

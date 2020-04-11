@@ -1,0 +1,9 @@
+// Generate Utility Classes for controlling how flex items are positioned along a container's cross axis
+// # Use the 'items-{value}' utilities to control how flex items are positioned along a container's cross axis
+
+// ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
+$class_map: $align_items_properties;
+// ## $class_variants = list. Use 'none' if you don't want any added states.
+$class_variants: 'responsive';
+
+@include class-constructor( $class_map, $class_variants );

@@ -4,6 +4,10 @@
 
 // - - - - - - - - - -
 
+// Additional CSS Vars
+// # Output in the :root of the main stylesheet
+$custom_css_vars: null !default;
+
 // # Colours
 $colours: null !default;
 
@@ -20,11 +24,11 @@ $resize_properties: null !default;
 $user_select_properties: null !default;
 
 // # Layout
-$flex_direction_properties: null !default;
-$flex_wrap_properties: null !default;
 $align_content_properties: null !default;
 $align_items_properties: null !default;
 $align_self_properties: null !default;
+$flex_direction_properties: null !default;
+$flex_wrap_properties: null !default;
 $justify_content_properties: null !default;
 $order_properties: null !default;
 
