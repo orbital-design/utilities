@@ -119,9 +119,9 @@
   --h-50: 50%;
   --h-75: 75%;
   --h-full: 100%;
-  --h-screen: 100vw;
-  --spacing-0: 0;
-  --spacing-1: 5px;
-  --spacing-2: 10px; }
+  --h-screen: 100vh;
+  --spacing-0: 0rem;
+  --spacing-1: 0.3125rem;
+  --spacing-2: 0.625rem; }
 
 /*# sourceMappingURL=base.css.map */
