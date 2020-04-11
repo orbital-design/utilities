@@ -133,11 +133,11 @@
 
     // SVG - Fills
     // # Generates matching Utility Classes in: svg/_fill.scss
-    // @include new-css-var-constructor( $fills );
+    @include new-css-var-constructor( $fills );
 
     // SVG - Stroke
     // # Generates matching Utility Classes in: svg/_stroke.scss
-    // @include new-css-var-constructor( $strokes );
+    @include new-css-var-constructor( $strokes );
 
     // SVG - Stroke Width
     // # Generates matching Utility Classes in: svg/_stroke-width.scss
