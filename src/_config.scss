@@ -14,14 +14,13 @@ $breakpoints: (
 // # Generates matching CSS Custom Vars in: _css-vars.
 $colours: (
     'vars': (
-        0: ( 'white': #ffffff ),
-        1: ( 'black': #252525 ),
-        2: ( 'dark-grey': #212322 ),
-        3: ( 'mid-grey': #54585a ),
-        4: ( 'light-grey': #97999b ),
-        5: ( 'bg-grey': #f3f3f3 )
-    ),
-    'classes': ()
+        'white':        #ffffff,
+        'black':        #252525,
+        'dark-grey':    #212322,
+        'mid-grey':     #54585a,
+        'light-grey':   #97999b,
+        'bg-grey':      #f3f3f3
+    )
 );
 
 // Effects - Box Shadow
@@ -29,28 +28,28 @@ $colours: (
 // # Generates matching CSS Custom Vars in: _css-vars.
 $shadow_properties: (
     'vars': (
-        0:  ( 'shadow-xs':      '0 0 0 1px rgba(0, 0, 0, 0.05)' ),
-        1:  ( 'shadow-sm':      '0 1px 2px 0 rgba(0, 0, 0, 0.05)' ),
-        2:  ( 'shadow-base':    '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)' ),
-        3:  ( 'shadow-md':      '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' ),
-        4:  ( 'shadow-lg':      '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' ),
-        5:  ( 'shadow-xl':      '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' ),
-        6:  ( 'shadow-2xl':     '0 25px 50px -12px rgba(0, 0, 0, 0.25)' ),
-        7:  ( 'shadow-inner':   'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)' ),
-        8:  ( 'shadow-outline': '0 0 0 3px rgba(66, 153, 225, 0.5)' ),
-        9:  ( 'shadow-none':    'none' )
+        'shadow-xs':        '0 0 0 1px rgba(0, 0, 0, 0.05)',
+        'shadow-sm':        '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        'shadow-base':      '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        'shadow-md':        '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'shadow-lg':        '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        'shadow-xl':        '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        'shadow-2xl':       '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+        'shadow-inner':     'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+        'shadow-outline':   '0 0 0 3px rgba(66, 153, 225, 0.5)',
+        'shadow-none':      'none'
     ),
     'classes': (
-        0:  ( 'shadow-xs':      '0 0 0 1px rgba(0, 0, 0, 0.05)' ),
-        1:  ( 'shadow-sm':      '0 1px 2px 0 rgba(0, 0, 0, 0.05)' ),
-        2:  ( 'shadow-base':    '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)' ),
-        3:  ( 'shadow-md':      '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' ),
-        4:  ( 'shadow-lg':      '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' ),
-        5:  ( 'shadow-xl':      '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' ),
-        6:  ( 'shadow-2xl':     '0 25px 50px -12px rgba(0, 0, 0, 0.25)' ),
-        7:  ( 'shadow-inner':   'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)' ),
-        8:  ( 'shadow-outline': '0 0 0 3px rgba(66, 153, 225, 0.5)' ),
-        9:  ( 'shadow-none':    'none' )
+        'shadow-xs':        ( 'box-shadow':   v('shadow-xs') ),
+        'shadow-sm':        ( 'box-shadow':   v('shadow-sm') ),
+        'shadow-base':      ( 'box-shadow':   v('shadow-base') ),
+        'shadow-md':        ( 'box-shadow':   v('shadow-md') ),
+        'shadow-lg':        ( 'box-shadow':   v('shadow-lg') ),
+        'shadow-xl':        ( 'box-shadow':   v('shadow-xl') ),
+        'shadow-2xl':       ( 'box-shadow':   v('shadow-2xl') ),
+        'shadow-inner':     ( 'box-shadow':   v('shadow-inner') ),
+        'shadow-outline':   ( 'box-shadow':   v('shadow-outline') ),
+        'shadow-none':      ( 'box-shadow':   v('shadow-none') )
     ),
 );
 
@@ -63,7 +62,9 @@ $opacities: ( 'vars': (), 'classes': () );
 
     $opacities: map-merge(
         $opacities, (
-            'classes': ( $i: ( 'opacity-#{$unit}': $value ) )
+            'classes': (
+                'opacity-#{$unit}':     ( 'opacity':    $value )
+            )
         )
     );
 }
@@ -73,7 +74,7 @@ $opacities: ( 'vars': (), 'classes': () );
 $appearances: (
     'vars': (),
     'classes': (
-        0: ( 'apperance-none':      'none' )
+        'apperance-none':       ( 'appearance': 'none' )
     )
 );
 
@@ -82,13 +83,13 @@ $appearances: (
 $cursors: (
     'vars': (),
     'classes': (
-        0:  ( 'cursor-auto',        'auto' ),
-        1:  ( 'cursor-default',     'default' ),
-        2:  ( 'cursor-pointer',     'pointer' ),
-        3:  ( 'cursor-wait',        'wait' ),
-        4:  ( 'cursor-text',        'text' ),
-        5:  ( 'cursor-move',        'move' ),
-        6:  ( 'cursor-not-allowed', 'not-allowed' )
+        'cursor-auto':          ( 'cursor': 'auto' ),
+        'cursor-default':       ( 'cursor': 'default' ),
+        'cursor-pointer':       ( 'cursor': 'pointer' ),
+        'cursor-wait':          ( 'cursor': 'wait' ),
+        'cursor-text':          ( 'cursor': 'text' ),
+        'cursor-move':          ( 'cursor': 'move' ),
+        'cursor-not-allowed':   ( 'cursor': 'not-allowed' )
     )
 );
 
@@ -97,7 +98,7 @@ $cursors: (
 $outlines: (
     'vars': (),
     'classes': (
-        0:  ( 'outline-none':       'none' ),
+        'outline-none':         ( 'outline': 'none' )
     )
 );
 
@@ -106,8 +107,8 @@ $outlines: (
 $pointer_events: (
     'vars': (),
     'classes': (
-        0:  ( 'pointer-none':       'none' ),
-        1:  ( 'pointer-auto':       'auto' )
+        'pointer-none':         ( 'pointer-events': 'none' ),
+        'pointer-auto':         ( 'pointer-events': 'auto' )
     )
 );
 
@@ -116,10 +117,10 @@ $pointer_events: (
 $resizes: (
     'vars': (),
     'classes': (
-        0:  ( 'resize-both':        'both' ),
-        1:  ( 'resize-none':        'none' ),
-        2:  ( 'resize-y':           'vertical' ),
-        3:  ( 'resize-x':           'horizontal' )
+        'resize-both':          ( 'resize': 'both' ),
+        'resize-none':          ( 'resize': 'none' ),
+        'resize-y':             ( 'resize': 'vertical' ),
+        'resize-x':             ( 'resize': 'horizontal' )
     )
 );
 
@@ -128,10 +129,10 @@ $resizes: (
 $user_selects: (
     'vars': (),
     'classes': (
-        0:  ( 'u-select-none':        'none' ),
-        1:  ( 'u-select-text':        'text' ),
-        2:  ( 'u-select-all':         'all' ),
-        3:  ( 'u-select-auto':        'auto' )
+        'u-select-none':        ( 'user-select': 'none' ),
+        'u-select-text':        ( 'user-select': 'text' ),
+        'u-select-all':         ( 'user-select': 'all' ),
+        'u-select-auto':        ( 'user-select': 'auto' )
     )
 );
 
@@ -139,44 +140,44 @@ $user_selects: (
 // # Generates matching Utility Classes in: sizing/_width.scss
 $widths: (
     'vars': (
-        0:  ( 'w-auto':         auto       ),
-        1:  ( 'w-0':            0          ),
-        2:  ( 'w-25':           25%        ),
-        3:  ( 'w-50':           50%        ),
-        4:  ( 'w-75':           75%        ),
-        5:  ( 'w-full':         100%       ),
-        6:  ( 'w-screen':       100vw      ),
-        7:  ( 'w-1-third':      33.333333% ),
-        8:  ( 'w-2-thirds':     66.666667% ),
-        9:  ( 'w-1-fifth':      20%        ),
-        10: ( 'w-2-fifths':     40%        ),
-        11: ( 'w-3-fifths':     60%        ),
-        12: ( 'w-4-fifths':     80%        ),
-        13: ( 'w-1-sixth':      16.666667% ),
-        14: ( 'w-2-sixths':     33.333333% ),
-        15: ( 'w-3-sixths':     50%        ),
-        16: ( 'w-4-sixths':     66.666667% ),
-        17: ( 'w-5-sixths':     83.333333% ),
-        18: ( 'w-1-twelfth':    8.333333%  ),
-        19: ( 'w-2-twelfths':   16.666667% ),
-        20: ( 'w-3-twelfths':   25%        ),
-        21: ( 'w-4-twelfths':   33.333333% ),
-        22: ( 'w-5-twelfths':   41.666667% ),
-        23: ( 'w-6-twelfths':   50%        ),
-        24: ( 'w-7-twelfths':   58.333333% ),
-        25: ( 'w-8-twelfths':   66.666667% ),
-        26: ( 'w-9-twelfths':   75%        ),
-        27: ( 'w-10-twelfths':  83.333333% ),
-        28: ( 'w-11-twelfths':  91.666667% )
+        'w-auto':           auto,
+        'w-0':              0,
+        'w-25':             25%,
+        'w-50':             50%,
+        'w-75':             75%,
+        'w-full':           100%,
+        'w-screen':         100vw,
+        'w-1-third':        33.333333%,
+        'w-2-thirds':       66.666667%,
+        'w-1-fifth':        20%,
+        'w-2-fifths':       40%,
+        'w-3-fifths':       60%,
+        'w-4-fifths':       80%,
+        'w-1-sixth':        16.666667%,
+        'w-2-sixths':       33.333333%,
+        'w-3-sixths':       50%,
+        'w-4-sixths':       66.666667%,
+        'w-5-sixths':       83.333333%,
+        'w-1-twelfth':      8.333333% ,
+        'w-2-twelfths':     16.666667%,
+        'w-3-twelfths':     25%,
+        'w-4-twelfths':     33.333333%,
+        'w-5-twelfths':     41.666667%,
+        'w-6-twelfths':     50%,
+        'w-7-twelfths':     58.333333%,
+        'w-8-twelfths':     66.666667%,
+        'w-9-twelfths':     75%,
+        'w-10-twelfths':    83.333333%,
+        'w-11-twelfths':    91.666667%
     ),
     'classes': (
-        0:  ( 'w-auto':             v('w-auto') ),
-        1:  ( 'w-0':                v('w-0') ),
-        2:  ( 'w-quarter':          v('w-25') ),
-        3:  ( 'w-half':             v('w-50') ),
-        4:  ( 'w-3-quarter':        v('w-75') ),
-        5:  ( 'w-full':             v('w-full') ),
-        6:  ( 'w-screen':           v('w-screen') )
+        'w-auto':           ( 'width': v('w-auto') ),
+        'w-0':              ( 'width': v('w-0') ),
+        'w-quarter':        ( 'width': v('w-25') ),
+        'w-half':           ( 'width': v('w-50') ),
+        'w-3-quarter':      ( 'width': v('w-75') ),
+        'w-full':           ( 'width': v('w-full') ),
+        'w-screen':         ( 'width': v('w-screen') )
     )
 );
 
@@ -184,22 +185,22 @@ $widths: (
 // # Generates matching Utility Classes in: sizing/_height.scss
 $heights: (
     'vars': (
-        0:  ( 'h-auto':             auto ),
-        1:  ( 'h-0':                0    ),
-        2:  ( 'h-25':               25%  ),
-        3:  ( 'h-50':               50%  ),
-        4:  ( 'h-75':               75%  ),
-        5:  ( 'h-full':             100% ),
-        6:  ( 'h-screen':           100vw)
+        'h-auto':           auto,
+        'h-0':              0,
+        'h-25':             25%,
+        'h-50':             50%,
+        'h-75':             75%,
+        'h-full':           100%,
+        'h-screen':         100vh
     ),
     'classes': (
-        0:  ( 'h-auto':             v('h-auto') ),
-        1:  ( 'h-0':                v('h-0') ),
-        2:  ( 'h-quarter':          v('h-25') ),
-        3:  ( 'h-half':             v('h-50') ),
-        4:  ( 'h-3-quarter':        v('h-75') ),
-        5:  ( 'h-full':             v('h-full') ),
-        6:  ( 'h-screen':           v('h-screen') )
+        'h-auto':           ( 'height': v('h-auto') ),
+        'h-0':              ( 'height': v('h-0') ),
+        'h-quarter':        ( 'height': v('h-25') ),
+        'h-half':           ( 'height': v('h-50') ),
+        'h-3-quarter':      ( 'height': v('h-75') ),
+        'h-full':           ( 'height': v('h-full') ),
+        'h-screen':         ( 'height': v('h-screen') )
     )
 );
 
@@ -207,11 +208,12 @@ $heights: (
 // # Generates matching CSS Custom Vars in: _css-vars.
 // # Generates Margin Utility Classes using these vars in: spacing/_padding.scss
 // # Generates Padding Utility Classes using these vars in: spacing/_margin.scss
+$spacing_default: 5px;
 $spacing_properties: (
     'vars': (
-        0: ( 'spacing-0': 0 ),
-        1: ( 'spacing-1': 5px ),
-        2: ( 'spacing-2': 10px )
+        'spacing-0':    rem-calc($spacing_default * 0),
+        'spacing-1':    rem-calc($spacing_default * 1),
+        'spacing-2':    rem-calc($spacing_default * 2)
     ),
     'classes': ()
 );
@@ -230,58 +232,35 @@ $padding_properties: ( 'vars': (), 'classes': () );
 
 // SVG - Fill
 // # Generates matching Utility Classes in: svg/_fill.scss
-$fills: (
-    'vars': (),
-    'classes': (
-        0:  ( 'fill-current':       'currentColor' )
-    )
-);
-// TODO: Fix Fills Loop
-// @each $name, $details in $colours {
-//     $f: 0;
-//     $fills: map-merge(
-//         $fills, (
-//         //  int:( value,      class,   classExt       var,     varExt ),
-//             $name: ( #{nth($details, 1)}, false, #{nth($details, 3)} )
-//         )
-//     );
-//     $f: $f+1;
-// }
+$fills: ( 'classes': ( 'fill-current': ( 'fill': 'currentColor' ) ) );
+@each $name, $value in map-get($colours, 'vars') {
+    $fills: map-deep-set( $fills, 'classes', 'fill-#{$name}', ('fill': $value) );
+}
 
-// SVG - Stroke
+// SVG - Stroke Colors
 // # Generates matching Utility Classes in: svg/_stroke.scss
-$strokes: (
-    'vars': (),
-    'classes': (
-        0:  ( 'stroke-current':     'currentColor' )
-    )
-);
-// TODO: Fix Strokes Loop
-// @each $name, $details in $colours {
-//     $strokes: map-merge( $strokes, ( $name: ( #{nth($details, 1)}, false, #{nth($details, 3)} ) ) );
-// }
+$strokes: ( 'classes': ( 'stroke-current': ( 'stroke': 'currentColor' ) ) );
+@each $name, $value in map-get($colours, 'vars') {
+    $strokes: map-deep-set( $strokes, 'classes', 'stroke-#{$name}', ('stroke': $value) );
+}
 
 // SVG - Stroke Width
 // # Generates matching Utility Classes in: svg/_stroke-width.scss
 $stroke_widths: ( 'vars': (), 'classes': () );
 @for $i from 0 through 5 {
-    $stroke_widths: map-merge(
-        $stroke_widths, (
-            'classes': ( $i: ( 'stroke-w-#{$i}': $i ) )
-        )
-    );
+    $stroke_widths: map-deep-set( $stroke_widths, 'classes', 'stroke-w-#{$i}', ('stroke-width': $i) );
 }
 
 // Typography - Fluid Text Defaults
 // # Generates matching CSS Custom Vars in: _css-vars.
 $fluid_typography: (
     'vars': (
-        0: ( 'fluid-min-width':         320 ),
-        1: ( 'fluid-max-width':         1500 ),
-        2: ( 'fluid-min-size':          16 ),
-        3: ( 'fluid-max-size':          19 ),
-        4: ( 'fluid-min-ratio':         1.125 ),
-        5: ( 'fluid-max-ratio':         1.2 )
+        'fluid-min-width':  320,
+        'fluid-max-width':  1500,
+        'fluid-min-size':   16,
+        'fluid-max-size':   19,
+        'fluid-min-ratio':  1.125,
+        'fluid-max-ratio':  1.2
     ),
     'classes': ()
 );
@@ -291,12 +270,12 @@ $fluid_typography: (
 // # Generates matching CSS Custom Vars in: _css-vars.
 $font_families: (
     'vars': (
-        0: ( 'ff-sans':                 'Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif' ),
-        1: ( 'ff-serif':                'Georgia, Cambria, "Times New Roman", Times, serif' )
+        'ff-sans':      'Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif',
+        'ff-serif':     'Georgia, Cambria, "Times New Roman", Times, serif'
     ),
     'classes': (
-        0: ( 'font-sans':               v('ff-sans') ),
-        1: ( 'font-serif':              v('ff-serif') )
+        'font-sans':    ( 'font-family': v('ff-sans') ),
+        'font-serif':   ( 'font-family': v('ff-serif') )
     )
 );
 
@@ -305,22 +284,22 @@ $font_families: (
 // # Generates matching CSS Custom Vars in: _css-vars.
 $font_sizes: (
     'vars': (
-        0: ( 'fs-sm':                   calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp))) ),
-        1: ( 'fs-base':                 calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp))) ),
-        2: ( 'fs-md':                   calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp))) ),
-        3: ( 'fs-lg':                   calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp))) ),
-        4: ( 'fs-xl':                   calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp))) ),
-        5: ( 'fs-2xl':                  calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp))) ),
-        6: ( 'fs-3xl':                  calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp))) )
+        'fs-sm':        calc(((var(--fluid-min-size--1) * 1rem) + (var(--fluid-max-size--1) - var(--fluid-min-size--1)) * var(--fluid-bp))),
+        'fs-base':      calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp))),
+        'fs-md':        calc(((var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp))),
+        'fs-lg':        calc(((var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp))),
+        'fs-xl':        calc(((var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp))),
+        'fs-2xl':       calc(((var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp))),
+        'fs-3xl':       calc(((var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)))
     ),
     'classes': (
-        0: ( 'font-sm',                 v('fs-sm') ),
-        1: ( 'font-base',               v('fs-base') ),
-        2: ( 'font-md',                 v('fs-md') ),
-        3: ( 'font-lg',                 v('fs-lg') ),
-        4: ( 'font-xl',                 v('fs-xl') ),
-        5: ( 'font-2xl',                v('fs-2xl') ),
-        6: ( 'font-3xl',                v('fs-3xl') )
+        'font-sm',      ( 'font-size': v('fs-sm') ),
+        'font-base',    ( 'font-size': v('fs-base') ),
+        'font-md',      ( 'font-size': v('fs-md') ),
+        'font-lg',      ( 'font-size': v('fs-lg') ),
+        'font-xl',      ( 'font-size': v('fs-xl') ),
+        'font-2xl',     ( 'font-size': v('fs-2xl') ),
+        'font-3xl',     ( 'font-size': v('fs-3xl') )
     )
 );
 
@@ -329,8 +308,8 @@ $font_sizes: (
 $font_styles: (
     'vars': (),
     'classes': (
-        0: ( 'font-style-normal':       'normal' ),
-        1: ( 'font-style-italic':       'italic' )
+        'font-style-normal':    ( 'font-style': 'normal' ),
+        'font-style-italic':    ( 'font-style': 'italic' )
     )
 );
 
@@ -339,14 +318,14 @@ $font_styles: (
 // # Generates matching CSS Custom Vars in: _css-vars.
 $font_weights: (
     'vars': (
-        0: ( 'fw-light':                200 ),
-        1: ( 'fw-normal':               400 ),
-        2: ( 'fw-bold':                 600 )
+        'fw-light':         200,
+        'fw-normal':        400,
+        'fw-bold':          600
     ),
     'classes': (
-        0: ( 'font-light':              v('ff-light') ),
-        1: ( 'font-normal':             v('ff-normal') ),
-        2: ( 'font-bold':               v('ff-bold') )
+        'font-light':       ( 'font-weight': v('ff-light') ),
+        'font-normal':      ( 'font-weight': v('ff-normal') ),
+        'font-bold':        ( 'font-weight': v('ff-bold') )
     )
 );
 
@@ -355,22 +334,22 @@ $font_weights: (
 // # Generates matching CSS Custom Vars in: _css-vars.
 $letter_spacings: (
     'vars': (
-        0: ( 'tracking-tightest':       -0.1em,  ),
-        1: ( 'tracking-tighter':        -0.05em, ),
-        2: ( 'tracking-tight':          -0.025em ),
-        3: ( 'tracking-normal':         0,       ),
-        4: ( 'tracking-wide':           0.025em, ),
-        5: ( 'tracking-wider':          0.05em,  ),
-        6: ( 'tracking-widest':         0.1em,   )
+        'tracking-tightest':    -0.1em,
+        'tracking-tighter':     -0.05em,
+        'tracking-tight':       -0.025em,
+        'tracking-normal':      0,
+        'tracking-wide':        0.025em,
+        'tracking-wider':       0.05em,
+        'tracking-widest':      0.1em
     ),
     'classes': (
-        0: ( 'tracking-tightest',       v('tracking-tightest') ),
-        1: ( 'tracking-tighter',        v('tracking-tighter') ),
-        2: ( 'tracking-tight',          v('tracking-tight') ),
-        3: ( 'tracking-normal',         v('tracking-normal') ),
-        4: ( 'tracking-wide',           v('tracking-wide') ),
-        5: ( 'tracking-wider',          v('tracking-wider') ),
-        6: ( 'tracking-widest',         v('tracking-widest') )
+        'tracking-tightest',    ( 'letter-spacing': v('tracking-tightest') ),
+        'tracking-tighter',     ( 'letter-spacing': v('tracking-tighter') ),
+        'tracking-tight',       ( 'letter-spacing': v('tracking-tight') ),
+        'tracking-normal',      ( 'letter-spacing': v('tracking-normal') ),
+        'tracking-wide',        ( 'letter-spacing': v('tracking-wide') ),
+        'tracking-wider',       ( 'letter-spacing': v('tracking-wider') ),
+        'tracking-widest',      ( 'letter-spacing': v('tracking-widest') )
     )
 );
 
@@ -379,20 +358,20 @@ $letter_spacings: (
 // # Generates matching CSS Custom Vars in: _css-vars.
 $line_heights: (
     'vars': (
-        0:  ('leading-none':            1 ),
-        1:  ('leading-tight':           1.25 ),
-        2:  ('leading-snug':            1.375 ),
-        3:  ('leading-normal':          1.5 ),
-        4:  ('leading-relaxed':         1.625 ),
-        5:  ('leading-loose':           2 )
+        'leading-none':     1,
+        'leading-tight':    1.25,
+        'leading-snug':     1.375,
+        'leading-normal':   1.5,
+        'leading-relaxed':  1.625,
+        'leading-loose':    2
     ),
     'classes': (
-        0:  ( 'leading-none':           v('leading-none') ),
-        1:  ( 'leading-tight':          v('leading-tight') ),
-        2:  ( 'leading-snug':           v('leading-snug') ),
-        3:  ( 'leading-normal':         v('leading-normal') ),
-        4:  ( 'leading-relaxed':        v('leading-relaxed') ),
-        5:  ( 'leading-loose':          v('leading-loose') )
+        'leading-none':     ( 'line-height': v('leading-none') ),
+        'leading-tight':    ( 'line-height': v('leading-tight') ),
+        'leading-snug':     ( 'line-height': v('leading-snug') ),
+        'leading-normal':   ( 'line-height': v('leading-normal') ),
+        'leading-relaxed':  ( 'line-height': v('leading-relaxed') ),
+        'leading-loose':    ( 'line-height': v('leading-loose') )
     )
 );
 
@@ -401,10 +380,10 @@ $line_heights: (
 $text_alignments: (
     'vars': (),
     'classes': (
-        0: ( 'text-left':               'left' ),
-        1: ( 'text-center':             'center' ),
-        2: ( 'text-right':              'right' ),
-        3: ( 'text-justify':            'justify' )
+        'text-left':    ( 'text-align': 'left' ),
+        'text-center':  ( 'text-align': 'center' ),
+        'text-right':   ( 'text-align': 'right' ),
+        'text-justify': ( 'text-align': 'justify' )
     )
 );
 
@@ -413,8 +392,8 @@ $text_alignments: (
 $text_decorations: (
     'vars': (),
     'classes': (
-        0: ( 'text-under':              'underline' ),
-        1: ( 'text-strike':             'line-through' ),
-        2: ( 'text-none':               'none' )
+        'text-under':   ( 'text-decoration': 'underline' ),
+        'text-strike':  ( 'text-decoration': 'line-through' ),
+        'text-none':    ( 'text-decoration': 'none' )
     )
 );
