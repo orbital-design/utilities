@@ -45,6 +45,10 @@
     --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
     --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
 
+    // Global - Custom CSS Vars
+    // # These will be generated for the themes custom css
+    @include css-var-constructor( $custom_css_vars );
+
     // Typography - Font Family
     // # Generates matching Utility Classes in: typography/_font-family.scss
     @include css-var-constructor( $font_family_properties );

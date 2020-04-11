@@ -1,61 +1,63 @@
 // Get map defaults used for condtionals
-@import 'helpers/map-defaults';
+@import 'utilities/helpers/map-defaults';
 
 // SCSS Helpers
-@import 'helpers/functions';
-@import 'helpers/mixins';
-@import 'helpers/constructor-spacings';
-@import 'helpers/constructor-utilities';
+@import 'utilities/helpers/functions';
+@import 'utilities/helpers/mixins';
+@import 'utilities/helpers/constructor-spacings';
+@import 'utilities/helpers/constructor-utilities';
 
-@import 'helpers/constructor-vars';
+@import 'utilities/helpers/constructor-vars';
 
 // Config/Setup file
 // This is where the uses specifies what they want.
 @import 'config';
 
 // Generate CSS Custom vars
-@import 'helpers/css-vars';
+@import 'utilities/helpers/css-vars';
+
+// @import 'utilities/layout/grid';
 
 // Utility Class Generators
 // # Accessibility classes.
-// @import 'accessibility/screen-readers';
+// @import 'utilities/accessibility/screen-readers';
 
 // # Effects
-// @import 'effects/box-shadow';
-// @import 'effects/opacity';
+// @import 'utilities/effects/box-shadow';
+// @import 'utilities/effects/opacity';
 
 // # Interactivity.
-// @import 'interactivity/appearance';
-// @import 'interactivity/cursor';
-// @import 'interactivity/outline';
-// @import 'interactivity/pointer-events';
-// @import 'interactivity/resize';
-// @import 'interactivity/user-select';
+// @import 'utilities/interactivity/appearance';
+// @import 'utilities/interactivity/cursor';
+// @import 'utilities/interactivity/outline';
+// @import 'utilities/interactivity/pointer-events';
+// @import 'utilities/interactivity/resize';
+// @import 'utilities/interactivity/user-select';
 
 // # Sizing.
-// @import 'sizing/height';
-// @import 'sizing/max-height';
-// @import 'sizing/min-height';
-// @import 'sizing/width';
-// @import 'sizing/max-width';
-// @import 'sizing/min-width';
+// @import 'utilities/sizing/height';
+// @import 'utilities/sizing/max-height';
+// @import 'utilities/sizing/min-height';
+// @import 'utilities/sizing/width';
+// @import 'utilities/sizing/max-width';
+// @import 'utilities/sizing/min-width';
 
 // # Spacing
-// @import 'spacing/margin';
-// @import 'spacing/padding';
+// @import 'utilities/spacing/margin';
+// @import 'utilities/spacing/padding';
 
 // # SVG classes.
-// @import 'svg/fill';
-// @import 'svg/stroke';
-// @import 'svg/stroke-width';
+// @import 'utilities/svg/fill';
+// @import 'utilities/svg/stroke';
+// @import 'utilities/svg/stroke-width';
 
 // # Typography
-// @import 'typography/font-family';
-// @import 'typography/font-size';
-// @import 'typography/font-style';
-// @import 'typography/font-weight';
-// @import 'typography/letter-spacing';
-// @import 'typography/line-height';
-// @import 'typography/text-align';
-@import 'typography/text-colour';
-// @import 'typography/text-decoration';
+// @import 'utilities/typography/font-family';
+// @import 'utilities/typography/font-size';
+// @import 'utilities/typography/font-style';
+// @import 'utilities/typography/font-weight';
+// @import 'utilities/typography/letter-spacing';
+// @import 'utilities/typography/line-height';
+// @import 'utilities/typography/text-align';
+// @import 'utilities/typography/text-colour';
+// @import 'utilities/typography/text-decoration';

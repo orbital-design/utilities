@@ -7,6 +7,19 @@ $breakpoints: (
   xl: 1500px
 );
 
+// Additional CSS Vars
+// # Place all theme vars you need here.
+// # They'll be output in the :root of the main stylesheer
+$custom_css_vars: (
+    'vars': (
+        'gutter':                   rem-calc(20px),
+        'gutter-half':              calc((var(--gutter) * 0.5)),
+        'gutter-comp':              calc((var(--gutter) * 0.5) * -1),
+        'gutter-page':              calc((var(--gutter) * 2.5)),
+        'gutter-page-negative':     calc((var(--gutter) * -2.5)),
+    )
+);
+
 // Comment out any maps below this line to prevent css vars or Utility Classes being created from them.
 //===============================================================================================
 
@@ -120,6 +133,88 @@ $user_select_properties: (
         'u-select-auto':        ( 'user-select': 'auto' )
     )
 );
+
+// Layout - Flexbox - Flex Direction
+// # Generates matching Utility Classes in: layout/flex/_flex-direction.scss
+$flex_direction_properties: (
+    'classes': (
+        'flex-row':	            ( 'flex-direction': 'row' ),
+        'flex-row-rev':	        ( 'flex-direction': 'row-reverse' ),
+        'flex-col':	            ( 'flex-direction': 'column' ),
+        'flex-col-rev':	        ( 'flex-direction': 'column-reverse' )
+    )
+);
+
+// Layout - Flexbox - Flex Wrap
+// # Generates matching Utility Classes in: layout/flex/_flex-wrap.scss
+$flex_wrap_properties: (
+    'classes': (
+        'flex-no-wrap':	        ( 'flex-wrap': 'nowrap' ),
+        'flex-wrap':	        ( 'flex-wrap': 'wrap' ),
+        'flex-wrap-rev':	    ( 'flex-wrap': 'wrap-reverse' )
+    )
+);
+
+// Layout - Flexbox - Align Items
+// # Generates matching Utility Classes in: layout/flex/_align-items.scss
+$align_items_properties: (
+    'classes': (
+        'items-stretch':	    ( 'align-items': 'stretch' ),
+        'items-start':	        ( 'align-items': 'flex-start' ),
+        'items-center':	        ( 'align-items': 'center' ),
+        'items-end':	        ( 'align-items': 'flex-end' ),
+        'items-baseline':	    ( 'align-items': 'baseline' )
+    )
+);
+
+// Layout - Flexbox - Align Content
+// # Generates matching Utility Classes in: layout/flex/_align-content.scss
+$align_content_properties: (
+    'classes': (
+        'content-start':	    ( 'align-content': 'flex-start' ),
+        'content-center':	    ( 'align-content': 'center' ),
+        'content-end':	        ( 'align-content': 'flex-end' ),
+        'content-between':	    ( 'align-content': 'space-between' ),
+        'content-around':	    ( 'align-content': 'space-around' )
+    )
+);
+
+// Layout - Flexbox - Align Self
+// # Generates matching Utility Classes in: layout/flex/_align-self.scss
+$align_self_properties: (
+    'classes': (
+        'self-auto':	    ( 'align-self': 'auto' ),
+        'self-start':	    ( 'align-self': 'flex-start' ),
+        'self-center':	    ( 'align-self': 'center' ),
+        'self-end':	        ( 'align-self': 'flex-end' ),
+        'self-stretch':	    ( 'align-self': 'stretch' )
+    )
+);
+
+// Layout - Flexbox - Justify Content
+// # Generates matching Utility Classes in: layout/flex/_justify-content.scss
+$justify_content_properties: (
+    'classes': (
+        'justify-start':	    ( 'justify-content': 'flex-start' ),
+        'justify-center':	    ( 'justify-content': 'center' ),
+        'justify-end':	        ( 'justify-content': 'flex-end' ),
+        'justify-between':	    ( 'justify-content': 'space-between' ),
+        'justify-around':	    ( 'justify-content': 'space-around' )
+    )
+);
+
+// Layout - Flexbox - order
+// # Generates matching Utility Classes in: layout/flex/_order.scss
+$order_properties: (
+    'classes': (
+        'order-first':	        ( 'order': -9999 ),
+        'order-last':	        ( 'order': 9999 ),
+        'order-none':	        ( 'order': 0 ),
+    )
+);
+@for $i from 1 through 12 {
+    $order_properties: map-deep-set( $order_properties, 'classes', 'order-#{$i}', ('order': $i) );
+}
 
 // Sizing - width
 // # Generates matching Utility Classes in: sizing/_width.scss
