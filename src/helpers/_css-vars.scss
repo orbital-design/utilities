@@ -125,6 +125,12 @@
     // # Generates matching Utility Classes in: sizing/_max-height.scss
     @include css-var-constructor( $heights );
 
+    // Spacing - Padding
+    // # Generates matching Utility Classes in: sizing/_height.scss
+    // # Generates matching Utility Classes in: sizing/_min-height.scss
+    // # Generates matching Utility Classes in: sizing/_max-height.scss
+    @include new-css-var-constructor( $spacing_properties );
+
     // SVG - Fills
     // # Generates matching Utility Classes in: svg/_fill.scss
     // @include css-var-constructor( $fills );
