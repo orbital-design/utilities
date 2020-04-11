@@ -13,13 +13,15 @@ $breakpoints: (
 // Colours
 // # Generates matching CSS Custom Vars in: _css-vars.
 $colours: (
-//  int:( value,      class,   classExt       var,     varExt ),
-    0:  ( #ffffff,  true,   'white',        true,   'white' ),
-    1:  ( #252525,  true,   'black',        true,   'black' ),
-    2:  ( #212322,  true,   'dark-grey'     true,   'dark-grey' ),
-    3:  ( #54585a,  true,   'mid-grey',     true,   'mid-grey' ),
-    4:  ( #97999b,  true,   'light-grey',   true,   'light-grey' ),
-    5:  ( #f3f3f3,  true,   'bg-grey',      true,   'bg-grey' )
+    'vars': (
+        0: ( 'white': #ffffff ),
+        1: ( 'black': #252525 ),
+        2: ( 'dark-grey': #212322 ),
+        3: ( 'mid-grey': #54585a ),
+        4: ( 'light-grey': #97999b ),
+        5: ( 'bg-grey': #f3f3f3 )
+    ),
+    'classes': ()
 );
 
 // Effects - Box Shadow
