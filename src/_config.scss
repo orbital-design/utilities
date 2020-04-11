@@ -1,10 +1,10 @@
 // Breakpoints - min-width
 // # DO NOT REMOVE - Edit but DO NOT REMOVE
 $breakpoints: (
-  sm: 768px,
-  md: 1024px,
-  lg: 1300px,
-  xl: 1500px
+  sm: rem-calc(768px),
+  md: rem-calc(1024px),
+  lg: rem-calc(1300px),
+  xl: rem-calc(1500px)
 );
 
 // Additional CSS Vars
@@ -195,9 +195,12 @@ $flex_wrap_properties: (
 // # Generates matching Utility Classes in: layout/flex/_justify-content.scss
 $justify_content_properties: (
     'classes': (
-        'justify-start':	    ( 'justify-content': 'flex-start' ),
-        'justify-center':	    ( 'justify-content': 'center' ),
-        'justify-end':	        ( 'justify-content': 'flex-end' ),
+        'justify-start':	    ( 'justify-content': 'flex-start',
+                                  'text-align': 'start' ),
+        'justify-center':	    ( 'justify-content': 'center',
+                                  'text-align': 'center' ),
+        'justify-end':	        ( 'justify-content': 'flex-end',
+                                  'text-align': 'end' ),
         'justify-between':	    ( 'justify-content': 'space-between' ),
         'justify-around':	    ( 'justify-content': 'space-around' )
     )
