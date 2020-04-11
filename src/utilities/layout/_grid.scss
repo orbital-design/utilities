@@ -23,45 +23,6 @@
     max-width: var(--width);
     padding-right: var(--gutter-comp);
     padding-left: var(--gutter-comp);
-
-    &--start {
-        justify-content: flex-start;
-        text-align: start;
-    }
-
-    &--center {
-        justify-content: center;
-        text-align: center;
-    }
-
-    &--end {
-        justify-content: flex-end;
-        text-align: end;
-    }
-
-    &--top {
-        align-items: flex-start;
-    }
-
-    &--middle {
-        align-items: center;
-    }
-
-    &--bottom {
-        align-items: flex-end;
-    }
-
-    &--around {
-        justify-content: space-around;
-    }
-
-    &--between {
-        justify-content: space-between;
-    }
-
-    &--reverse {
-        flex-direction: row-reverse;
-    }
 }
 
 .row__col {
@@ -99,10 +60,6 @@
     flex-grow: 1;
     flex-basis: 0;
     max-width: var(--w-full);
-
-    &--reverse {
-        flex-direction: column-reverse;
-    }
 
     &--1 {
         flex-basis: var(--w-1-twelfth);
@@ -211,52 +168,9 @@
     &--offset-11 {
         margin-left: var(--w-11-twelfths);
     }
-
-    &--start {
-        justify-content: flex-start;
-        text-align: start;
-    }
-
-    &--center {
-        justify-content: center;
-        text-align: center;
-    }
-
-    &--end {
-        justify-content: flex-end;
-        text-align: end;
-    }
-
-    &--top {
-        align-items: flex-start;
-    }
-
-    &--middle {
-        align-items: center;
-    }
-
-    &--bottom {
-        align-items: flex-end;
-    }
-
-    &--around {
-        justify-content: space-around;
-    }
-
-    &--between {
-        justify-content: space-between;
-    }
-
-    &--first {
-        order: -1;
-    }
-
-    &--last {
-        order: 1;
-    }
 }
 
-@media (--viewport-sm) {
+@include mq(sm) {
     .sm {
         &\:row__col,
         &\:row__col--1,
@@ -294,10 +208,6 @@
             flex-grow: 1;
             flex-basis: 0;
             max-width: var(--w-full);
-
-            &--reverse {
-                flex-direction: column-reverse;
-            }
         }
 
         &\:row__col--1 {
@@ -407,53 +317,10 @@
         &\:row__col--offset-11 {
             margin-left: var(--w-11-twelfths);
         }
-
-        &\:row__col--start {
-            justify-content: flex-start;
-            text-align: start;
-        }
-
-        &\:row__col--center {
-            justify-content: center;
-            text-align: center;
-        }
-
-        &\:row__col--end {
-            justify-content: flex-end;
-            text-align: end;
-        }
-
-        &\:row__col--top {
-            align-items: flex-start;
-        }
-
-        &\:row__col--middle {
-            align-items: center;
-        }
-
-        &\:row__col--bottom {
-            align-items: flex-end;
-        }
-
-        &\:row__col--around {
-            justify-content: space-around;
-        }
-
-        &\:row__col--between {
-            justify-content: space-between;
-        }
-
-        &\:row__col--first {
-            order: -1;
-        }
-
-        &\:row__col--last {
-            order: 1;
-        }
     }
 }
 
-@media (--viewport-md) {
+@include mq(md) {
     .md {
         &\:row__col,
         &\:row__col--1,
@@ -491,10 +358,6 @@
             flex-grow: 1;
             flex-basis: 0;
             max-width: var(--w-full);
-
-            &--reverse {
-                flex-direction: column-reverse;
-            }
         }
 
         &\:row__col--1 {
@@ -604,53 +467,10 @@
         &\:row__col--offset-11 {
             margin-left: var(--w-11-twelfths);
         }
-
-        &\:row__col--start {
-            justify-content: flex-start;
-            text-align: start;
-        }
-
-        &\:row__col--center {
-            justify-content: center;
-            text-align: center;
-        }
-
-        &\:row__col--end {
-            justify-content: flex-end;
-            text-align: end;
-        }
-
-        &\:row__col--top {
-            align-items: flex-start;
-        }
-
-        &\:row__col--middle {
-            align-items: center;
-        }
-
-        &\:row__col--bottom {
-            align-items: flex-end;
-        }
-
-        &\:row__col--around {
-            justify-content: space-around;
-        }
-
-        &\:row__col--between {
-            justify-content: space-between;
-        }
-
-        &\:row__col--first {
-            order: -1;
-        }
-
-        &\:row__col--last {
-            order: 1;
-        }
     }
 }
 
-@media (--viewport-lg) {
+@include mq(lg) {
     .lg {
         &\:row__col,
         &\:row__col--1,
@@ -688,10 +508,6 @@
             flex-grow: 1;
             flex-basis: 0;
             max-width: var(--w-full);
-
-            &--reverse {
-                flex-direction: column-reverse;
-            }
         }
 
         &\:row__col--1 {
@@ -801,53 +617,10 @@
         &\:row__col--offset-11 {
             margin-left: var(--w-11-twelfths);
         }
-
-        &\:row__col--start {
-            justify-content: flex-start;
-            text-align: start;
-        }
-
-        &\:row__col--center {
-            justify-content: center;
-            text-align: center;
-        }
-
-        &\:row__col--end {
-            justify-content: flex-end;
-            text-align: end;
-        }
-
-        &\:row__col--top {
-            align-items: flex-start;
-        }
-
-        &\:row__col--middle {
-            align-items: center;
-        }
-
-        &\:row__col--bottom {
-            align-items: flex-end;
-        }
-
-        &\:row__col--around {
-            justify-content: space-around;
-        }
-
-        &\:row__col--between {
-            justify-content: space-between;
-        }
-
-        &\:row__col--first {
-            order: -1;
-        }
-
-        &\:row__col--last {
-            order: 1;
-        }
     }
 }
 
-@media (--viewport-xl) {
+@include mq(xl) {
     .xl {
         &\:row__col,
         &\:row__col--1,
@@ -885,10 +658,6 @@
             flex-grow: 1;
             flex-basis: 0;
             max-width: var(--w-full);
-
-            &--reverse {
-                flex-direction: column-reverse;
-            }
         }
 
         &\:row__col--1 {
@@ -997,49 +766,6 @@
 
         &\:row__col--offset-11 {
             margin-left: var(--w-11-twelfths);
-        }
-
-        &\:row__col--start {
-            justify-content: flex-start;
-            text-align: start;
-        }
-
-        &\:row__col--center {
-            justify-content: center;
-            text-align: center;
-        }
-
-        &\:row__col--end {
-            justify-content: flex-end;
-            text-align: end;
-        }
-
-        &\:row__col--top {
-            align-items: flex-start;
-        }
-
-        &\:row__col--middle {
-            align-items: center;
-        }
-
-        &\:row__col--bottom {
-            align-items: flex-end;
-        }
-
-        &\:row__col--around {
-            justify-content: space-around;
-        }
-
-        &\:row__col--between {
-            justify-content: space-between;
-        }
-
-        &\:row__col--first {
-            order: -1;
-        }
-
-        &\:row__col--last {
-            order: 1;
         }
     }
 }
