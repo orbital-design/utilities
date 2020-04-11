@@ -57,16 +57,7 @@ $shadow_properties: (
 // # Generates matching Utility Classes in: effects/_opacity.scss
 $opacities: ( 'vars': (), 'classes': () );
 @for $i from 0 through 20 {
-    $value: ( $i * 5 ) / 100;
-    $unit: $i * 5;
-
-    $opacities: map-merge(
-        $opacities, (
-            'classes': (
-                'opacity-#{$unit}':     ( 'opacity':    $value )
-            )
-        )
-    );
+    $opacities: map-deep-set( $opacities, 'classes', 'opacity-#{($i*5)}', ('opacity': ( $i * 5 ) / 100) );
 }
 
 // Interactivity - Appearance
