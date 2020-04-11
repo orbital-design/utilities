@@ -1,180 +1,79 @@
-// TODO: Comment mixins properly
+// TODO: Comment mixin properly
 @mixin spacing-map-constructor( $class_map, $class_name, $class_property ) {
 
-    @each $key, $value in $class_map {
+    $i: 0;
+    @each $name, $value in map-get($class_map, 'vars') {
+        $spacing_types: '', 'x', 'y', 't', 'r', 'b', 'l';
 
-        @if $key == 'vars' {
-
-            @each $key-1, $value-1 in $value {
-
-                @each $name, $pokemon in $value-1 {
-                    $index: $key-1;
-                    $index: (
-                        '#{$class_name}-#{$key-1}': (
-                            '#{$class_property}': v(#{$name}),
-                        ),
-                        '#{$class_name}x-#{$key-1}': (
-                            '#{$class_property}-left': v(#{$name}),
-                            '#{$class_property}-right': v(#{$name}),
-                        ),
-                        '#{$class_name}y-#{$key-1}': (
-                            '#{$class_property}-top': v(#{$name}),
-                            '#{$class_property}-bottom': v(#{$name}),
-                        ),
-                        '#{$class_name}t-#{$key-1}': (
-                            '#{$class_property}-top': v(#{$name}),
-                        ),
-                        '#{$class_name}r-#{$key-1}': (
-                            '#{$class_property}-right': v(#{$name}),
-                        ),
-                        '#{$class_name}b-#{$key-1}': (
-                            '#{$class_property}-bottom': v(#{$name}),
-                        ),
-                        '#{$class_name}l-#{$key-1}': (
-                            '#{$class_property}-left': v(#{$name}),
-                        ),
-                    );
-
-                    @if $class_property == 'padding' {
-                        $padding_properties: map-deep-set( $padding_properties, 'classes', $key-1, $index) !global;
-                    } @else if $class_property == 'margin' {
-                        $margin_properties: map-deep-set( $margin_properties, 'classes', $key-1, $index) !global;
-                    }
+        @if $class_property == 'padding' {
+            @each $spacing_type in $spacing_types {
+                @if $spacing_type == '' {
+                    $padding_properties: map-deep-set( $padding_properties, 'classes', '#{$class_name}-#{$i}', (
+                            '#{$class_property}': v(#{$name})
+                    ) ) !global;
+                } @else if $spacing_type == 'x' {
+                    $padding_properties: map-deep-set( $padding_properties, 'classes', '#{$class_name}#{$spacing_type}-#{$i}', (
+                        '#{$class_property}-left': v(#{$name}),
+                        '#{$class_property}-right': v(#{$name})
+                    ) ) !global;
+                } @else if $spacing_type == 'y' {
+                    $padding_properties: map-deep-set( $padding_properties, 'classes', '#{$class_name}#{$spacing_type}-#{$i}', (
+                        '#{$class_property}-top': v(#{$name}),
+                        '#{$class_property}-bottom': v(#{$name})
+                    ) ) !global;
+                } @else if $spacing_type == 't' {
+                    $padding_properties: map-deep-set( $padding_properties, 'classes', '#{$class_name}#{$spacing_type}-#{$i}', (
+                        '#{$class_property}-top': v(#{$name})
+                    ) ) !global;
+                } @else if $spacing_type == 'r' {
+                    $padding_properties: map-deep-set( $padding_properties, 'classes', '#{$class_name}#{$spacing_type}-#{$i}', (
+                        '#{$class_property}-right': v(#{$name})
+                    ) ) !global;
+                } @else if $spacing_type == 'b' {
+                    $padding_properties: map-deep-set( $padding_properties, 'classes', '#{$class_name}#{$spacing_type}-#{$i}', (
+                        '#{$class_property}-bottom': v(#{$name})
+                    ) ) !global;
+                } @else if $spacing_type == 'l' {
+                    $padding_properties: map-deep-set( $padding_properties, 'classes', '#{$class_name}#{$spacing_type}-#{$i}', (
+                        '#{$class_property}-left': v(#{$name})
+                    ) ) !global;
+                }
+            }
+        } @else if $class_property == 'margin' {
+            @each $spacing_type in $spacing_types {
+                @if $spacing_type == '' {
+                    $margin_properties: map-deep-set( $margin_properties, 'classes', '#{$class_name}-#{$i}', (
+                            '#{$class_property}': v(#{$name})
+                    ) ) !global;
+                } @else if $spacing_type == 'x' {
+                    $margin_properties: map-deep-set( $margin_properties, 'classes', '#{$class_name}#{$spacing_type}-#{$i}', (
+                        '#{$class_property}-left': v(#{$name}),
+                        '#{$class_property}-right': v(#{$name})
+                    ) ) !global;
+                } @else if $spacing_type == 'y' {
+                    $margin_properties: map-deep-set( $margin_properties, 'classes', '#{$class_name}#{$spacing_type}-#{$i}', (
+                        '#{$class_property}-top': v(#{$name}),
+                        '#{$class_property}-bottom': v(#{$name})
+                    ) ) !global;
+                } @else if $spacing_type == 't' {
+                    $margin_properties: map-deep-set( $margin_properties, 'classes', '#{$class_name}#{$spacing_type}-#{$i}', (
+                        '#{$class_property}-top': v(#{$name})
+                    ) ) !global;
+                } @else if $spacing_type == 'r' {
+                    $margin_properties: map-deep-set( $margin_properties, 'classes', '#{$class_name}#{$spacing_type}-#{$i}', (
+                        '#{$class_property}-right': v(#{$name})
+                    ) ) !global;
+                } @else if $spacing_type == 'b' {
+                    $margin_properties: map-deep-set( $margin_properties, 'classes', '#{$class_name}#{$spacing_type}-#{$i}', (
+                        '#{$class_property}-bottom': v(#{$name})
+                    ) ) !global;
+                } @else if $spacing_type == 'l' {
+                    $margin_properties: map-deep-set( $margin_properties, 'classes', '#{$class_name}#{$spacing_type}-#{$i}', (
+                        '#{$class_property}-left': v(#{$name})
+                    ) ) !global;
                 }
             }
         }
-    }
-}
-// Utility Class Constructor
-// @mixin spacing-class-constructor( $prefix, $suffix ) {
-@mixin spacing-class-constructor( $class_prefix, $class_name, $class_suffix ) {
-    // # Check if $map has been specified
-    @if $class_map != null {
-
-        // Loop through first level of map
-        @each $map_type, $map_type_values in $class_map {
-
-            // # Check whether item should output a var.
-            @if $map_type == 'classes' {
-
-                // If type is 'classes', progress with loop of indexes.
-                @each $index, $classes in $map_type_values {
-
-                    // Loop through classes inside index.
-                    @each $class_name, $class_attrs in $classes {
-
-                        // Create class.
-                        .#{$class_prefix}#{$class_name}#{$class_suffix} {
-                            // Loop through attributes that form class.
-                            @each $css_property, $css_value in $class_attrs {
-                                // Output each attribute line inside class.
-                                #{$css_property}: $css_value;
-                            }
-                        }
-                    }
-                }
-
-            }
-        }
-
-
-
-
-
-
-
-
-
-        // ## If $map is specified, loop through each item.
-        // @each $name, $properties in $class_map {
-
-        //     // ### Check if item should output a class.
-        //     @if nth( $properties, 2 ) == true {
-
-        //         // #### Check if item should output a CSS Var.
-        //         @if nth( $properties, 4 ) == true {
-
-        //             // ##### Check if class should be a default.
-        //             @if nth( $properties, 3 ) == 'default' {
-
-        //                 // ###### Construct class with no --{value}
-        //                 .#{$prefix}#{$suffix} {
-        //                     #{$class_property}: v(#{nth($properties, 5)});
-        //                 }
-        //             } @else {
-
-        //                 // ###### Construct class with --{value} with property from map.
-        //                 .#{$prefix}--#{nth($properties, 3)}#{$suffix} {
-        //                     #{$class_property}: v(#{nth($properties, 5)});
-        //                 }
-        //             }
-        //         } @else {
-
-        //             // ##### Check if class should be a default.
-        //             @if nth( $properties, 3 ) == 'default' {
-
-        //                 // ###### Construct class with no --{value}
-        //                 .#{$prefix}#{$suffix} {
-        //                     #{$class_property}: #{nth($properties, 1)};
-        //                 }
-        //             } @else {
-        //                 // ###### Construct class with --{value} with property from map.
-        //                 .#{$prefix}--#{nth($properties, 3)}#{$suffix} {
-        //                     #{$class_property}: #{nth($properties, 1)};
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-    }
-}
-
-// # Let's put it altogether
-@mixin spacing-utility-spacing-class-constructor( $class_map, $class_variants, $class_name ){
-
-    // @warn $class_map;
-    // ## Use constructor to build your default classes without media queries & variants.
-    @include spacing-class-constructor('', $class_name, '');
-
-    // ## Check if our $variants list includes 'none'.
-    @if not index($class_variants, 'none') {
-
-        // ### If 'none' isn't present we'll loop through the selected variants for this class.
-        @each $variant in $class_variants {
-
-            // #### We want to make sure we don't use the 'responsive' variant at this point if it exists.
-            @if $variant != 'responsive' {
-
-                // ##### Use constructor to build our variant classes without media queries.
-                @include spacing-class-constructor( '#{$variant}\\:', $class_name, ':#{$variant}' );
-            }
-        }
-    }
-
-    // ## Check if our $variants list includes 'responsive'.
-    @if index($class_variants, 'responsive') {
-
-        // ### If 'responsive' is present we'll loop through the brakpoints set in _scss-vars.scss.
-        @each $bp_name, $breakpoint in $breakpoints {
-
-            // #### Construct each media query when we loop through it.
-            @include mq( $bp_name ) {
-            // @media (min-width: $breakpoint) {
-
-                // ##### Use constructor to build our default classes with breakpoint prefix.
-                @include spacing-class-constructor( '#{$bp_name}\\:', $class_name, '' );
-
-                // ##### We'll loop through the selected variants for this class.
-                @each $variant in $class_variants {
-
-                    // ###### We want to make sure we don't use the 'responsive' variant at this pointas we've already used it.
-                    @if $variant != 'responsive' {
-
-                        // ####### Use constructor to build our variant classes with breakpoint prefix.
-                        @include spacing-class-constructor( '#{$bp_name}\\:#{$variant}\\:', $class_name, ':#{$variant}' );
-                    }
-                }
-            }
-        }
+        $i: $i+1;
     }
 }
