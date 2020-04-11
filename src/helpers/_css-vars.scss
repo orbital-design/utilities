@@ -83,7 +83,7 @@
 
     // Effects - Box Shadow
     // # Generates matching Utility Classes in: effects/_box-shadow.scss
-    @include css-var-constructor( $box_shadows );
+    @include new-css-var-constructor( $shadow_properties );
 
     // Effects - Opacity
     // # Generates matching Utility Classes in: effects/_opacity.scss
