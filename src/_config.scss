@@ -118,13 +118,13 @@ $appearance_properties: (
 // # Generates matching Utility Classes in: interactivity/_cursor.scss
 $cursor_properties: (
     'classes': (
-        'cursor-auto':          ( 'cursor': 'auto' ),
-        'cursor-default':       ( 'cursor': 'default' ),
-        'cursor-pointer':       ( 'cursor': 'pointer' ),
-        'cursor-wait':          ( 'cursor': 'wait' ),
-        'cursor-text':          ( 'cursor': 'text' ),
-        'cursor-move':          ( 'cursor': 'move' ),
-        'cursor-not-allowed':   ( 'cursor': 'not-allowed' )
+        'cursor-auto':          ( 'cursor': auto ),
+        'cursor-default':       ( 'cursor': default ),
+        'cursor-pointer':       ( 'cursor': pointer ),
+        'cursor-wait':          ( 'cursor': wait ),
+        'cursor-text':          ( 'cursor': text ),
+        'cursor-move':          ( 'cursor': move ),
+        'cursor-not-allowed':   ( 'cursor': not-allowed )
     )
 );
 
@@ -132,7 +132,7 @@ $cursor_properties: (
 // # Generates matching Utility Classes in: interactivity/_outline.scss
 $outline_properties: (
     'classes': (
-        'outline-none':         ( 'outline': 'none' )
+        'outline-none':         ( 'outline': none )
     )
 );
 
@@ -140,8 +140,8 @@ $outline_properties: (
 // # Generates matching Utility Classes in: interactivity/_pointer-events.scss
 $pointer_event_properties: (
     'classes': (
-        'pointer-none':         ( 'pointer-events': 'none' ),
-        'pointer-auto':         ( 'pointer-events': 'auto' )
+        'pointer-none':         ( 'pointer-events': none ),
+        'pointer-auto':         ( 'pointer-events': auto )
     )
 );
 
@@ -149,10 +149,10 @@ $pointer_event_properties: (
 // # Generates matching Utility Classes in: interactivity/_resize.scss
 $resize_properties: (
     'classes': (
-        'resize-both':          ( 'resize': 'both' ),
-        'resize-none':          ( 'resize': 'none' ),
-        'resize-y':             ( 'resize': 'vertical' ),
-        'resize-x':             ( 'resize': 'horizontal' )
+        'resize-both':          ( 'resize': both ),
+        'resize-none':          ( 'resize': none ),
+        'resize-y':             ( 'resize': vertical ),
+        'resize-x':             ( 'resize': horizontal )
     )
 );
 
@@ -160,10 +160,10 @@ $resize_properties: (
 // # Generates matching Utility Classes in: interactivity/_user-select.scss
 $user_select_properties: (
     'classes': (
-        'u-select-none':        ( 'user-select': 'none' ),
-        'u-select-text':        ( 'user-select': 'text' ),
-        'u-select-all':         ( 'user-select': 'all' ),
-        'u-select-auto':        ( 'user-select': 'auto' )
+        'u-select-none':        ( 'user-select': none ),
+        'u-select-text':        ( 'user-select': text ),
+        'u-select-all':         ( 'user-select': all ),
+        'u-select-auto':        ( 'user-select': auto )
     )
 );
 
@@ -171,11 +171,11 @@ $user_select_properties: (
 // # Generates matching Utility Classes in: layout/flex/_align-content.scss
 $align_content_properties: (
     'classes': (
-        'content-start':	    ( 'align-content': 'flex-start' ),
-        'content-center':	    ( 'align-content': 'center' ),
-        'content-end':	        ( 'align-content': 'flex-end' ),
-        'content-between':	    ( 'align-content': 'space-between' ),
-        'content-around':	    ( 'align-content': 'space-around' )
+        'content-start':	    ( 'align-content': flex-start ),
+        'content-center':	    ( 'align-content': center ),
+        'content-end':	        ( 'align-content': flex-end ),
+        'content-between':	    ( 'align-content': space-between ),
+        'content-around':	    ( 'align-content': space-around )
     )
 );
 
@@ -183,11 +183,11 @@ $align_content_properties: (
 // # Generates matching Utility Classes in: layout/flex/_align-items.scss
 $align_items_properties: (
     'classes': (
-        'items-stretch':	    ( 'align-items': 'stretch' ),
-        'items-start':	        ( 'align-items': 'flex-start' ),
-        'items-center':	        ( 'align-items': 'center' ),
-        'items-end':	        ( 'align-items': 'flex-end' ),
-        'items-baseline':	    ( 'align-items': 'baseline' )
+        'items-stretch':	    ( 'align-items': stretch ),
+        'items-start':	        ( 'align-items': flex-start ),
+        'items-center':	        ( 'align-items': center ),
+        'items-end':	        ( 'align-items': flex-end ),
+        'items-baseline':	    ( 'align-items': baseline )
     )
 );
 
@@ -195,11 +195,11 @@ $align_items_properties: (
 // # Generates matching Utility Classes in: layout/flex/_align-self.scss
 $align_self_properties: (
     'classes': (
-        'self-auto':	    ( 'align-self': 'auto' ),
-        'self-start':	    ( 'align-self': 'flex-start' ),
-        'self-center':	    ( 'align-self': 'center' ),
-        'self-end':	        ( 'align-self': 'flex-end' ),
-        'self-stretch':	    ( 'align-self': 'stretch' )
+        'self-auto':	    ( 'align-self': auto ),
+        'self-start':	    ( 'align-self': flex-start ),
+        'self-center':	    ( 'align-self': center ),
+        'self-end':	        ( 'align-self': flex-end ),
+        'self-stretch':	    ( 'align-self': stretch )
     )
 );
 
@@ -207,10 +207,10 @@ $align_self_properties: (
 // # Generates matching Utility Classes in: layout/flex/_flex-direction.scss
 $flex_direction_properties: (
     'classes': (
-        'flex-row':	            ( 'flex-direction': 'row' ),
-        'flex-row-rev':	        ( 'flex-direction': 'row-reverse' ),
-        'flex-col':	            ( 'flex-direction': 'column' ),
-        'flex-col-rev':	        ( 'flex-direction': 'column-reverse' )
+        'flex-row':	            ( 'flex-direction': row ),
+        'flex-row-rev':	        ( 'flex-direction': row-reverse ),
+        'flex-col':	            ( 'flex-direction': column ),
+        'flex-col-rev':	        ( 'flex-direction': column-reverse )
     )
 );
 
@@ -218,9 +218,9 @@ $flex_direction_properties: (
 // # Generates matching Utility Classes in: layout/flex/_flex-wrap.scss
 $flex_wrap_properties: (
     'classes': (
-        'flex-no-wrap':	        ( 'flex-wrap': 'nowrap' ),
-        'flex-wrap':	        ( 'flex-wrap': 'wrap' ),
-        'flex-wrap-rev':	    ( 'flex-wrap': 'wrap-reverse' )
+        'flex-no-wrap':	        ( 'flex-wrap': nowrap ),
+        'flex-wrap':	        ( 'flex-wrap': wrap ),
+        'flex-wrap-rev':	    ( 'flex-wrap': wrap-reverse )
     )
 );
 
@@ -228,14 +228,14 @@ $flex_wrap_properties: (
 // # Generates matching Utility Classes in: layout/flex/_justify-content.scss
 $justify_content_properties: (
     'classes': (
-        'justify-start':	    ( 'justify-content': 'flex-start',
-                                  'text-align': 'start' ),
-        'justify-center':	    ( 'justify-content': 'center',
-                                  'text-align': 'center' ),
-        'justify-end':	        ( 'justify-content': 'flex-end',
-                                  'text-align': 'end' ),
-        'justify-between':	    ( 'justify-content': 'space-between' ),
-        'justify-around':	    ( 'justify-content': 'space-around' )
+        'justify-start':	    ( 'justify-content': flex-start,
+                                  'text-align': start ),
+        'justify-center':	    ( 'justify-content': center,
+                                  'text-align': center ),
+        'justify-end':	        ( 'justify-content': flex-end,
+                                  'text-align': end ),
+        'justify-between':	    ( 'justify-content': space-between ),
+        'justify-around':	    ( 'justify-content': space-around )
     )
 );
 
@@ -379,14 +379,14 @@ $padding_properties: ( 'classes': () );
 
 // SVG - Fill
 // # Generates matching Utility Classes in: svg/_fill.scss
-$fill_color_properties: ( 'classes': ( 'fill-current': ( 'fill': 'currentColor' ) ) );
+$fill_color_properties: ( 'classes': ( 'fill-current': ( 'fill': currentColor ) ) );
 @each $name, $value in map-get($colors, 'vars') {
     $fill_color_properties: map-deep-set( $fill_color_properties, 'classes', 'fill-#{$name}', ('fill': $value) );
 }
 
 // SVG - Stroke Colors
 // # Generates matching Utility Classes in: svg/_stroke.scss
-$stroke_color_properties: ( 'classes': ( 'stroke-current': ( 'stroke': 'currentColor' ) ) );
+$stroke_color_properties: ( 'classes': ( 'stroke-current': ( 'stroke': currentColor ) ) );
 @each $name, $value in map-get($colors, 'vars') {
     $stroke_color_properties: map-deep-set( $stroke_color_properties, 'classes', 'stroke-#{$name}', ('stroke': $value) );
 }
@@ -453,8 +453,8 @@ $font_size_properties: (
 // # Generates matching Utility Classes in: typography/_font-style.scss
 $font_style_properties: (
     'classes': (
-        'font-style-normal':    ( 'font-style': 'normal' ),
-        'font-style-italic':    ( 'font-style': 'italic' )
+        'font-style-normal':    ( 'font-style': normal ),
+        'font-style-italic':    ( 'font-style': italic )
     )
 );
 
@@ -524,10 +524,10 @@ $leading_properties: (
 // # Generates matching Utility Classes in: typography/_text-align.scss
 $text_align_properties: (
     'classes': (
-        'text-left':    ( 'text-align': 'left' ),
-        'text-center':  ( 'text-align': 'center' ),
-        'text-right':   ( 'text-align': 'right' ),
-        'text-justify': ( 'text-align': 'justify' )
+        'text-left':    ( 'text-align': left ),
+        'text-center':  ( 'text-align': center ),
+        'text-right':   ( 'text-align': right ),
+        'text-justify': ( 'text-align': justify )
     )
 );
 
@@ -542,8 +542,8 @@ $text_color_properties: ( 'classes': () );
 // # Generates matching Utility Classes in: typography/_text-decoration.scss
 $text_decoration_properties: (
     'classes': (
-        'text-under':   ( 'text-decoration': 'underline' ),
-        'text-strike':  ( 'text-decoration': 'line-through' ),
-        'text-none':    ( 'text-decoration': 'none' )
+        'text-under':   ( 'text-decoration': underline ),
+        'text-strike':  ( 'text-decoration': line-through ),
+        'text-none':    ( 'text-decoration': none )
     )
 );
