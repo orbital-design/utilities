@@ -16,59 +16,59 @@
 // Generate CSS Custom vars
 @import 'utilities/helpers/css-vars';
 
-// @import 'utilities/layout/grid';
+@import 'utilities/layout/grid';
 
 // Utility Class Generators
 // # Accessibility classes.
-// @import 'utilities/accessibility/screen-readers';
+@import 'utilities/accessibility/screen-readers';
 
 // Backgrounds
-@import 'utilities/backgrounds/background-colour';
+@import 'utilities/backgrounds/background-color';
 // # Effects
-// @import 'utilities/effects/box-shadow';
-// @import 'utilities/effects/opacity';
+@import 'utilities/effects/box-shadow';
+@import 'utilities/effects/opacity';
 
 // # Interactivity.
-// @import 'utilities/interactivity/appearance';
-// @import 'utilities/interactivity/cursor';
-// @import 'utilities/interactivity/outline';
-// @import 'utilities/interactivity/pointer-events';
-// @import 'utilities/interactivity/resize';
-// @import 'utilities/interactivity/user-select';
+@import 'utilities/interactivity/appearance';
+@import 'utilities/interactivity/cursor';
+@import 'utilities/interactivity/outline';
+@import 'utilities/interactivity/pointer-events';
+@import 'utilities/interactivity/resize';
+@import 'utilities/interactivity/user-select';
 
 // # Layout
-// @import 'utilities/layout/align-content';
-// @import 'utilities/layout/align-items';
-// @import 'utilities/layout/align-self';
-// @import 'utilities/layout/flex-direction';
-// @import 'utilities/layout/flex-wrap';
-// @import 'utilities/layout/justify-content';
-// @import 'utilities/layout/order';
+@import 'utilities/layout/align-content';
+@import 'utilities/layout/align-items';
+@import 'utilities/layout/align-self';
+@import 'utilities/layout/flex-direction';
+@import 'utilities/layout/flex-wrap';
+@import 'utilities/layout/justify-content';
+@import 'utilities/layout/order';
 
 // # Sizing.
-// @import 'utilities/sizing/height';
-// @import 'utilities/sizing/max-height';
-// @import 'utilities/sizing/min-height';
-// @import 'utilities/sizing/width';
-// @import 'utilities/sizing/max-width';
-// @import 'utilities/sizing/min-width';
+@import 'utilities/sizing/height';
+@import 'utilities/sizing/max-height';
+@import 'utilities/sizing/min-height';
+@import 'utilities/sizing/width';
+@import 'utilities/sizing/max-width';
+@import 'utilities/sizing/min-width';
 
 // # Spacing
-// @import 'utilities/spacing/margin';
-// @import 'utilities/spacing/padding';
+@import 'utilities/spacing/margin';
+@import 'utilities/spacing/padding';
 
 // # SVG classes.
-// @import 'utilities/svg/fill';
-// @import 'utilities/svg/stroke';
-// @import 'utilities/svg/stroke-width';
+@import 'utilities/svg/fill';
+@import 'utilities/svg/stroke';
+@import 'utilities/svg/stroke-width';
 
 // # Typography
-// @import 'utilities/typography/font-family';
-// @import 'utilities/typography/font-size';
-// @import 'utilities/typography/font-style';
-// @import 'utilities/typography/font-weight';
-// @import 'utilities/typography/letter-spacing';
-// @import 'utilities/typography/line-height';
-// @import 'utilities/typography/text-align';
-// @import 'utilities/typography/text-colour';
-// @import 'utilities/typography/text-decoration';
+@import 'utilities/typography/font-family';
+@import 'utilities/typography/font-size';
+@import 'utilities/typography/font-style';
+@import 'utilities/typography/font-weight';
+@import 'utilities/typography/letter-spacing';
+@import 'utilities/typography/line-height';
+@import 'utilities/typography/text-align';
+@import 'utilities/typography/text-color';
+@import 'utilities/typography/text-decoration';

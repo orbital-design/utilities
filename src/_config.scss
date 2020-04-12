@@ -23,9 +23,9 @@ $custom_css_vars: (
 // Comment out any maps below this line to prevent css vars or Utility Classes being created from them.
 //===============================================================================================
 
-// Colours
+// Colors
 // # Generates matching CSS Custom Vars in: _css-vars.
-$colours: (
+$colors: (
     'vars': (
         'white':        #ffffff,
         'black':        #252525,
@@ -62,11 +62,11 @@ $screen_reader_properties: (
     )
 );
 
-// Backgrounds - Background Colour
-// # Generates matching Utility Classes in: backgrounds/_background-colour.scss
-$bg_colour_properties: ( 'classes': ( 'bg-transparent':   ( 'background-color': transparent ) ) );
-@each $name, $value in map-get($colours, 'vars') {
-    $bg_colour_properties: map-deep-set( $bg_colour_properties, 'classes', 'bg-#{$name}', ('background-color': v($name) ) );
+// Backgrounds - Background Color
+// # Generates matching Utility Classes in: backgrounds/_background-color.scss
+$bg_color_properties: ( 'classes': ( 'bg-transparent':   ( 'background-color': transparent ) ) );
+@each $name, $value in map-get($colors, 'vars') {
+    $bg_color_properties: map-deep-set( $bg_color_properties, 'classes', 'bg-#{$name}', ('background-color': v($name) ) );
 }
 
 // Effects - Box Shadow
@@ -110,7 +110,7 @@ $opacity_properties: ( 'classes': () );
 // # Generates matching Utility Classes in: interactivity/_appearance.scss
 $appearance_properties: (
     'classes': (
-        'apperance-none':       ( 'appearance': 'none' )
+        'apperance-none':       ( 'appearance': none )
     )
 );
 
@@ -380,14 +380,14 @@ $padding_properties: ( 'classes': () );
 // SVG - Fill
 // # Generates matching Utility Classes in: svg/_fill.scss
 $fill_color_properties: ( 'classes': ( 'fill-current': ( 'fill': 'currentColor' ) ) );
-@each $name, $value in map-get($colours, 'vars') {
+@each $name, $value in map-get($colors, 'vars') {
     $fill_color_properties: map-deep-set( $fill_color_properties, 'classes', 'fill-#{$name}', ('fill': $value) );
 }
 
 // SVG - Stroke Colors
 // # Generates matching Utility Classes in: svg/_stroke.scss
 $stroke_color_properties: ( 'classes': ( 'stroke-current': ( 'stroke': 'currentColor' ) ) );
-@each $name, $value in map-get($colours, 'vars') {
+@each $name, $value in map-get($colors, 'vars') {
     $stroke_color_properties: map-deep-set( $stroke_color_properties, 'classes', 'stroke-#{$name}', ('stroke': $value) );
 }
 
@@ -532,9 +532,9 @@ $text_align_properties: (
 );
 
 // Typography - Text Colors
-// # Generates matching Utility Classes in: typography/_text-colour.scss
+// # Generates matching Utility Classes in: typography/_text-color.scss
 $text_color_properties: ( 'classes': () );
-@each $name, $value in map-get($colours, 'vars') {
+@each $name, $value in map-get($colors, 'vars') {
     $text_color_properties: map-deep-set( $text_color_properties, 'classes', 'text-#{$name}', ('color': v($name) ) );
 }
 

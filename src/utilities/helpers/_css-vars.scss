@@ -77,8 +77,8 @@
     // # Generates matching Utility Classes in: typography/_text-align.scss
     @include css-var-constructor( $text_align_properties );
 
-    // Typography - Text Colour
-    // # Generates matching Utility Classes in: typography/_text-colour.scss
+    // Typography - Text Color
+    // # Generates matching Utility Classes in: typography/_text-color.scss
     @include css-var-constructor( $text_color_properties );
 
     // Typography - Text Decoration
@@ -86,8 +86,8 @@
     @include css-var-constructor( $text_decoration_properties );
 
     // Generate Color Properties
-    // # Create matchng utilities for these in: typography/_text-colour.scss
-    @include css-var-constructor( $colours );
+    // # Create matchng utilities for these in: typography/_text-color.scss
+    @include css-var-constructor( $colors );
 
     // Effects - Box Shadow
     // # Generates matching Utility Classes in: effects/_box-shadow.scss

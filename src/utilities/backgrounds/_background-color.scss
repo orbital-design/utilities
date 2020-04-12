@@ -2,7 +2,7 @@
 // # Use the 'bg-{value}' utilities to control the element's background color.
 
 // ## $class_map = list. Should be a list you've already specified in '_scss-vars.scss'.
-$class_map: $bg_colour_properties;
+$class_map: $bg_color_properties;
 // ## $class_variants = list. Use 'none' if you don't want any added states.
 $class_variants: 'responsive' 'hover' 'focus';
 
