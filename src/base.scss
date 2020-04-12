@@ -1,29 +1,44 @@
-// Get map defaults used for condtionals
-@import 'utilities/helpers/map-defaults';
-
-// SCSS Helpers
+@import 'utilities/helpers/map-defaults'; // Get map defaults used for condtionals
 @import 'utilities/helpers/functions';
 @import 'utilities/helpers/mixins';
 @import 'utilities/helpers/constructor-spacings';
 @import 'utilities/helpers/constructor-utilities';
-
 @import 'utilities/helpers/constructor-vars';
 
-// Config/Setup file
-// This is where the uses specifies what they want.
+// ********************************************
+// ***   START - Import Config/Setup file   ***
+// *** All Utils & CSS Vars are setup here. ***
+// ********************************************
 @import 'config';
+// ********************************************
+// ***    End - Import Config/Setup fil.    ***
+// ********************************************
 
-// Generate CSS Custom vars
 @import 'utilities/helpers/css-vars';
-
 @import 'utilities/layout/grid';
 
-// Utility Class Generators
+// ********************************************
+// ***         START - Theme Imports        ***
+// *** Place all themes custom Imports Here ***
+// ********************************************
+
+// @import '';
+
+// ********************************************
+// ***          End - Theme Imports         ***
+// ********************************************
+// ############################################
+// ********************************************
+// ***        START - Utility Imports       ***
+// ***      DON"T TOUCH BELOW THS LINE      ***
+// ********************************************
+
 // # Accessibility classes.
 @import 'utilities/accessibility/screen-readers';
 
 // Backgrounds
 @import 'utilities/backgrounds/background-color';
+
 // # Effects
 @import 'utilities/effects/box-shadow';
 @import 'utilities/effects/opacity';
