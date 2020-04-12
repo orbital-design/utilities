@@ -7,6 +7,7 @@
 
 // ********************************************
 // ***   START - Import Config/Setup file   ***
+// ********************************************
 // *** All Utils & CSS Vars are setup here. ***
 // ********************************************
 @import 'config';
@@ -17,8 +18,10 @@
 @import 'utilities/helpers/css-vars';
 @import 'utilities/layout/grid';
 
+// ############################################
 // ********************************************
 // ***         START - Theme Imports        ***
+// ********************************************
 // *** Place all themes custom Imports Here ***
 // ********************************************
 
@@ -28,11 +31,12 @@
 // ***          End - Theme Imports         ***
 // ********************************************
 // ############################################
+
 // ********************************************
 // ***        START - Utility Imports       ***
-// ***      DON"T TOUCH BELOW THS LINE      ***
 // ********************************************
-
+// ***     DON"T EDIT BELOW THIS LINE.      ***
+// ********************************************
 // # Accessibility classes.
 @import 'utilities/accessibility/screen-readers';
 
@@ -87,3 +91,6 @@
 @import 'utilities/typography/text-align';
 @import 'utilities/typography/text-color';
 @import 'utilities/typography/text-decoration';
+// ********************************************
+// ***         END - Utility Imports.       ***
+// ********************************************
