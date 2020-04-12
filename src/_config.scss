@@ -62,6 +62,13 @@ $screen_reader_properties: (
     )
 );
 
+// Backgrounds - Background Colour
+// # Generates matching Utility Classes in: backgrounds/_background-colour.scss
+$bg_colour_properties: ( 'classes': ( 'bg-transparent':   ( 'background-color': transparent ) ) );
+@each $name, $value in map-get($colours, 'vars') {
+    $bg_colour_properties: map-deep-set( $bg_colour_properties, 'classes', 'bg-#{$name}', ('background-color': v($name) ) );
+}
+
 // Effects - Box Shadow
 // # Generates matching Utility Classes in: effects/_box-shadow.scss
 // # Generates matching CSS Custom Vars in: _css-vars.
