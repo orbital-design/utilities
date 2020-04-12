@@ -356,12 +356,27 @@ $min_height_properties: ( 'classes': () );
 // # Generates matching CSS Custom Vars in: _css-vars.
 // # Generates Margin Utility Classes using these vars in: spacing/_padding.scss
 // # Generates Padding Utility Classes using these vars in: spacing/_margin.scss
-$spacing_default: 5px;
+$spacing_default: 4px;
 $spacing_properties: (
     'vars': (
         'spacing-0':    rem-calc($spacing_default * 0),
         'spacing-1':    rem-calc($spacing_default * 1),
-        'spacing-2':    rem-calc($spacing_default * 2)
+        'spacing-2':    rem-calc($spacing_default * 2),
+        'spacing-3':    rem-calc($spacing_default * 3),
+        'spacing-4':    rem-calc($spacing_default * 4),
+        'spacing-5':    rem-calc($spacing_default * 5),
+        'spacing-6':    rem-calc($spacing_default * 6),
+        'spacing-8':    rem-calc($spacing_default * 8),
+        'spacing-10':   rem-calc($spacing_default * 10),
+        'spacing-12':   rem-calc($spacing_default * 12),
+        'spacing-16':   rem-calc($spacing_default * 16),
+        'spacing-20':   rem-calc($spacing_default * 20),
+        'spacing-24':   rem-calc($spacing_default * 24),
+        'spacing-32':   rem-calc($spacing_default * 32),
+        'spacing-40':   rem-calc($spacing_default * 40),
+        'spacing-48':   rem-calc($spacing_default * 48),
+        'spacing-56':   rem-calc($spacing_default * 56),
+        'spacing-64':   rem-calc($spacing_default * 64)
     )
 );
 
