@@ -1,11 +1,11 @@
-// Map Defaults
-// # We need to make sure every map is set to null so if user comments out the map no vars or classes are output
+// ********************************************
+// ***         START - Map Defaults         ***
+// ********************************************
+// # Set all classes & var maps to null.
+// # Lets user comment out map without error.
 // # We don't need to do this for breakpoints.
 
-// - - - - - - - - - -
-
-// Additional CSS Vars
-// # Output in the :root of the main stylesheet
+// # Additional CSS Vars
 $custom_css_vars: null !default;
 
 // # Colors
@@ -67,3 +67,6 @@ $leading_properties: null !default;
 $text_align_properties: null !default;
 $text_color_properties: null !default;
 $text_decoration_properties: null !default;
+// ********************************************
+// ***          End - Map Defaults.         ***
+// ********************************************
